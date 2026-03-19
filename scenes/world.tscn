@@ -378,4 +378,4 @@ layer_0/tile_data = PackedInt32Array(65545, 917505, 15, 131081, 917505, 15, 1966
 position = Vector2(48, 24)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1320717058]
-position = Vector2(48, 29)
+position = Vector2(49, 33)
