@@ -48,8 +48,6 @@ texture = ExtResource("1_nnsk1")
 37:8/0 = 0
 18:22/size_in_atlas = Vector2i(5, 6)
 18:22/0 = 0
-25:22/size_in_atlas = Vector2i(5, 7)
-25:22/0 = 0
 4:31/size_in_atlas = Vector2i(4, 4)
 4:31/0 = 0
 0:21/size_in_atlas = Vector2i(3, 7)
@@ -277,10 +275,6 @@ texture = ExtResource("1_nnsk1")
 28:6/0 = 0
 25:7/size_in_atlas = Vector2i(1, 2)
 25:7/0 = 0
-29:20/size_in_atlas = Vector2i(1, 2)
-29:20/0 = 0
-28:20/size_in_atlas = Vector2i(1, 2)
-28:20/0 = 0
 27:20/size_in_atlas = Vector2i(1, 2)
 27:20/0 = 0
 26:20/size_in_atlas = Vector2i(1, 2)
@@ -309,6 +303,8 @@ texture = ExtResource("1_nnsk1")
 14:10/0 = 0
 11:7/size_in_atlas = Vector2i(2, 2)
 11:7/0 = 0
+25:22/size_in_atlas = Vector2i(5, 7)
+25:22/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7kh3"]
 texture = ExtResource("3_qfnet")
@@ -362,6 +358,7 @@ texture = ExtResource("4_i7141")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_q5onr"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4mrxx")
 sources/1 = SubResource("TileSetAtlasSource_7r4gi")
 sources/2 = SubResource("TileSetAtlasSource_w7kh3")
@@ -372,7 +369,7 @@ sources/3 = SubResource("TileSetAtlasSource_e3hyu")
 [node name="TileMap" type="TileMap" parent="." unique_id=829018898]
 tile_set = SubResource("TileSet_q5onr")
 format = 2
-layer_0/tile_data = PackedInt32Array(65545, 917505, 15, 131081, 917505, 15, 196617, 917505, 15, 262154, 1114113, 29, 131084, 1114113, 29, 65547, 917505, 15, 65546, 917505, 15, 196618, 917505, 15, 196619, 917505, 15, 131083, 917505, 15, 131082, 1441793, 9)
+layer_0/tile_data = PackedInt32Array(65545, 917505, 15, 131081, 917505, 15, 196617, 917505, 15, 262154, 1114113, 29, 131084, 1114113, 29, 65547, 917505, 15, 65546, 917505, 15, 196618, 917505, 15, 196619, 917505, 15, 131083, 917505, 15, 131082, 1441793, 9, -131076, 0, 5, -196610, 0, 5, -131072, 0, 5, -327678, 0, 5, -196604, 0, 5, -327670, 1638401, 22, -327666, 1638401, 22, -327662, 1638401, 22)
 
 [node name="player" parent="." unique_id=806170338 instance=ExtResource("2_rwgxs")]
 position = Vector2(48, 24)
