@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://c6xddue2nlilr" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://d20bvvarcqq1e" path="res://art/characters/bardo_2.png" id="3_qhqgy"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+custom_solver_bias = 1.0
+radius = 15.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
 atlas = ExtResource("3_qhqgy")
 region = Rect2(312, 216, 52, 72)
@@ -196,11 +200,14 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D" unique_id=1005905715]
+y_sort_enabled = true
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1417438236]
+shape = SubResource("CapsuleShape2D_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=851337391]
+position = Vector2(1, -20)
 sprite_frames = SubResource("SpriteFrames_lxlsd")
 animation = &"back_idle"
 frame_progress = 0.41649172
