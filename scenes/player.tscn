@@ -211,8 +211,7 @@ shape = SubResource("CapsuleShape2D_g2els")
 position = Vector2(1, -16)
 scale = Vector2(0.8173077, 0.75000006)
 sprite_frames = SubResource("SpriteFrames_lxlsd")
-animation = &"back_idle"
-frame_progress = 0.02212439
+animation = &"side_idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1154690296]
 position_smoothing_enabled = true
