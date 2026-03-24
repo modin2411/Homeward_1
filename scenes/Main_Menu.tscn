@@ -45,8 +45,8 @@ limit_top = -20000000
 limit_bottom = 10007951
 
 [node name="HomewardQuerLogo" type="Sprite2D" parent="." unique_id=1552822670]
-position = Vector2(2.1684043e-19, 0)
-scale = Vector2(0.66394037, 0.6044312)
+position = Vector2(-2.3841858e-07, -4.7683716e-07)
+scale = Vector2(0.65944415, 0.6186218)
 texture = ExtResource("2_y2rfe")
 
 [connection signal="pressed" from="button_controler/Start" to="." method="_on_start_pressed"]
