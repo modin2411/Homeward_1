@@ -1,3 +1,25 @@
 [gd_scene format=3 uid="uid://bbv8ik35fdbfp"]
 
+[ext_resource type="Script" uid="uid://b7mkep7n0ii3g" path="res://scenes/options.gd" id="1_c2u1v"]
+
 [node name="Options" type="Node2D" unique_id=1373579609]
+script = ExtResource("1_c2u1v")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2007505071]
+zoom = Vector2(0.5, 0.5)
+
+[node name="Control" type="Control" parent="." unique_id=1046526331]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Exit" type="Button" parent="Control" unique_id=1377025603]
+layout_mode = 0
+offset_left = -386.0
+offset_top = 223.0
+offset_right = -171.0
+offset_bottom = 254.0
+text = "Exit"
+
+[connection signal="pressed" from="Control/Exit" to="." method="_on_exit_pressed"]

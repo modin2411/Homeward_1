@@ -15,38 +15,37 @@ offset_bottom = 40.0
 [node name="Start" type="Button" parent="button_controler" unique_id=1783452097]
 z_index = 5
 layout_mode = 0
-offset_left = 192.0
-offset_top = 28.0
-offset_right = 336.0
-offset_bottom = 59.0
+offset_left = -85.0
+offset_top = -227.0
+offset_right = 59.0
+offset_bottom = -196.0
 text = "Start"
 
 [node name="Options" type="Button" parent="button_controler" unique_id=2047439141]
 z_index = 5
 layout_mode = 0
-offset_left = 192.0
-offset_top = 67.0
-offset_right = 336.0
-offset_bottom = 98.0
+offset_left = -85.0
+offset_top = -188.0
+offset_right = 59.0
+offset_bottom = -157.0
 text = "Options"
 
 [node name="Quit" type="Button" parent="button_controler" unique_id=695478458]
 z_index = 5
 layout_mode = 0
-offset_left = 192.0
-offset_top = 106.0
-offset_right = 336.0
-offset_bottom = 137.0
+offset_left = -85.0
+offset_top = -149.0
+offset_right = 59.0
+offset_bottom = -118.0
 text = "Quit"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1895888705]
-position = Vector2(268, 243)
 zoom = Vector2(0.5, 0.5)
 limit_top = -20000000
 limit_bottom = 10007951
 
 [node name="HomewardQuerLogo" type="Sprite2D" parent="." unique_id=1552822670]
-position = Vector2(268.00003, 243)
+position = Vector2(2.1684043e-19, 0)
 scale = Vector2(0.66394037, 0.6044312)
 texture = ExtResource("2_y2rfe")
 
