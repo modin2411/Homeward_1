@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b3lp81dk3y7r5" path="res://art/tilesets/Overworld.png" id="1_nnsk1"]
 [ext_resource type="TileSet" uid="uid://bg57u3x5v62md" path="res://tilesets/new_tile_set.tres" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://c1n5ksqthg6jo" path="res://scenes/player.tscn" id="2_rwgxs"]
-[ext_resource type="Script" uid="uid://bnwba7hkxf20v" path="res://scenes/entrence_hole.gd" id="4_k0juu"]
+[ext_resource type="Script" path="res://scenes/entrence_hole.gd" id="4_k0juu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wyf3"]
 texture = ExtResource("1_nnsk1")
