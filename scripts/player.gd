@@ -69,7 +69,7 @@ func play_anim(movement):
 
 	elif current_dir == "left":
 		anim.flip_h = false
-		anim.play("side_walk" if movement else "front_idle")
+		anim.play("side_walk" if movement else "front_idle") 
 			
 	elif current_dir == "down":
 		anim.flip_h = false
