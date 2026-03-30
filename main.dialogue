@@ -1,0 +1,25 @@
+~ start
+
+if global.given_villagers_item == false
+	Villager: [[Hi|Hallo|Howdy]]... wie kann ich dir helfen?
+	- Wer bist du?
+		Villager: ... ein ganz normaler Bewohner...
+	- Ich glaube ich habe etwas für dich.
+		Villager: Oh.. bist du dir sicher?
+		- Ja, habe etwas genau für dich gefunden
+			if global.found_villagers_item == true:
+				Villager: Ahhh, meine Zigarre... Ich glaube die habe ich verloren!
+				global.given_villagers_item == true
+				=> END
+				
+		- Nein, doch nicht => END
+	- Aufnimmerwiedersehen => END
+else:
+	Villager: [[Hi|Hallo|Howdy]], danke dir für deine Hilfe!
+	Villager: Ich weiß nicht was ich ohne dich getan hätte!
+	=> END
+=> END
+
+
+
+
