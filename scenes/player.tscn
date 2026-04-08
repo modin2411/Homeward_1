@@ -210,7 +210,7 @@ position = Vector2(0, -3)
 shape = SubResource("CapsuleShape2D_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=851337391]
-position = Vector2(1, -14.000002)
+position = Vector2(1, -12)
 scale = Vector2(0.6, 0.551)
 sprite_frames = SubResource("SpriteFrames_lxlsd")
 animation = &"front_idle"
