@@ -78,3 +78,14 @@ func play_anim(movement):
 	elif current_dir == "up":
 		anim.flip_h = false
 		anim.play("back_walk" if movement else "front_idle")
+		
+		
+		
+var hearts_list : Array[TextureRect]
+var health = 3
+
+func _ready() -> void:
+	var hearts_parent = $heartbar/HBoxContainer
+	for child in hearts_parent.get_children():
+		hearts_list.appand(child)
+	print(heart_list)

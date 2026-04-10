@@ -1,0 +1,227 @@
+[gd_scene format=3 uid="uid://bapvy71043313"]
+
+[ext_resource type="Script" uid="uid://cefula47ay66j" path="res://art/jumpandrun/Player/player.gd" id="1_1akqa"]
+[ext_resource type="Texture2D" uid="uid://d20bvvarcqq1e" path="res://art/characters/bardo_2.png" id="2_bs47l"]
+[ext_resource type="Texture2D" uid="uid://dt2l2rf7ouov2" path="res://art/characters/bardo_death.png" id="3_6dv4b"]
+[ext_resource type="Texture2D" uid="uid://bvhntllvom1xw" path="res://art/heart/Heart_pixelart.png" id="3_v32vc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bs47l"]
+radius = 9.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v32vc"]
+atlas = ExtResource("2_bs47l")
+region = Rect2(312, 144, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dv4b"]
+atlas = ExtResource("2_bs47l")
+region = Rect2(364, 144, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjkyb"]
+atlas = ExtResource("2_bs47l")
+region = Rect2(416, 144, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxa3v"]
+atlas = ExtResource("3_6dv4b")
+region = Rect2(208, 288, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vji8e"]
+atlas = ExtResource("3_6dv4b")
+region = Rect2(208, 360, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avwdd"]
+atlas = ExtResource("3_6dv4b")
+region = Rect2(208, 432, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxlmg"]
+atlas = ExtResource("3_6dv4b")
+region = Rect2(208, 504, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxjtf"]
+atlas = ExtResource("2_bs47l")
+region = Rect2(312, 216, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sney"]
+atlas = ExtResource("2_bs47l")
+region = Rect2(364, 216, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix3nu"]
+atlas = ExtResource("2_bs47l")
+region = Rect2(416, 216, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t36md"]
+atlas = ExtResource("2_bs47l")
+region = Rect2(312, 0, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq6js"]
+atlas = ExtResource("2_bs47l")
+region = Rect2(364, 0, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfq3y"]
+atlas = ExtResource("2_bs47l")
+region = Rect2(416, 0, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aecm7"]
+atlas = ExtResource("2_bs47l")
+region = Rect2(0, 144, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xk85"]
+atlas = ExtResource("2_bs47l")
+region = Rect2(0, 144, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqslg"]
+atlas = ExtResource("2_bs47l")
+region = Rect2(52, 144, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4x50v"]
+atlas = ExtResource("2_bs47l")
+region = Rect2(104, 144, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljon1"]
+atlas = ExtResource("3_6dv4b")
+region = Rect2(364, 0, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cm430"]
+atlas = ExtResource("3_6dv4b")
+region = Rect2(312, 0, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxkmh"]
+atlas = ExtResource("3_6dv4b")
+region = Rect2(364, 0, 52, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f4wda"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v32vc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dv4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjkyb")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxa3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vji8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avwdd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxlmg")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxjtf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sney")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ix3nu")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t36md")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq6js")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfq3y")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aecm7")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xk85")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqslg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4x50v")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljon1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cm430")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxkmh")
+}],
+"loop": true,
+"name": &"take_damage",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1637348435]
+collision_layer = 2
+script = ExtResource("1_1akqa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1639276995]
+position = Vector2(0, -9)
+shape = SubResource("CapsuleShape2D_bs47l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1400817073]
+position = Vector2(1, -15)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_f4wda")
+animation = &"death"
+autoplay = "idle"
+
+[node name="heartbar" type="CanvasLayer" parent="." unique_id=16996533]
+scale = Vector2(0.01, 0.01)
+transform = Transform2D(0.01, 0, 0, 0.01, 0, 0)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="heartbar" unique_id=587206706]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="heart" type="TextureRect" parent="heartbar/HBoxContainer" unique_id=1378345801]
+layout_mode = 2
+texture = ExtResource("3_v32vc")
+
+[node name="heart2" type="TextureRect" parent="heartbar/HBoxContainer" unique_id=820892224]
+layout_mode = 2
+texture = ExtResource("3_v32vc")
+
+[node name="heart3" type="TextureRect" parent="heartbar/HBoxContainer" unique_id=1509616152]
+layout_mode = 2
+texture = ExtResource("3_v32vc")

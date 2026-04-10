@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c1n5ksqthg6jo"]
 
 [ext_resource type="Script" uid="uid://c6xddue2nlilr" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://bvhntllvom1xw" path="res://art/heart/Heart_pixelart.png" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://d20bvvarcqq1e" path="res://art/characters/bardo_2.png" id="3_qhqgy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
@@ -217,3 +218,23 @@ animation = &"front_idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1154690296]
 position_smoothing_enabled = true
+
+[node name="heartbar" type="CanvasLayer" parent="." unique_id=2063048714]
+scale = Vector2(0.01, 0.01)
+transform = Transform2D(0.01, 0, 0, 0.01, 0, 0)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="heartbar" unique_id=1764283300]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="heart" type="TextureRect" parent="heartbar/HBoxContainer" unique_id=1398648151]
+layout_mode = 2
+texture = ExtResource("3_dqkch")
+
+[node name="heart2" type="TextureRect" parent="heartbar/HBoxContainer" unique_id=218014693]
+layout_mode = 2
+texture = ExtResource("3_dqkch")
+
+[node name="heart3" type="TextureRect" parent="heartbar/HBoxContainer" unique_id=1306605528]
+layout_mode = 2
+texture = ExtResource("3_dqkch")
