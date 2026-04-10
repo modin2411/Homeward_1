@@ -3,11 +3,22 @@ extends CharacterBody2D
 const speed = 100
 var current_dir = "down"
 
+var hearts_list : Array[TextureRect] = []
+var health = 3
+
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
+	
+	var hearts_parent = $heartbar/HBoxContainer
+	for child in hearts_parent.get_children():
+		hearts_list.append(child)
+		
+	print(hearts_list)
+
 
 func _physics_process(delta):
 	player_movement()
+
 
 func player_movement():
 	var input_dir = Vector2.ZERO
@@ -17,7 +28,6 @@ func player_movement():
 	var down  = Input.is_action_pressed("ui_down")
 	var up    = Input.is_action_pressed("ui_up")
 	
-	# Bewegungsrichtung (mehrere gleichzeitig möglich)
 	if right: input_dir.x += 1
 	if left:  input_dir.x -= 1
 	if down:  input_dir.y += 1
@@ -26,7 +36,6 @@ func player_movement():
 	input_dir = input_dir.normalized()
 	velocity = input_dir * speed
 	
-	# Blickrichtung NUR ändern, wenn aktuelle Richtung losgelassen wurde
 	if input_dir != Vector2.ZERO:
 		
 		match current_dir:
@@ -60,6 +69,7 @@ func player_movement():
 
 	move_and_slide()
 
+
 func play_anim(movement):
 	var anim = $AnimatedSprite2D
 	
@@ -78,14 +88,3 @@ func play_anim(movement):
 	elif current_dir == "up":
 		anim.flip_h = false
 		anim.play("back_walk" if movement else "front_idle")
-		
-		
-		
-var hearts_list : Array[TextureRect]
-var health = 3
-
-func _ready() -> void:
-	var hearts_parent = $heartbar/HBoxContainer
-	for child in hearts_parent.get_children():
-		hearts_list.appand(child)
-	print(heart_list)
