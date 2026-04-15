@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cefula47ay66j" path="res://art/jumpandrun/Player/player.gd" id="1_1akqa"]
 [ext_resource type="Texture2D" uid="uid://d20bvvarcqq1e" path="res://art/characters/bardo_2.png" id="2_bs47l"]
 [ext_resource type="Texture2D" uid="uid://dt2l2rf7ouov2" path="res://art/characters/bardo_death.png" id="3_6dv4b"]
-[ext_resource type="Texture2D" uid="uid://bvhntllvom1xw" path="res://art/heart/Heart_pixelart.png" id="3_v32vc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bs47l"]
 radius = 9.0
@@ -205,23 +204,3 @@ scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_f4wda")
 animation = &"death"
 autoplay = "idle"
-
-[node name="heartbar" type="CanvasLayer" parent="." unique_id=16996533]
-scale = Vector2(0.01, 0.01)
-transform = Transform2D(0.01, 0, 0, 0.01, 0, 0)
-
-[node name="HBoxContainer" type="HBoxContainer" parent="heartbar" unique_id=587206706]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="heart" type="TextureRect" parent="heartbar/HBoxContainer" unique_id=1378345801]
-layout_mode = 2
-texture = ExtResource("3_v32vc")
-
-[node name="heart2" type="TextureRect" parent="heartbar/HBoxContainer" unique_id=820892224]
-layout_mode = 2
-texture = ExtResource("3_v32vc")
-
-[node name="heart3" type="TextureRect" parent="heartbar/HBoxContainer" unique_id=1509616152]
-layout_mode = 2
-texture = ExtResource("3_v32vc")

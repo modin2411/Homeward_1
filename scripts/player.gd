@@ -2,19 +2,25 @@ extends CharacterBody2D
 
 const speed = 100
 var current_dir = "down"
+var coins = 0
 
-var hearts_list : Array[TextureRect] = []
-var health = 3
+@onready var coin_label = $CanvasLayer/HBoxContainer/CoinLabel
+
+func add_coin():
+	coins += 1
+	print("Coins:", coins)
+	update_coin_ui()
+
+func update_coin_ui():
+	print("UI update:", coins)
+	coin_label.text = str(coins)
+	
 
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
-	
-	var hearts_parent = $heartbar/HBoxContainer
-	for child in hearts_parent.get_children():
-		hearts_list.append(child)
-		
-	print(hearts_list)
+	print($CanvasLayer/HBoxContainer/CoinLabel)
 
+	
 
 func _physics_process(delta):
 	player_movement()

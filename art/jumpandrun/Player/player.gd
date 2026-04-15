@@ -43,26 +43,9 @@ func update_animations(input_axis):
 
 
 
-var hearts_list : Array[TextureRect]
-var health = 3
-
-func _ready() -> void:
-	var hearts_parent = $heartbar/HBoxContainer
-	for child in hearts_parent.get_children():
-		hearts_list.append(child)
-	print(hearts_list)
-	
 
 	
-func take_damage():
-	if health > 0:
-		health -= 1
-		animated_sprite_2d.play("take_damage")
-		update_heart_display()
 
-func update_heart_display():
-	for i in range(hearts_list.size()):
-		hearts_list[i].visible = i < health
 		
 		
 			
