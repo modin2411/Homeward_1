@@ -2446,8 +2446,26 @@ z_index = 3
 position = Vector2(515, 387)
 shape = SubResource("CircleShape2D_w7kh3")
 
+[node name="Coin4" type="Area2D" parent="." unique_id=215223337]
+position = Vector2(-524, -724)
+script = ExtResource("10_e3hyu")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin4" unique_id=1223115008]
+z_index = 1
+position = Vector2(515, 426)
+scale = Vector2(0.705, 0.705)
+sprite_frames = SubResource("SpriteFrames_dss4m")
+animation = &"Coinsspin"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin4" unique_id=62377429]
+z_index = 3
+position = Vector2(515, 426)
+shape = SubResource("CircleShape2D_w7kh3")
+
 [connection signal="body_entered" from="entrence hole" to="entrence hole" method="_on_body_entered"]
 [connection signal="body_entered" from="entrence mine" to="entrence mine" method="_on_body_entered"]
 [connection signal="body_entered" from="Coin" to="Coin" method="_on_body_entered"]
 [connection signal="body_entered" from="Coin2" to="Coin2" method="_on_body_entered"]
 [connection signal="body_entered" from="Coin3" to="Coin3" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin4" to="Coin4" method="_on_body_entered"]
