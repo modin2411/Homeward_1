@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://ddfvb12pmkmrf" path="res://art/manager/Coins Image.png" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://d20bvvarcqq1e" path="res://art/characters/bardo_2.png" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bvhntllvom1xw" path="res://art/manager/Heart_pixelart.png" id="4_dqkch"]
-[ext_resource type="Texture2D" uid="uid://ds1333cqqhfft" path="res://art/manager/generated-image-Photoroom.png" id="5_qlg0r"]
 [ext_resource type="Script" uid="uid://23ntm36qy6bn" path="res://scenes/canvas_layer_4_menu.gd" id="6_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://ckwh0oyf6wta4" path="res://art/manager/pixelartrolle (2)-Photoroom.png" id="7_fjrip"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
 custom_solver_bias = 1.0
@@ -265,23 +265,40 @@ offset_bottom = 1283.0
 scale = Vector2(0.015, 0.015)
 texture = ExtResource("4_dqkch")
 
-[node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=1403038193]
-visible = false
+[node name="CanvasLayerQText" type="CanvasLayer" parent="." unique_id=1403038193]
 
-[node name="Background" type="TextureRect" parent="CanvasLayer3" unique_id=1719979519]
-visible = false
-offset_left = -3.0
-offset_top = 28.000002
-offset_right = 2103.6665
-offset_bottom = 796.0
-scale = Vector2(0.075, 0.075)
-texture = ExtResource("5_qlg0r")
+[node name="QText" type="Label" parent="CanvasLayerQText" unique_id=36847185]
+modulate = Color(0, 0, 0, 1)
+offset_left = 169.88
+offset_top = 250.0
+offset_right = 220.88
+offset_bottom = 259.0
+theme_override_font_sizes/font_size = 6
+text = "Press Q for menu"
 
 [node name="CanvasLayer4_Menu" type="CanvasLayer" parent="." unique_id=98246178]
 script = ExtResource("6_tuyoq")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer4_Menu" unique_id=1373030681]
-offset_left = 140.0
-offset_top = 204.0
-offset_right = 275.0
+[node name="menuRoll" type="TextureRect" parent="CanvasLayer4_Menu" unique_id=382107538]
+offset_left = 106.00001
+offset_top = 169.00002
+offset_right = 384.5714
+offset_bottom = 300.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_fjrip")
+
+[node name="HintText" type="Label" parent="CanvasLayer4_Menu" unique_id=693374196]
+modulate = Color(0, 0, 0, 1)
+offset_left = 129.0
+offset_top = 192.0
+offset_right = 296.0
 offset_bottom = 244.0
+theme_override_constants/line_spacing = -1
+theme_override_font_sizes/font_size = 4
+text = "Hinweis:
+-Begib dich auf eine Reise durch die Welt von Fox 
+   und finde deinen vermissten Freund.
+-Sprich mit den Bewohnern, um Hinweise zu sammeln 
+   und neue Aufgaben zu erhalten.
+-Durchsuche Boxen und Kisten, um wertvolle Belohnungen 
+   zu entdecken."

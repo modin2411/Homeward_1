@@ -1,6 +1,6 @@
 extends Node
 
-@onready var help_menu = $ColorRect
+@onready var help_menu = $"."
 
 func _ready():
 	help_menu.visible = false
