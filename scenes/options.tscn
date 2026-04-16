@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bbv8ik35fdbfp"]
 
-[ext_resource type="Script" path="res://scenes/options.gd" id="1_c2u1v"]
+[ext_resource type="Script" uid="uid://b7mkep7n0ii3g" path="res://scenes/options.gd" id="1_c2u1v"]
 
 [node name="Options" type="Node2D" unique_id=1373579609]
 script = ExtResource("1_c2u1v")
@@ -24,10 +24,10 @@ text = "Exit"
 
 [node name="Stumm" type="Button" parent="Control" unique_id=1839682545]
 layout_mode = 0
-offset_left = -195.0
-offset_top = -197.0
-offset_right = -15.0
-offset_bottom = -166.0
-text = "Mute"
+offset_left = -88.0
+offset_top = -111.0
+offset_right = 92.0
+offset_bottom = -80.0
+text = "comming soon"
 
 [connection signal="pressed" from="Control/Exit" to="." method="_on_exit_pressed"]

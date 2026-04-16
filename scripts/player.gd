@@ -2,29 +2,50 @@ extends CharacterBody2D
 
 const speed = 100
 var current_dir = "down"
-
+var is_dead = false
 
 @onready var coin_label = $CanvasLayer/CoinLabel
 
+@onready var heart1 = $CanvasLayer2/health
+@onready var heart2 = $CanvasLayer2/health2
+@onready var heart3 = $CanvasLayer2/health3
+
 func add_coin():
-	CoinManager.coins += 1
-	print("Coins:", CoinManager.coins)
+	GameManager.coins += 1
 	update_coin_ui()
 
 func update_coin_ui():
-	print("UI update:", CoinManager.coins)
-	coin_label.text = str(CoinManager.coins)
+	coin_label.text = str(GameManager.coins)
 	
+func update_hearts():
+	heart1.visible = GameManager.health >= 1
+	heart2.visible = GameManager.health >= 2
+	heart3.visible = GameManager.health >= 3
+
+func die():
+	if is_dead:
+		return
+	
+	is_dead = true
+	velocity = Vector2.ZERO
+	$AnimatedSprite2D.play("death")
+
+func _on_animated_sprite_2d_animation_finished():
+	if $AnimatedSprite2D.animation == "death":
+		GameManager.health = GameManager.max_health
+		get_tree().reload_current_scene()
 
 func _ready():
+	add_to_group("player")
 	$AnimatedSprite2D.play("front_idle")
 	update_coin_ui()
-
-	
+	update_hearts()
 
 func _physics_process(delta):
+	if is_dead:
+		return
+	
 	player_movement()
-
 
 func player_movement():
 	var input_dir = Vector2.ZERO
@@ -34,10 +55,14 @@ func player_movement():
 	var down  = Input.is_action_pressed("ui_down")
 	var up    = Input.is_action_pressed("ui_up")
 	
-	if right: input_dir.x += 1
-	if left:  input_dir.x -= 1
-	if down:  input_dir.y += 1
-	if up:    input_dir.y -= 1
+	if right:
+		input_dir.x += 1
+	if left:
+		input_dir.x -= 1
+	if down:
+		input_dir.y += 1
+	if up:
+		input_dir.y -= 1
 	
 	input_dir = input_dir.normalized()
 	velocity = input_dir * speed
@@ -47,27 +72,39 @@ func player_movement():
 		match current_dir:
 			"right":
 				if not right:
-					if left: current_dir = "left"
-					elif down: current_dir = "down"
-					elif up: current_dir = "up"
+					if left:
+						current_dir = "left"
+					elif down:
+						current_dir = "down"
+					elif up:
+						current_dir = "up"
 			
 			"left":
 				if not left:
-					if right: current_dir = "right"
-					elif down: current_dir = "down"
-					elif up: current_dir = "up"
+					if right:
+						current_dir = "right"
+					elif down:
+						current_dir = "down"
+					elif up:
+						current_dir = "up"
 			
 			"down":
 				if not down:
-					if up: current_dir = "up"
-					elif right: current_dir = "right"
-					elif left: current_dir = "left"
+					if up:
+						current_dir = "up"
+					elif right:
+						current_dir = "right"
+					elif left:
+						current_dir = "left"
 			
 			"up":
 				if not up:
-					if down: current_dir = "down"
-					elif right: current_dir = "right"
-					elif left: current_dir = "left"
+					if down:
+						current_dir = "down"
+					elif right:
+						current_dir = "right"
+					elif left:
+						current_dir = "left"
 		
 		play_anim(1)
 	else:
@@ -75,8 +112,10 @@ func player_movement():
 
 	move_and_slide()
 
-
 func play_anim(movement):
+	if is_dead:
+		return
+	
 	var anim = $AnimatedSprite2D
 	
 	if current_dir == "right":
