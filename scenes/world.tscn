@@ -2396,324 +2396,428 @@ z_index = 1
 position = Vector2(63, -162)
 
 [node name="Coin" type="Area2D" parent="." unique_id=1133339578]
-position = Vector2(-524, -724)
+position = Vector2(-5, -231)
 script = ExtResource("10_e3hyu")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin" unique_id=1653749802]
 z_index = 1
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_dss4m")
 animation = &"Coinsspin"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coin" unique_id=564763841]
 z_index = 3
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_w7kh3")
 
-[node name="Coin2" type="Area2D" parent="." unique_id=513017313]
-position = Vector2(-524, -664)
+[node name="Coin2" type="Area2D" parent="." unique_id=1305785355]
+position = Vector2(-5, -253)
 script = ExtResource("10_e3hyu")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin2" unique_id=2132480203]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin2" unique_id=385850415]
 z_index = 1
-position = Vector2(515, 406)
+position = Vector2(1, 0)
 scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_dss4m")
 animation = &"Coinsspin"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin2" unique_id=1791646428]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin2" unique_id=63341418]
 z_index = 3
-position = Vector2(515, 406)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_w7kh3")
 
-[node name="Coin3" type="Area2D" parent="." unique_id=2128001687]
-position = Vector2(-524, -665)
+[node name="Coin3" type="Area2D" parent="." unique_id=693965446]
+position = Vector2(-6, -275)
 script = ExtResource("10_e3hyu")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin3" unique_id=276356564]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin3" unique_id=2112552835]
 z_index = 1
-position = Vector2(515, 387)
+position = Vector2(1, 0)
 scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_dss4m")
 animation = &"Coinsspin"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin3" unique_id=887099726]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin3" unique_id=1516382250]
 z_index = 3
-position = Vector2(515, 387)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_w7kh3")
 
-[node name="Coin4" type="Area2D" parent="." unique_id=215223337]
-position = Vector2(-524, -742)
+[node name="Coin4" type="Area2D" parent="." unique_id=917749774]
+position = Vector2(-6, -295)
 script = ExtResource("10_e3hyu")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin4" unique_id=1223115008]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin4" unique_id=777557793]
 z_index = 1
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_dss4m")
 animation = &"Coinsspin"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin4" unique_id=62377429]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin4" unique_id=2045033653]
 z_index = 3
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_w7kh3")
 
-[node name="Coin5" type="Area2D" parent="." unique_id=1729601893]
-position = Vector2(-154, -756)
+[node name="Coin5" type="Area2D" parent="." unique_id=1884321588]
+position = Vector2(-7, -317)
 script = ExtResource("10_e3hyu")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin5" unique_id=219003042]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin5" unique_id=388071268]
 z_index = 1
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_dss4m")
 animation = &"Coinsspin"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin5" unique_id=377556925]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin5" unique_id=931230243]
 z_index = 3
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_w7kh3")
 
-[node name="Coin6" type="Area2D" parent="." unique_id=2043492059]
-position = Vector2(-154, -738)
+[node name="Coin6" type="Area2D" parent="." unique_id=314175500]
+position = Vector2(356, -332)
 script = ExtResource("10_e3hyu")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin6" unique_id=1577213573]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin6" unique_id=793558680]
 z_index = 1
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_dss4m")
 animation = &"Coinsspin"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin6" unique_id=1954319903]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin6" unique_id=1712205220]
 z_index = 3
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_w7kh3")
 
-[node name="Coin7" type="Area2D" parent="." unique_id=1035843095]
-position = Vector2(-154, -775)
+[node name="Coin7" type="Area2D" parent="." unique_id=1716056701]
+position = Vector2(356, -354)
 script = ExtResource("10_e3hyu")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin7" unique_id=1778047424]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin7" unique_id=2030189080]
 z_index = 1
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_dss4m")
 animation = &"Coinsspin"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin7" unique_id=1625238853]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin7" unique_id=1725350998]
 z_index = 3
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_w7kh3")
 
-[node name="Coin8" type="Area2D" parent="." unique_id=2078300415]
-position = Vector2(103, -928)
+[node name="Coin8" type="Area2D" parent="." unique_id=1738805582]
+position = Vector2(355, -376)
 script = ExtResource("10_e3hyu")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin8" unique_id=1894044024]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin8" unique_id=1013882438]
 z_index = 1
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_dss4m")
 animation = &"Coinsspin"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin8" unique_id=260596919]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin8" unique_id=692773545]
 z_index = 3
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_w7kh3")
 
-[node name="Coin9" type="Area2D" parent="." unique_id=2048387330]
-position = Vector2(132, -966)
+[node name="Coin9" type="Area2D" parent="." unique_id=1855252941]
+position = Vector2(355, -396)
 script = ExtResource("10_e3hyu")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin9" unique_id=1362880884]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin9" unique_id=1447813775]
 z_index = 1
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_dss4m")
 animation = &"Coinsspin"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin9" unique_id=1812550535]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin9" unique_id=418364968]
 z_index = 3
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_w7kh3")
 
-[node name="Coin10" type="Area2D" parent="." unique_id=1008094068]
-position = Vector2(122, -944)
+[node name="Coin10" type="Area2D" parent="." unique_id=770326778]
+position = Vector2(354, -418)
 script = ExtResource("10_e3hyu")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin10" unique_id=1780502067]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin10" unique_id=564025544]
 z_index = 1
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_dss4m")
 animation = &"Coinsspin"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin10" unique_id=689419422]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin10" unique_id=645298387]
 z_index = 3
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_w7kh3")
 
-[node name="Coin11" type="Area2D" parent="." unique_id=2054568669]
-position = Vector2(132, -989)
+[node name="Coin11" type="Area2D" parent="." unique_id=1816321900]
+position = Vector2(401, -1217)
 script = ExtResource("10_e3hyu")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin11" unique_id=2054991169]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin11" unique_id=876131971]
 z_index = 1
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_dss4m")
 animation = &"Coinsspin"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin11" unique_id=968519408]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin11" unique_id=432788982]
 z_index = 3
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_w7kh3")
 
-[node name="Coin12" type="Area2D" parent="Coin11" unique_id=1208302455]
+[node name="Coin12" type="Area2D" parent="." unique_id=290446337]
+position = Vector2(401, -1239)
 script = ExtResource("10_e3hyu")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin11/Coin12" unique_id=2076534928]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin12" unique_id=2014013894]
 z_index = 1
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_dss4m")
 animation = &"Coinsspin"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin11/Coin12" unique_id=1579413673]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin12" unique_id=584464746]
 z_index = 3
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_w7kh3")
 
-[node name="Coin12" type="Area2D" parent="." unique_id=285572831]
-position = Vector2(80, -918)
+[node name="Coin13" type="Area2D" parent="." unique_id=491729853]
+position = Vector2(400, -1261)
 script = ExtResource("10_e3hyu")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin12" unique_id=463376672]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin13" unique_id=1617695267]
 z_index = 1
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_dss4m")
 animation = &"Coinsspin"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin12" unique_id=772181841]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin13" unique_id=38034681]
 z_index = 3
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_w7kh3")
 
-[node name="Coin13" type="Area2D" parent="." unique_id=1895724866]
-position = Vector2(-110, -1687)
+[node name="Coin14" type="Area2D" parent="." unique_id=1896639680]
+position = Vector2(400, -1281)
 script = ExtResource("10_e3hyu")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin13" unique_id=1555735252]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin14" unique_id=1068081648]
 z_index = 1
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_dss4m")
 animation = &"Coinsspin"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin13" unique_id=150635498]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin14" unique_id=1705120004]
 z_index = 3
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_w7kh3")
 
-[node name="Coin14" type="Area2D" parent="." unique_id=910983983]
-position = Vector2(-110, -1729)
+[node name="Coin15" type="Area2D" parent="." unique_id=1513594138]
+position = Vector2(399, -1303)
 script = ExtResource("10_e3hyu")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin14" unique_id=786784856]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin15" unique_id=293605628]
 z_index = 1
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_dss4m")
 animation = &"Coinsspin"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin14" unique_id=318632723]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin15" unique_id=1493150283]
 z_index = 3
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_w7kh3")
 
-[node name="Coin15" type="Area2D" parent="." unique_id=145084379]
-position = Vector2(-110, -1708)
+[node name="Coin16" type="Area2D" parent="." unique_id=193102075]
+position = Vector2(569, -488)
 script = ExtResource("10_e3hyu")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin15" unique_id=447896199]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin16" unique_id=1918958358]
 z_index = 1
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_dss4m")
 animation = &"Coinsspin"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin15" unique_id=1368342797]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin16" unique_id=1365921304]
 z_index = 3
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_w7kh3")
 
-[node name="Coin16" type="Area2D" parent="." unique_id=82475573]
-position = Vector2(-110, -1645)
+[node name="Coin17" type="Area2D" parent="." unique_id=1599550897]
+position = Vector2(598, -495)
 script = ExtResource("10_e3hyu")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin16" unique_id=1165755335]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin17" unique_id=675552897]
 z_index = 1
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_dss4m")
 animation = &"Coinsspin"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin16" unique_id=1643675846]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin17" unique_id=350263210]
 z_index = 3
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_w7kh3")
 
-[node name="Coin12" type="Area2D" parent="Coin16" unique_id=623508668]
+[node name="Coin18" type="Area2D" parent="." unique_id=603383829]
+position = Vector2(626, -511)
 script = ExtResource("10_e3hyu")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin16/Coin12" unique_id=736598126]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin18" unique_id=1975080578]
 z_index = 1
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_dss4m")
 animation = &"Coinsspin"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin16/Coin12" unique_id=418808157]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin18" unique_id=641695520]
 z_index = 3
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_w7kh3")
 
-[node name="Coin17" type="Area2D" parent="." unique_id=637569891]
-position = Vector2(-110, -1666)
+[node name="Coin19" type="Area2D" parent="." unique_id=634111282]
+position = Vector2(646, -532)
 script = ExtResource("10_e3hyu")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin17" unique_id=1127934770]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin19" unique_id=1292926077]
 z_index = 1
-position = Vector2(515, 426)
+position = Vector2(1, 0)
 scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_dss4m")
 animation = &"Coinsspin"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin17" unique_id=1375986871]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin19" unique_id=1182771214]
 z_index = 3
-position = Vector2(515, 426)
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_w7kh3")
+
+[node name="Coin20" type="Area2D" parent="." unique_id=767895293]
+position = Vector2(649, -560)
+script = ExtResource("10_e3hyu")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin20" unique_id=461432744]
+z_index = 1
+position = Vector2(1, 0)
+scale = Vector2(0.705, 0.705)
+sprite_frames = SubResource("SpriteFrames_dss4m")
+animation = &"Coinsspin"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin20" unique_id=1469039006]
+z_index = 3
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_w7kh3")
+
+[node name="Coin21" type="Area2D" parent="." unique_id=1976922596]
+position = Vector2(403, -725)
+script = ExtResource("10_e3hyu")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin21" unique_id=1179518809]
+z_index = 1
+position = Vector2(1, 0)
+scale = Vector2(0.705, 0.705)
+sprite_frames = SubResource("SpriteFrames_dss4m")
+animation = &"Coinsspin"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin21" unique_id=1016284715]
+z_index = 3
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_w7kh3")
+
+[node name="Coin22" type="Area2D" parent="." unique_id=75163796]
+position = Vector2(403, -747)
+script = ExtResource("10_e3hyu")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin22" unique_id=1409068497]
+z_index = 1
+position = Vector2(1, 0)
+scale = Vector2(0.705, 0.705)
+sprite_frames = SubResource("SpriteFrames_dss4m")
+animation = &"Coinsspin"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin22" unique_id=361687709]
+z_index = 3
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_w7kh3")
+
+[node name="Coin23" type="Area2D" parent="." unique_id=557873667]
+position = Vector2(402, -769)
+script = ExtResource("10_e3hyu")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin23" unique_id=2102536620]
+z_index = 1
+position = Vector2(1, 0)
+scale = Vector2(0.705, 0.705)
+sprite_frames = SubResource("SpriteFrames_dss4m")
+animation = &"Coinsspin"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin23" unique_id=1227476606]
+z_index = 3
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_w7kh3")
+
+[node name="Coin24" type="Area2D" parent="." unique_id=1783765443]
+position = Vector2(402, -789)
+script = ExtResource("10_e3hyu")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin24" unique_id=950849446]
+z_index = 1
+position = Vector2(1, 0)
+scale = Vector2(0.705, 0.705)
+sprite_frames = SubResource("SpriteFrames_dss4m")
+animation = &"Coinsspin"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin24" unique_id=187019498]
+z_index = 3
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_w7kh3")
+
+[node name="Coin25" type="Area2D" parent="." unique_id=543316927]
+position = Vector2(401, -811)
+script = ExtResource("10_e3hyu")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin25" unique_id=510066434]
+z_index = 1
+position = Vector2(1, 0)
+scale = Vector2(0.705, 0.705)
+sprite_frames = SubResource("SpriteFrames_dss4m")
+animation = &"Coinsspin"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin25" unique_id=1152487123]
+z_index = 3
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_w7kh3")
 
 [connection signal="body_entered" from="entrence hole" to="entrence hole" method="_on_body_entered"]
@@ -2729,11 +2833,17 @@ shape = SubResource("CircleShape2D_w7kh3")
 [connection signal="body_entered" from="Coin9" to="Coin9" method="_on_body_entered"]
 [connection signal="body_entered" from="Coin10" to="Coin10" method="_on_body_entered"]
 [connection signal="body_entered" from="Coin11" to="Coin11" method="_on_body_entered"]
-[connection signal="body_entered" from="Coin11/Coin12" to="Coin11/Coin12" method="_on_body_entered"]
 [connection signal="body_entered" from="Coin12" to="Coin12" method="_on_body_entered"]
 [connection signal="body_entered" from="Coin13" to="Coin13" method="_on_body_entered"]
 [connection signal="body_entered" from="Coin14" to="Coin14" method="_on_body_entered"]
 [connection signal="body_entered" from="Coin15" to="Coin15" method="_on_body_entered"]
 [connection signal="body_entered" from="Coin16" to="Coin16" method="_on_body_entered"]
-[connection signal="body_entered" from="Coin16/Coin12" to="Coin16/Coin12" method="_on_body_entered"]
 [connection signal="body_entered" from="Coin17" to="Coin17" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin18" to="Coin18" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin19" to="Coin19" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin20" to="Coin20" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin21" to="Coin21" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin22" to="Coin22" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin23" to="Coin23" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin24" to="Coin24" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin25" to="Coin25" method="_on_body_entered"]
