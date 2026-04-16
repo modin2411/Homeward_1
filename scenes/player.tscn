@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://c6xddue2nlilr" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://ddfvb12pmkmrf" path="res://art/manager/Coins Image.png" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://d20bvvarcqq1e" path="res://art/characters/bardo_2.png" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://bvhntllvom1xw" path="res://art/manager/Heart_pixelart.png" id="4_dqkch"]
+[ext_resource type="Texture2D" uid="uid://ds1333cqqhfft" path="res://art/manager/generated-image-Photoroom.png" id="5_qlg0r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
 custom_solver_bias = 1.0
@@ -221,17 +223,55 @@ position_smoothing_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2043148446]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1410969556]
-clip_contents = true
-offset_right = 1268.0
-offset_bottom = 1254.0
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1868842829]
+offset_left = 72.999985
+offset_top = 2.0
+offset_right = 1327.0
+offset_bottom = 1256.0
 scale = Vector2(0.015, 0.015)
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=1868842829]
-layout_mode = 2
 texture = ExtResource("3_dqkch")
 
-[node name="CoinLabel" type="Label" parent="CanvasLayer/HBoxContainer" unique_id=1832252317]
+[node name="CoinLabel" type="Label" parent="CanvasLayer" unique_id=1832252317]
 top_level = true
-layout_mode = 2
+offset_left = 95.00001
+offset_right = 105.00001
+offset_bottom = 23.0
 text = "0"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=277801234]
+
+[node name="health" type="TextureRect" parent="CanvasLayer2" unique_id=1802221791]
+offset_left = 4.0600085
+offset_top = 2.9999995
+offset_right = 1284.06
+offset_bottom = 1283.0
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("4_dqkch")
+
+[node name="health2" type="TextureRect" parent="CanvasLayer2" unique_id=606405049]
+offset_left = 24.850006
+offset_top = 2.9999998
+offset_right = 1304.85
+offset_bottom = 1283.0
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("4_dqkch")
+
+[node name="health3" type="TextureRect" parent="CanvasLayer2" unique_id=1770849426]
+offset_left = 46.324997
+offset_top = 2.9999998
+offset_right = 1326.325
+offset_bottom = 1283.0
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("4_dqkch")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=1403038193]
+visible = false
+
+[node name="Background" type="TextureRect" parent="CanvasLayer3" unique_id=1719979519]
+visible = false
+offset_left = -3.0
+offset_top = 28.000002
+offset_right = 2103.6665
+offset_bottom = 796.0
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("5_qlg0r")

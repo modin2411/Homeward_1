@@ -4,7 +4,7 @@ const speed = 100
 var current_dir = "down"
 var coins = 0
 
-@onready var coin_label = $CanvasLayer/HBoxContainer/CoinLabel
+@onready var coin_label = $CanvasLayer/CoinLabel
 
 func add_coin():
 	coins += 1
