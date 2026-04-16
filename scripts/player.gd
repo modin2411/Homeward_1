@@ -2,23 +2,23 @@ extends CharacterBody2D
 
 const speed = 100
 var current_dir = "down"
-var coins = 0
+
 
 @onready var coin_label = $CanvasLayer/CoinLabel
 
 func add_coin():
-	coins += 1
-	print("Coins:", coins)
+	CoinManager.coins += 1
+	print("Coins:", CoinManager.coins)
 	update_coin_ui()
 
 func update_coin_ui():
-	print("UI update:", coins)
-	coin_label.text = str(coins)
+	print("UI update:", CoinManager.coins)
+	coin_label.text = str(CoinManager.coins)
 	
 
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
-	print($CanvasLayer/HBoxContainer/CoinLabel)
+	update_coin_ui()
 
 	
 

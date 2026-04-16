@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d20bvvarcqq1e" path="res://art/characters/bardo_2.png" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bvhntllvom1xw" path="res://art/manager/Heart_pixelart.png" id="4_dqkch"]
 [ext_resource type="Texture2D" uid="uid://ds1333cqqhfft" path="res://art/manager/generated-image-Photoroom.png" id="5_qlg0r"]
+[ext_resource type="Script" uid="uid://23ntm36qy6bn" path="res://scenes/canvas_layer_4_menu.gd" id="6_tuyoq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
 custom_solver_bias = 1.0
@@ -275,3 +276,12 @@ offset_right = 2103.6665
 offset_bottom = 796.0
 scale = Vector2(0.075, 0.075)
 texture = ExtResource("5_qlg0r")
+
+[node name="CanvasLayer4_Menu" type="CanvasLayer" parent="." unique_id=98246178]
+script = ExtResource("6_tuyoq")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer4_Menu" unique_id=1373030681]
+offset_left = 140.0
+offset_top = 204.0
+offset_right = 275.0
+offset_bottom = 244.0
