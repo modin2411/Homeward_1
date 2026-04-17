@@ -7,3 +7,5 @@ func _on_body_entered(body):
 
 		if GameManager.health <= 0:
 			body.die()
+		else:
+			body.play_hurt_animation()

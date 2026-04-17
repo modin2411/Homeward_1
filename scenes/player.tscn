@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c6xddue2nlilr" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://ddfvb12pmkmrf" path="res://art/manager/Coins Image.png" id="3_dqkch"]
+[ext_resource type="Texture2D" uid="uid://dt2l2rf7ouov2" path="res://art/characters/bardo_death.png" id="3_fjrip"]
 [ext_resource type="Texture2D" uid="uid://d20bvvarcqq1e" path="res://art/characters/bardo_2.png" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bvhntllvom1xw" path="res://art/manager/Heart_pixelart.png" id="4_dqkch"]
+[ext_resource type="Texture2D" uid="uid://bfbquw5jtna4n" path="res://art/characters/bardo_heal.png" id="4_smehm"]
 [ext_resource type="Script" uid="uid://23ntm36qy6bn" path="res://scenes/canvas_layer_4_menu.gd" id="6_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://ckwh0oyf6wta4" path="res://art/manager/pixelartrolle (2)-Photoroom.png" id="7_fjrip"]
 
@@ -75,6 +77,38 @@ region = Rect2(52, 0, 52, 72)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ke2ow"]
 atlas = ExtResource("3_qhqgy")
 region = Rect2(104, 0, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4ail"]
+atlas = ExtResource("3_fjrip")
+region = Rect2(364, 0, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a38lo"]
+atlas = ExtResource("3_fjrip")
+region = Rect2(312, 0, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ni07"]
+atlas = ExtResource("3_fjrip")
+region = Rect2(364, 0, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l71n6"]
+atlas = ExtResource("3_fjrip")
+region = Rect2(312, 0, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dt7fs"]
+atlas = ExtResource("4_smehm")
+region = Rect2(364, 0, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqfne"]
+atlas = ExtResource("4_smehm")
+region = Rect2(312, 0, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnwbv"]
+atlas = ExtResource("4_smehm")
+region = Rect2(364, 0, 52, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gl8cc"]
+atlas = ExtResource("4_smehm")
+region = Rect2(312, 0, 52, 72)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ujl30"]
 atlas = ExtResource("3_qhqgy")
@@ -177,6 +211,40 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_i4ail")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a38lo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ni07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l71n6")
+}],
+"loop": false,
+"name": &"get_damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dt7fs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqfne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnwbv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gl8cc")
+}],
+"loop": false,
+"name": &"get_heal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ujl30")
 }, {
 "duration": 1.0,
@@ -217,7 +285,7 @@ shape = SubResource("CapsuleShape2D_g2els")
 position = Vector2(1, -12)
 scale = Vector2(0.6, 0.551)
 sprite_frames = SubResource("SpriteFrames_lxlsd")
-animation = &"death"
+animation = &"front_idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1154690296]
 position_smoothing_enabled = true

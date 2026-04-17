@@ -34,6 +34,7 @@ func _process(_delta):
 				if player_ref:
 					player_ref.update_hearts()
 					player_ref.update_coin_ui()
+					player_ref.play_heal_animation()
 
 				message_label.text = "1 Herz gekauft!"
 			elif GameManager.health >= GameManager.max_health:
@@ -48,3 +49,7 @@ func update_message():
 		message_label.text = "Drücke E: Kaufe 1 Herz für 5 Münzen"
 	else:
 		message_label.text = "Du brauchst 5 Münzen"
+		
+		
+		
+		

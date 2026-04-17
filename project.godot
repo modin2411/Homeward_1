@@ -19,7 +19,6 @@ config/icon="res://art/icon.svg"
 
 DialogueManager="*uid://c3rodes2l3gxb"
 global="*uid://c733fks5634n1"
-CoinManager="*uid://rj35ygcx06e0"
 GameManager="*uid://bybxlcoesfo7l"
 
 [display]
