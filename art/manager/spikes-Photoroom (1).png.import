@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwjku4tpn0qeb"
-path="res://.godot/imported/spikes-Photoroom.png-7f81835125e1f59f68fb16420147a3ba.ctex"
+uid="uid://c7av7e05pa4d1"
+path="res://.godot/imported/spikes-Photoroom (1).png-41d369d59ed006839d42894a00fe72ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/manager/spikes-Photoroom.png"
-dest_files=["res://.godot/imported/spikes-Photoroom.png-7f81835125e1f59f68fb16420147a3ba.ctex"]
+source_file="res://art/manager/spikes-Photoroom (1).png"
+dest_files=["res://.godot/imported/spikes-Photoroom (1).png-41d369d59ed006839d42894a00fe72ce.ctex"]
 
 [params]
 

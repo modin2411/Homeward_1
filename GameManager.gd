@@ -4,6 +4,9 @@ var coins: int = 0
 var health: int = 3
 var max_health: int = 3
 
+var quest_progress: int = 0
+var quest_progress_max: int = 100
+
 func damage(amount: int = 1):
 	health -= amount
 	if health < 0:
@@ -21,3 +24,6 @@ func buy_heart():
 	if can_buy_heart():
 		coins -= 5
 		heal(1)
+
+func add_quest_progress(amount: int):
+	quest_progress = clamp(quest_progress + amount, 0, quest_progress_max)

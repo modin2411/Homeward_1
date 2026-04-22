@@ -333,19 +333,6 @@ offset_bottom = 1283.0
 scale = Vector2(0.015, 0.015)
 texture = ExtResource("4_dqkch")
 
-[node name="CanvasLayerQText" type="CanvasLayer" parent="." unique_id=1403038193]
-visible = false
-
-[node name="QText" type="Label" parent="." unique_id=36847185]
-visible = false
-modulate = Color(0, 0, 0, 1)
-offset_left = 896.0
-offset_top = 1214.0
-offset_right = 1104.0
-offset_bottom = 1223.0
-theme_override_font_sizes/font_size = 6
-text = "Press Q for menu"
-
 [node name="CanvasLayer4_Menu" type="CanvasLayer" parent="." unique_id=98246178]
 script = ExtResource("6_tuyoq")
 
@@ -389,5 +376,15 @@ text = "Hinweis:
 -Durchsuche Boxen und Kisten, um wertvolle Belohnungen 
    zu entdecken."
 horizontal_alignment = 1
+
+[node name="CanvasLayer_progress" type="CanvasLayer" parent="." unique_id=252295598]
+
+[node name="quest_bar" type="ProgressBar" parent="CanvasLayer_progress" unique_id=490067846]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -4.0
+offset_bottom = 27.0
+grow_horizontal = 0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
