@@ -334,35 +334,53 @@ scale = Vector2(0.015, 0.015)
 texture = ExtResource("4_dqkch")
 
 [node name="CanvasLayerQText" type="CanvasLayer" parent="." unique_id=1403038193]
+visible = false
 
-[node name="QText" type="Label" parent="CanvasLayerQText" unique_id=36847185]
+[node name="QText" type="Label" parent="." unique_id=36847185]
+visible = false
 modulate = Color(0, 0, 0, 1)
-offset_left = 169.88
-offset_top = 250.0
-offset_right = 220.88
-offset_bottom = 259.0
+offset_left = 896.0
+offset_top = 1214.0
+offset_right = 1104.0
+offset_bottom = 1223.0
 theme_override_font_sizes/font_size = 6
 text = "Press Q for menu"
 
 [node name="CanvasLayer4_Menu" type="CanvasLayer" parent="." unique_id=98246178]
 script = ExtResource("6_tuyoq")
 
-[node name="menuRoll" type="TextureRect" parent="CanvasLayer4_Menu" unique_id=382107538]
-offset_left = 106.00001
-offset_top = 169.00002
-offset_right = 384.5714
-offset_bottom = 300.0
-scale = Vector2(0.7, 0.7)
+[node name="Control" type="Control" parent="CanvasLayer4_Menu" unique_id=264165232]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer4_Menu/Control" unique_id=2079392254]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -150.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer4_Menu/Control/CenterContainer" unique_id=747936110]
+layout_mode = 2
+theme_override_constants/separation = -97
+alignment = 1
+
+[node name="menuRoll" type="TextureRect" parent="CanvasLayer4_Menu/Control/CenterContainer/VBoxContainer" unique_id=382107538]
+layout_mode = 2
 texture = ExtResource("7_fjrip")
 
-[node name="HintText" type="Label" parent="CanvasLayer4_Menu" unique_id=693374196]
+[node name="HintText" type="Label" parent="CanvasLayer4_Menu/Control/CenterContainer/VBoxContainer" unique_id=693374196]
 modulate = Color(0, 0, 0, 1)
-offset_left = 129.0
-offset_top = 192.0
-offset_right = 296.0
-offset_bottom = 244.0
+layout_mode = 2
 theme_override_constants/line_spacing = -1
-theme_override_font_sizes/font_size = 4
+theme_override_font_sizes/font_size = 5
 text = "Hinweis:
 -Begib dich auf eine Reise durch die Welt von Fox 
    und finde deinen vermissten Freund.
@@ -370,5 +388,6 @@ text = "Hinweis:
    und neue Aufgaben zu erhalten.
 -Durchsuche Boxen und Kisten, um wertvolle Belohnungen 
    zu entdecken."
+horizontal_alignment = 1
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -1,6 +1,6 @@
 extends Node
 
-@onready var help_menu = $"."
+@onready var help_menu = $Control/CenterContainer/VBoxContainer
 
 func _ready():
 	help_menu.visible = false
