@@ -8,26 +8,28 @@ script = ExtResource("1_c2u1v")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2007505071]
 zoom = Vector2(0.5, 0.5)
 
-[node name="Control" type="Control" parent="." unique_id=1046526331]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=866765129]
 
-[node name="Exit" type="Button" parent="Control" unique_id=1377025603]
-layout_mode = 0
-offset_left = -386.0
-offset_top = 223.0
-offset_right = -171.0
-offset_bottom = 254.0
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1046526331]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_bottom = -40.0
+grow_vertical = 0
+
+[node name="Exit" type="Button" parent="CanvasLayer/Control" unique_id=1377025603]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 21.0
+offset_right = 190.55
+offset_bottom = 52.0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
 text = "Exit"
 
-[node name="Stumm" type="Button" parent="Control" unique_id=1839682545]
-layout_mode = 0
-offset_left = -88.0
-offset_top = -111.0
-offset_right = 92.0
-offset_bottom = -80.0
-text = "comming soon"
-
-[connection signal="pressed" from="Control/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Exit" to="." method="_on_exit_pressed"]
