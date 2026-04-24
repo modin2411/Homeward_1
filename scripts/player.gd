@@ -6,6 +6,9 @@ var is_dead = false
 var is_hurt = false
 var is_healing = false
 
+@export var inv: Inv
+
+
 @onready var coin_label = $CanvasLayer/CoinLabel
 @onready var quest_bar = $CanvasLayer_progress/quest_bar
 @onready var heart1 = $CanvasLayer2/health
@@ -15,7 +18,12 @@ var is_healing = false
 func add_coin():
 	GameManager.coins += 1
 	update_coin_ui()
-
+	
+func add_apple():
+	GameManager.apple += 1
+	print(GameManager.apple)
+	#update_apples_ui()
+	
 func update_coin_ui():
 	coin_label.text = str(GameManager.coins)
 
@@ -173,3 +181,8 @@ func play_anim(movement):
 	elif current_dir == "up":
 		anim.flip_h = false
 		anim.play("back_walk" if movement else "front_idle")
+
+
+func collect(item):
+	inv.insert(item)
+	get_tree().call_group("inventory_ui", "update_slots")

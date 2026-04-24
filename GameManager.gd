@@ -1,6 +1,7 @@
 extends Node
 
 var coins: int = 0
+var apple: int = 0
 var health: int = 3
 var max_health: int = 3
 
@@ -27,3 +28,4 @@ func buy_heart():
 
 func add_quest_progress(amount: int):
 	quest_progress = clamp(quest_progress + amount, 0, quest_progress_max)
+	

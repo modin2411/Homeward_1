@@ -14,7 +14,6 @@
 [ext_resource type="Script" uid="uid://b35wvxhts04i4" path="res://scenes/heiler.gd" id="10_jhx03"]
 [ext_resource type="Texture2D" uid="uid://djdjls4gxavwf" path="res://art/manager/MonedaD.png" id="10_w7kh3"]
 [ext_resource type="Script" uid="uid://cddt6355ck1o5" path="res://scenes/damage_zone.gd" id="12_q5onr"]
-[ext_resource type="Resource" uid="uid://binntw3fp44rk" path="res://inventory/items/apple.tres" id="15_dss4m"]
 [ext_resource type="Texture2D" uid="uid://clrtna2mqjbhw" path="res://art/apple-icon.png" id="15_xo05s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jhx03"]
@@ -338,12 +337,10 @@ radius = 5.0
 [sub_resource type="GDScript" id="GDScript_dss4m"]
 script/source = "extends Area2D
 
-@export var item: InvItem
 
 func _on_body_entered(body: Node2D) -> void:
-	print(\"Apple touched by:\", body.name)
 	if body.is_in_group(\"player\"):
-		body.collect(item)
+		body.add_coin()
 		queue_free()
 "
 
@@ -963,28 +960,12 @@ tile_set = ExtResource("2_4wyf3")
 
 [node name="Apple" type="Area2D" parent="." unique_id=984451683]
 script = SubResource("GDScript_dss4m")
-item = ExtResource("15_dss4m")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Apple" unique_id=377267680]
 position = Vector2(6, -13)
 texture = ExtResource("15_xo05s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Apple" unique_id=569382955]
-position = Vector2(6, -12)
-shape = SubResource("CircleShape2D_7t5mc")
-
-[node name="Apple2" type="Area2D" parent="." unique_id=70858765]
-position = Vector2(0, -15)
-script = SubResource("GDScript_dss4m")
-item = ExtResource("15_dss4m")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Apple2" unique_id=637796135]
-position = Vector2(6, -13)
-texture = ExtResource("15_xo05s")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Apple2" unique_id=364148105]
 position = Vector2(6, -12)
 shape = SubResource("CircleShape2D_7t5mc")
 
@@ -1019,4 +1000,3 @@ shape = SubResource("CircleShape2D_7t5mc")
 [connection signal="body_entered" from="Coin24" to="Coin24" method="_on_body_entered"]
 [connection signal="body_entered" from="Coin25" to="Coin25" method="_on_body_entered"]
 [connection signal="body_entered" from="Apple" to="Apple" method="_on_body_entered"]
-[connection signal="body_entered" from="Apple2" to="Apple2" method="_on_body_entered"]
