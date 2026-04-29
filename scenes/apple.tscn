@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://c2x6c0b1trwuq"]
+
+[ext_resource type="Resource" uid="uid://binntw3fp44rk" path="res://inventory/items/apple.tres" id="1_7vr8k"]
+[ext_resource type="Texture2D" uid="uid://clrtna2mqjbhw" path="res://art/apple-icon.png" id="2_3dmh2"]
+
+[sub_resource type="GDScript" id="GDScript_dss4m"]
+script/source = "extends Area2D
+
+@export var item: InvItem
+
+func _on_body_entered(body: Node2D) -> void:
+	print(\"Apple touched by:\", body.name)
+	if body.is_in_group(\"player\"):
+		body.collect(item)
+		queue_free()
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7t5mc"]
+radius = 5.0
+
+[node name="Apple" type="Area2D" unique_id=380050055]
+script = SubResource("GDScript_dss4m")
+item = ExtResource("1_7vr8k")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=277998972]
+position = Vector2(6, -13)
+texture = ExtResource("2_3dmh2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=462675947]
+position = Vector2(6, -12)
+shape = SubResource("CircleShape2D_7t5mc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

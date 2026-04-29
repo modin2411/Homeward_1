@@ -26,7 +26,7 @@ layout_mode = 2
 
 [node name="item_display" type="Sprite2D" parent="CenterContainer/Panel" unique_id=1280545895]
 
-[node name="Label" type="Label" parent="CenterContainer/Panel" unique_id=1910567823]
+[node name="amountLabel" type="Label" parent="CenterContainer/Panel" unique_id=1910567823]
 custom_minimum_size = Vector2(19, 23)
 layout_mode = 0
 offset_left = -0.5999994
