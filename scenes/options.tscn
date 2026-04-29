@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bbv8ik35fdbfp"]
 
-[ext_resource type="Script" uid="uid://b7mkep7n0ii3g" path="res://scenes/options.gd" id="1_c2u1v"]
+[ext_resource type="Script" path="res://scenes/options.gd" id="1_c2u1v"]
+[ext_resource type="Texture2D" uid="uid://ckwh0oyf6wta4" path="res://art/manager/pixelartrolle (2)-Photoroom.png" id="2_yjkok"]
+[ext_resource type="Texture2D" uid="uid://c5tvtrd4ydhcu" path="res://art/Homeward_Quer_LOGO.png" id="3_2iy26"]
 
 [node name="Options" type="Node2D" unique_id=1373579609]
 script = ExtResource("1_c2u1v")
@@ -9,6 +11,7 @@ script = ExtResource("1_c2u1v")
 zoom = Vector2(0.5, 0.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=866765129]
+layer = 7
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=1046526331]
 layout_mode = 3
@@ -20,6 +23,7 @@ offset_bottom = -40.0
 grow_vertical = 0
 
 [node name="Exit" type="Button" parent="CanvasLayer/Control" unique_id=1377025603]
+z_index = 7
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -34,11 +38,68 @@ text = "Exit"
 
 [node name="CanvasLayer2_Keys" type="CanvasLayer" parent="." unique_id=485239868]
 
-[node name="Control" type="Control" parent="CanvasLayer2_Keys" unique_id=1503029257]
+[node name="ControlRolle" type="Control" parent="CanvasLayer2_Keys" unique_id=1503029257]
+z_index = 1
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchor_left = 0.51500005
+anchor_top = 0.523
+anchor_right = 0.51500005
+anchor_bottom = 0.523
+offset_left = -50.000122
+offset_top = -49.900024
+offset_right = -10.000122
+offset_bottom = -9.900024
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.5, 2.5)
 size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Rolle" type="TextureRect" parent="CanvasLayer2_Keys/ControlRolle" unique_id=784183236]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -65.5
+offset_right = 104.0
+offset_bottom = 65.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_yjkok")
+
+[node name="Text_menu" type="Label" parent="CanvasLayer2_Keys/ControlRolle" unique_id=1413785432]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -11.5
+offset_right = 64.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = -1
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 5
+text = "W  . . .  to move forward
+A  . . .   to move to left
+S  . . .   to move backward
+D  . . .   to move to right
+E  . . .   to interact
+I  . . .    to open/close Inventory
+Q  . . .   to open/close Hintmenu
+ESC  . . .  to open pausemenu"
+
+[node name="HomewardQuerLogo" type="Sprite2D" parent="." unique_id=685034950]
+position = Vector2(-2.3841858e-07, -4.7683716e-07)
+scale = Vector2(0.65944415, 0.6186218)
+texture = ExtResource("3_2iy26")
 
 [connection signal="pressed" from="CanvasLayer/Control/Exit" to="." method="_on_exit_pressed"]

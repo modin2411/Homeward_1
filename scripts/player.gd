@@ -53,6 +53,10 @@ func die():
 	GameManager.coins = max(GameManager.coins - 10, 0)
 	$AnimatedSprite2D.play("death")
 
+func _process(delta):
+	if Input.is_action_just_pressed("PauseMenu"):
+		get_tree().change_scene_to_file("res://scenes/pause_menu.tscn")
+
 func play_heal_animation():
 	if is_dead or is_hurt or is_healing:
 		return

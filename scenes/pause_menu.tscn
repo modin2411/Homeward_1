@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cso8qj3r03ya0"]
+
+[ext_resource type="Script" uid="uid://bkv3rno7p8aci" path="res://scenes/canvas_layer_pausemenu.gd" id="1_n87rw"]
+
+[sub_resource type="GDScript" id="GDScript_n87rw"]
+
+[node name="pause_menu" type="Node2D" unique_id=1321023038]
+script = SubResource("GDScript_n87rw")
+
+[node name="CanvasLayer_pausemenu" type="CanvasLayer" parent="." unique_id=1498234253]
+script = ExtResource("1_n87rw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer_pausemenu" unique_id=1949262592]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -68.0
+offset_right = 46.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="CanvasLayer_pausemenu/VBoxContainer" unique_id=1089430872]
+layout_mode = 2
+text = "Resume"
+
+[node name="Mainmenu" type="Button" parent="CanvasLayer_pausemenu/VBoxContainer" unique_id=343512772]
+layout_mode = 2
+text = "Mainmenu"
+
+[node name="Controls" type="Button" parent="CanvasLayer_pausemenu/VBoxContainer" unique_id=309111402]
+layout_mode = 2
+text = "Controls"
+
+[node name="Quit" type="Button" parent="CanvasLayer_pausemenu/VBoxContainer" unique_id=480063396]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="CanvasLayer_pausemenu/VBoxContainer/Resume" to="CanvasLayer_pausemenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer_pausemenu/VBoxContainer/Mainmenu" to="CanvasLayer_pausemenu" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer_pausemenu/VBoxContainer/Controls" to="CanvasLayer_pausemenu" method="_on_controls_pressed"]
+[connection signal="pressed" from="CanvasLayer_pausemenu/VBoxContainer/Quit" to="CanvasLayer_pausemenu" method="_on_quit_pressed"]
