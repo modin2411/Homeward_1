@@ -8,33 +8,37 @@ var is_healing = false
 
 @export var inv: Inv
 
-
 @onready var coin_label = $CanvasLayer/CoinLabel
 @onready var quest_bar = $CanvasLayer_progress/quest_bar
 @onready var heart1 = $CanvasLayer2/health
 @onready var heart2 = $CanvasLayer2/health2
 @onready var heart3 = $CanvasLayer2/health3
 
+
 func add_coin():
 	GameManager.coins += 1
 	update_coin_ui()
-	
+
+
 func add_apple():
 	GameManager.apple += 1
 	print(GameManager.apple)
-	#update_apples_ui()
-	
+
+
 func update_coin_ui():
 	coin_label.text = str(GameManager.coins)
+
 
 func update_hearts():
 	heart1.visible = GameManager.health >= 1
 	heart2.visible = GameManager.health >= 2
 	heart3.visible = GameManager.health >= 3
 
+
 func update_quest_bar():
 	quest_bar.max_value = GameManager.quest_progress_max
 	quest_bar.value = GameManager.quest_progress
+
 
 func play_hurt_animation():
 	if is_hurt or is_dead:
@@ -43,6 +47,7 @@ func play_hurt_animation():
 	is_hurt = true
 	velocity = Vector2.ZERO
 	$AnimatedSprite2D.play("get_damage")
+
 
 func die():
 	if is_dead:
@@ -53,9 +58,6 @@ func die():
 	GameManager.coins = max(GameManager.coins - 10, 0)
 	$AnimatedSprite2D.play("death")
 
-func _process(delta):
-	if Input.is_action_just_pressed("PauseMenu"):
-		get_tree().change_scene_to_file("res://scenes/pause_menu.tscn")
 
 func play_heal_animation():
 	if is_dead or is_hurt or is_healing:
@@ -64,8 +66,9 @@ func play_heal_animation():
 	is_healing = true
 	velocity = Vector2.ZERO
 	$AnimatedSprite2D.play("get_heal")
-	GameManager.add_quest_progress(50)###########################################################
-	update_quest_bar()###########################################################################
+	GameManager.add_quest_progress(50)
+	update_quest_bar()
+
 
 func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == "death":
@@ -78,9 +81,53 @@ func _on_animated_sprite_2d_animation_finished():
 	elif $AnimatedSprite2D.animation == "get_heal":
 		is_healing = false
 
-func _ready():
+
+func rebuild_inventory_from_save() -> void:
+	if inv == null:
+		return
+
+	inv.items.clear()
+
+	for entry in SaveManager.pending_inventory_data:
+		if typeof(entry) != TYPE_DICTIONARY:
+			continue
+
+		if not entry.has("item_path") or not entry.has("amount"):
+			continue
+
+		var item_path: String = entry["item_path"]
+		var amount: int = int(entry["amount"])
+
+		if item_path.is_empty():
+			continue
+
+		var loaded_item = load(item_path)
+		if loaded_item == null:
+			push_error("Item konnte nicht geladen werden: " + item_path)
+			continue
+
+		var new_slot := InvSlot.new()
+		new_slot.item = loaded_item
+		new_slot.amount = amount
+		inv.items.append(new_slot)
+
+	SaveManager.pending_inventory_data.clear()
+	get_tree().call_group("inventory_ui", "update_slots")
+
+
+func _ready() -> void:
 	add_to_group("player")
 	$AnimatedSprite2D.play("front_idle")
+
+	if SaveManager.has_pending_player_position:
+		global_position = SaveManager.pending_player_position
+		SaveManager.has_pending_player_position = false
+		print("Geladene Position gesetzt: ", global_position)
+	else:
+		print("Keine geladene Position vorhanden.")
+
+	rebuild_inventory_from_save()
+
 	update_coin_ui()
 	update_hearts()
 
@@ -88,7 +135,11 @@ func _ready():
 	quest_bar.custom_minimum_size = Vector2(100, 24)
 	update_quest_bar()
 
-func _physics_process(delta):
+
+func _physics_process(delta: float) -> void:
+	if get_tree().paused:
+		return
+
 	if is_dead:
 		return
 
@@ -99,13 +150,14 @@ func _physics_process(delta):
 
 	player_movement()
 
+
 func player_movement():
 	var input_dir = Vector2.ZERO
 
 	var right = Input.is_action_pressed("ui_right")
-	var left  = Input.is_action_pressed("ui_left")
-	var down  = Input.is_action_pressed("ui_down")
-	var up    = Input.is_action_pressed("ui_up")
+	var left = Input.is_action_pressed("ui_left")
+	var down = Input.is_action_pressed("ui_down")
+	var up = Input.is_action_pressed("ui_up")
 
 	if right:
 		input_dir.x += 1
@@ -120,7 +172,6 @@ func player_movement():
 	velocity = input_dir * speed
 
 	if input_dir != Vector2.ZERO:
-
 		match current_dir:
 			"right":
 				if not right:
@@ -163,6 +214,7 @@ func player_movement():
 		play_anim(0)
 
 	move_and_slide()
+
 
 func play_anim(movement):
 	if is_dead or is_hurt or is_healing:

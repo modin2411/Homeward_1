@@ -27,6 +27,10 @@ grow_vertical = 2
 layout_mode = 2
 text = "Resume"
 
+[node name="Save" type="Button" parent="CanvasLayer_pausemenu/VBoxContainer" unique_id=387853526]
+layout_mode = 2
+text = "Save Game"
+
 [node name="Mainmenu" type="Button" parent="CanvasLayer_pausemenu/VBoxContainer" unique_id=343512772]
 layout_mode = 2
 text = "Mainmenu"
@@ -40,6 +44,7 @@ layout_mode = 2
 text = "Quit"
 
 [connection signal="pressed" from="CanvasLayer_pausemenu/VBoxContainer/Resume" to="CanvasLayer_pausemenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer_pausemenu/VBoxContainer/Save" to="CanvasLayer_pausemenu" method="_on_save_pressed"]
 [connection signal="pressed" from="CanvasLayer_pausemenu/VBoxContainer/Mainmenu" to="CanvasLayer_pausemenu" method="_on_main_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer_pausemenu/VBoxContainer/Controls" to="CanvasLayer_pausemenu" method="_on_controls_pressed"]
 [connection signal="pressed" from="CanvasLayer_pausemenu/VBoxContainer/Quit" to="CanvasLayer_pausemenu" method="_on_quit_pressed"]

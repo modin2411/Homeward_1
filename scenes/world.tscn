@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bb1ekc4q5gggp" path="res://scenes/villager.tscn" id="5_71j4m"]
 [ext_resource type="Texture2D" uid="uid://c7av7e05pa4d1" path="res://art/manager/spikes-Photoroom (1).png" id="6_jhx03"]
 [ext_resource type="TileSet" uid="uid://dkn8ms5utc2nc" path="res://tilesets/farm.tres" id="6_o8fc1"]
-[ext_resource type="Script" uid="uid://6wpe1nygim1o" path="res://scenes/entrence_mine.gd" id="8_7r4gi"]
-[ext_resource type="Script" uid="uid://ihx5kth1ssdj" path="res://scenes/chests.gd" id="9_lakw3"]
+[ext_resource type="Script" path="res://scenes/entrence_mine.gd" id="8_7r4gi"]
+[ext_resource type="Script" path="res://scenes/chests.gd" id="9_lakw3"]
 [ext_resource type="Script" uid="uid://cgr8n7aefcjpm" path="res://scenes/coin.gd" id="10_e3hyu"]
 [ext_resource type="Script" uid="uid://b35wvxhts04i4" path="res://scenes/heiler.gd" id="10_jhx03"]
 [ext_resource type="Texture2D" uid="uid://dcc5aclxi7afe" path="res://art/manager/RPG Chests.png" id="10_pm21f"]
@@ -20,6 +20,7 @@
 [ext_resource type="Resource" uid="uid://binntw3fp44rk" path="res://inventory/items/apple.tres" id="15_dss4m"]
 [ext_resource type="Texture2D" uid="uid://clrtna2mqjbhw" path="res://art/apple-icon.png" id="15_xo05s"]
 [ext_resource type="PackedScene" uid="uid://c2x6c0b1trwuq" path="res://scenes/apple.tscn" id="17_pm21f"]
+[ext_resource type="PackedScene" uid="uid://cso8qj3r03ya0" path="res://scenes/pause_menu.tscn" id="21_7iits"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jhx03"]
 texture = ExtResource("2_q5onr")
@@ -1029,6 +1030,8 @@ texture = ExtResource("15_xo05s")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Apple2" unique_id=364148105]
 position = Vector2(6, -12)
 shape = SubResource("CircleShape2D_7t5mc")
+
+[node name="pause_menu" parent="." unique_id=1321023038 instance=ExtResource("21_7iits")]
 
 [connection signal="body_entered" from="spikes/DamageZone" to="spikes/DamageZone" method="_on_body_entered"]
 [connection signal="body_entered" from="chests" to="chests" method="_on_body_entered"]
