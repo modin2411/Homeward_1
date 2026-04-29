@@ -32,4 +32,13 @@ grow_vertical = 0
 scale = Vector2(0.5, 0.5)
 text = "Exit"
 
+[node name="CanvasLayer2_Keys" type="CanvasLayer" parent="." unique_id=485239868]
+
+[node name="Control" type="Control" parent="CanvasLayer2_Keys" unique_id=1503029257]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+
 [connection signal="pressed" from="CanvasLayer/Control/Exit" to="." method="_on_exit_pressed"]
