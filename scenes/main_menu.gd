@@ -10,7 +10,6 @@ func _ready() -> void:
 func _on_start_pressed() -> void:
 	GameManager.reset_for_new_game()
 	SaveManager.has_pending_player_position = false
-	SaveManager.pending_inventory_data = []
 	get_tree().change_scene_to_file("res://scenes/world.tscn")
 
 
@@ -40,10 +39,5 @@ func _on_load_pressed() -> void:
 	SaveManager.apply_game_manager_data(gm_data)
 	SaveManager.pending_player_position = Vector2(pos_dict["x"], pos_dict["y"])
 	SaveManager.has_pending_player_position = true
-
-	if data.has("inventory"):
-		SaveManager.pending_inventory_data = data["inventory"]
-	else:
-		SaveManager.pending_inventory_data = []
 
 	get_tree().change_scene_to_file(scene_path)

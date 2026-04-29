@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://0n8tfusaiur2"]
 
-[ext_resource type="PackedScene" uid="uid://bcsnyw4t6pnw2" path="res://art/jumpandrun/parallax_background.tscn" id="1_2dejq"]
+[ext_resource type="PackedScene" uid="uid://bcsnyw4t6pnw2" path="res://scenes/parallax_background.tscn" id="1_2dejq"]
 [ext_resource type="PackedScene" uid="uid://bapvy71043313" path="res://art/jumpandrun/Player/player.tscn" id="1_vr7hw"]
 [ext_resource type="TileSet" uid="uid://c7kaege8uy1fd" path="res://scenes/world-tileset.tres" id="2_2cmn2"]
 [ext_resource type="Texture2D" uid="uid://lsat347glqmi" path="res://art/jumpandrun/rock.png" id="2_oelmh"]
@@ -22,7 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://hvw2tjk7rxpp" path="res://art/jumpandrun/Oposum/oposum.tscn" id="20_x2wnd"]
 [ext_resource type="PackedScene" uid="uid://cad0e06g0b45v" path="res://art/jumpandrun/Eagle/eagle.tscn" id="21_25vrf"]
 [ext_resource type="PackedScene" uid="uid://bttsjij0ss8q0" path="res://art/jumpandrun/Frog/frog.tscn" id="22_8sn40"]
-[ext_resource type="Script" uid="uid://cpldhjtrrjd0v" path="res://scenes/exit.gd" id="23_kh180"]
+[ext_resource type="Script" path="res://scenes/exit.gd" id="23_kh180"]
+[ext_resource type="PackedScene" uid="uid://cso8qj3r03ya0" path="res://scenes/pause_menu.tscn" id="24_lyj1p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyj1p"]
 size = Vector2(10, 17)
@@ -222,6 +223,8 @@ limit_left = 0
 limit_top = 0
 limit_right = 3600
 limit_bottom = 240
+
+[node name="pause_menu" parent="." unique_id=1321023038 instance=ExtResource("24_lyj1p")]
 
 [connection signal="body_entered" from="Enemies/Eagle" to="Enemies/Oposum" method="_on_eagle_body_entered"]
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]

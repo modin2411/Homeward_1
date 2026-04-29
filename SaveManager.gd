@@ -5,7 +5,6 @@ const SAVE_PATH := "user://savegame.json"
 var save_data: Dictionary = {}
 var pending_player_position: Vector2 = Vector2.ZERO
 var has_pending_player_position := false
-var pending_inventory_data: Array = []
 
 
 func _ready() -> void:
@@ -53,7 +52,8 @@ func get_game_manager_data() -> Dictionary:
 		"health": GameManager.health,
 		"max_health": GameManager.max_health,
 		"quest_progress": GameManager.quest_progress,
-		"quest_progress_max": GameManager.quest_progress_max
+		"quest_progress_max": GameManager.quest_progress_max,
+		"inventory": GameManager.inventory_data
 	}
 
 
@@ -69,34 +69,20 @@ func apply_game_manager_data(data: Dictionary) -> void:
 		GameManager.quest_progress_max
 	)
 
-
-func get_inventory_data(inv: Inv) -> Array:
-	var result: Array = []
-
-	if inv == null:
-		return result
-
-	for slot in inv.items:
-		if slot == null or slot.item == null:
-			continue
-
-		result.append({
-			"item_path": slot.item.resource_path,
-			"amount": slot.amount
-		})
-
-	return result
+	if data.has("inventory"):
+		GameManager.inventory_data = data["inventory"]
+	else:
+		GameManager.inventory_data = []
 
 
-func save_game(slot_name: String, player_position: Vector2, scene_path: String, inv: Inv) -> bool:
+func save_game(slot_name: String, player_position: Vector2, scene_path: String) -> bool:
 	save_data[slot_name] = {
 		"scene": scene_path,
 		"position": {
 			"x": player_position.x,
 			"y": player_position.y
 		},
-		"game_manager": get_game_manager_data(),
-		"inventory": get_inventory_data(inv)
+		"game_manager": get_game_manager_data()
 	}
 
 	return write_file()

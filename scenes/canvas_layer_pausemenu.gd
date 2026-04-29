@@ -57,11 +57,12 @@ func _on_save_pressed() -> void:
 		push_error("Keine aktuelle Szene gefunden.")
 		return
 
+	player.sync_inventory_to_game_manager()
+
 	var ok := SaveManager.save_game(
 		"MySave",
 		player.global_position,
-		current_scene.scene_file_path,
-		player.inv
+		current_scene.scene_file_path
 	)
 
 	if ok:

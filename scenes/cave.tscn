@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c1n5ksqthg6jo" path="res://scenes/player.tscn" id="1_w6v1y"]
 [ext_resource type="TileSet" uid="uid://bibrg2mtfmodk" path="res://tilesets/cave.tres" id="2_rawnq"]
 [ext_resource type="Script" uid="uid://c8pw6ybhwbi3j" path="res://scenes/area_2d.gd" id="3_rawnq"]
+[ext_resource type="PackedScene" uid="uid://cso8qj3r03ya0" path="res://scenes/pause_menu.tscn" id="4_ywssb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2l0f"]
 size = Vector2(13, 12)
@@ -83,5 +84,7 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=79623818]
 position = Vector2(3.5, -4)
 shape = SubResource("RectangleShape2D_w2l0f")
+
+[node name="pause_menu" parent="." unique_id=1321023038 instance=ExtResource("4_ywssb")]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

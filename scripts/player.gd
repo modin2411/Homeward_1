@@ -22,7 +22,8 @@ func add_coin():
 
 func add_apple():
 	GameManager.apple += 1
-	print(GameManager.apple)
+	update_coin_ui()
+	sync_inventory_to_game_manager()
 
 
 func update_coin_ui():
@@ -82,23 +83,42 @@ func _on_animated_sprite_2d_animation_finished():
 		is_healing = false
 
 
-func rebuild_inventory_from_save() -> void:
+func sync_inventory_to_game_manager() -> void:
+	if inv == null:
+		GameManager.inventory_data = []
+		return
+
+	var result: Array = []
+
+	for slot in inv.items:
+		if slot == null or slot.item == null:
+			continue
+
+		result.append({
+			"item_name": slot.item.name,
+			"item_path": slot.item.resource_path,
+			"amount": slot.amount
+		})
+
+	GameManager.inventory_data = result
+	print("SYNC INVENTORY TO GM:", GameManager.inventory_data)
+
+
+func rebuild_inventory_from_game_manager() -> void:
 	if inv == null:
 		return
 
 	inv.items.clear()
 
-	for entry in SaveManager.pending_inventory_data:
+	for entry in GameManager.inventory_data:
 		if typeof(entry) != TYPE_DICTIONARY:
 			continue
 
-		if not entry.has("item_path") or not entry.has("amount"):
-			continue
-
-		var item_path: String = entry["item_path"]
-		var amount: int = int(entry["amount"])
+		var item_path: String = str(entry.get("item_path", ""))
+		var amount: int = int(entry.get("amount", 1))
 
 		if item_path.is_empty():
+			push_error("Leerer item_path im GameManager-Inventar gefunden.")
 			continue
 
 		var loaded_item = load(item_path)
@@ -111,7 +131,7 @@ func rebuild_inventory_from_save() -> void:
 		new_slot.amount = amount
 		inv.items.append(new_slot)
 
-	SaveManager.pending_inventory_data.clear()
+	print("REBUILD INVENTORY FROM GM:", GameManager.inventory_data)
 	get_tree().call_group("inventory_ui", "update_slots")
 
 
@@ -123,10 +143,8 @@ func _ready() -> void:
 		global_position = SaveManager.pending_player_position
 		SaveManager.has_pending_player_position = false
 		print("Geladene Position gesetzt: ", global_position)
-	else:
-		print("Keine geladene Position vorhanden.")
 
-	rebuild_inventory_from_save()
+	rebuild_inventory_from_game_manager()
 
 	update_coin_ui()
 	update_hearts()
@@ -241,4 +259,5 @@ func play_anim(movement):
 
 func collect(item):
 	inv.insert(item)
+	sync_inventory_to_game_manager()
 	get_tree().call_group("inventory_ui", "update_slots")

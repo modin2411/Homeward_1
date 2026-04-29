@@ -8,6 +8,8 @@ var max_health: int = 3
 var quest_progress: int = 0
 var quest_progress_max: int = 100
 
+var inventory_data: Array = []
+
 
 func damage(amount: int = 1):
 	health -= amount
@@ -42,3 +44,4 @@ func reset_for_new_game() -> void:
 	max_health = 3
 	quest_progress = 0
 	quest_progress_max = 100
+	inventory_data.clear()
