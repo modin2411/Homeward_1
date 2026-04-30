@@ -162,8 +162,15 @@ func _ready() -> void:
 
 func _input(event):
 	if event is InputEventKey and event.pressed and event.keycode == KEY_I:
-		light_on = !light_on
-		player_light.visible = light_on
+		var current_scene_path = get_tree().current_scene.scene_file_path
+		var allowed_scene = "res://scenes/cave.tscn"
+
+		if current_scene_path == allowed_scene:
+			light_on = !light_on
+			player_light.visible = light_on
+		else:
+			light_on = false
+			player_light.visible = false
 
 
 func _physics_process(delta: float) -> void:
