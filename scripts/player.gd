@@ -6,6 +6,8 @@ var is_dead = false
 var is_hurt = false
 var is_healing = false
 
+var light_on := false
+
 @export var inv: Inv
 
 @onready var coin_label = $CanvasLayer/CoinLabel
@@ -13,6 +15,8 @@ var is_healing = false
 @onready var heart1 = $CanvasLayer2/health
 @onready var heart2 = $CanvasLayer2/health2
 @onready var heart3 = $CanvasLayer2/health3
+
+@onready var player_light = $PointLight2D2
 
 
 func add_coin():
@@ -139,6 +143,8 @@ func _ready() -> void:
 	add_to_group("player")
 	$AnimatedSprite2D.play("front_idle")
 
+	player_light.visible = false
+
 	if SaveManager.has_pending_player_position:
 		global_position = SaveManager.pending_player_position
 		SaveManager.has_pending_player_position = false
@@ -152,6 +158,12 @@ func _ready() -> void:
 	quest_bar.min_value = 0
 	quest_bar.custom_minimum_size = Vector2(100, 24)
 	update_quest_bar()
+
+
+func _input(event):
+	if event is InputEventKey and event.pressed and event.keycode == KEY_I:
+		light_on = !light_on
+		player_light.visible = light_on
 
 
 func _physics_process(delta: float) -> void:

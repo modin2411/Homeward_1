@@ -92,6 +92,17 @@ texture = ExtResource("2_q5onr")
 [sub_resource type="TileSet" id="TileSet_lakw3"]
 sources/0 = SubResource("TileSetAtlasSource_7t5mc")
 
+[sub_resource type="Gradient" id="Gradient_ywssb"]
+offsets = PackedFloat32Array(0.53097343, 1)
+colors = PackedColorArray(1, 1, 1, 0.27450982, 0.012617188, 0.012617188, 0.012617188, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_oo54l"]
+gradient = SubResource("Gradient_ywssb")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.10000001, 0.10000001)
+metadata/_snap_enabled = true
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o8fc1"]
 texture = ExtResource("6_jhx03")
 6:2/0 = 0
@@ -399,6 +410,7 @@ radius = 5.0
 y_sort_enabled = true
 
 [node name="DayNight" type="CanvasModulate" parent="." unique_id=65121050]
+visible = false
 script = ExtResource("1_oo54l")
 
 [node name="clouds0" type="TileMapLayer" parent="." unique_id=472744201]
@@ -439,6 +451,17 @@ offset_right = 144.76973
 offset_bottom = 160.43503
 theme_override_font_sizes/font_size = 10
 metadata/_edit_use_anchors_ = true
+
+[node name="PointLight2D2" type="PointLight2D" parent="player" unique_id=84959009]
+visible = false
+z_index = -2
+y_sort_enabled = true
+position = Vector2(-1.6649876, -63.005013)
+scale = Vector2(0.19774382, 0.11832206)
+color = Color(1, 1, 1, 0.56078434)
+energy = 4.78
+texture = SubResource("GradientTexture2D_oo54l")
+texture_scale = 9.64
 
 [node name="ground" type="TileMapLayer" parent="." unique_id=1628781350]
 y_sort_enabled = true
