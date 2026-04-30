@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://cfw437xxjh36t"]
 
 [ext_resource type="TileSet" uid="uid://n0ry6rt2qrm5" path="res://tilesets/clouds.tres" id="1_e3hyu"]
+[ext_resource type="Script" uid="uid://wxjk0yncc57w" path="res://scenes/day_night.gd" id="1_oo54l"]
 [ext_resource type="TileSet" uid="uid://bg57u3x5v62md" path="res://tilesets/new_tile_set.tres" id="2_4wyf3"]
 [ext_resource type="Texture2D" uid="uid://bw7mtvtsfk0d6" path="res://art/Cloud Canopy.png" id="2_q5onr"]
 [ext_resource type="PackedScene" uid="uid://c1n5ksqthg6jo" path="res://scenes/player.tscn" id="2_rwgxs"]
@@ -9,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bb1ekc4q5gggp" path="res://scenes/villager.tscn" id="5_71j4m"]
 [ext_resource type="Texture2D" uid="uid://c7av7e05pa4d1" path="res://art/manager/spikes-Photoroom (1).png" id="6_jhx03"]
 [ext_resource type="TileSet" uid="uid://dkn8ms5utc2nc" path="res://tilesets/farm.tres" id="6_o8fc1"]
-[ext_resource type="Script" path="res://scenes/entrence_mine.gd" id="8_7r4gi"]
-[ext_resource type="Script" path="res://scenes/chests.gd" id="9_lakw3"]
+[ext_resource type="Script" uid="uid://6wpe1nygim1o" path="res://scenes/entrence_mine.gd" id="8_7r4gi"]
+[ext_resource type="Script" uid="uid://ihx5kth1ssdj" path="res://scenes/chests.gd" id="9_lakw3"]
 [ext_resource type="Script" uid="uid://cgr8n7aefcjpm" path="res://scenes/coin.gd" id="10_e3hyu"]
 [ext_resource type="Script" uid="uid://b35wvxhts04i4" path="res://scenes/heiler.gd" id="10_jhx03"]
 [ext_resource type="Texture2D" uid="uid://dcc5aclxi7afe" path="res://art/manager/RPG Chests.png" id="10_pm21f"]
@@ -396,6 +397,9 @@ radius = 5.0
 
 [node name="world" type="Node2D" unique_id=968044343]
 y_sort_enabled = true
+
+[node name="DayNight" type="CanvasModulate" parent="." unique_id=65121050]
+script = ExtResource("1_oo54l")
 
 [node name="clouds0" type="TileMapLayer" parent="." unique_id=472744201]
 z_index = 5
@@ -1016,9 +1020,10 @@ position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_w7kh3")
 
 [node name="Apple" parent="." unique_id=380050055 instance=ExtResource("17_pm21f")]
+position = Vector2(53, 10)
 
 [node name="Apple2" type="Area2D" parent="." unique_id=70858765]
-position = Vector2(0, -15)
+position = Vector2(41, 2)
 script = SubResource("GDScript_dss4m")
 item = ExtResource("15_dss4m")
 metadata/_edit_group_ = true
