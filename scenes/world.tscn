@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bb1ekc4q5gggp" path="res://scenes/villager.tscn" id="5_71j4m"]
 [ext_resource type="Texture2D" uid="uid://c7av7e05pa4d1" path="res://art/manager/spikes-Photoroom (1).png" id="6_jhx03"]
 [ext_resource type="TileSet" uid="uid://dkn8ms5utc2nc" path="res://tilesets/farm.tres" id="6_o8fc1"]
-[ext_resource type="Script" uid="uid://6wpe1nygim1o" path="res://scenes/entrence_mine.gd" id="8_7r4gi"]
-[ext_resource type="Script" uid="uid://ihx5kth1ssdj" path="res://scenes/chests.gd" id="9_lakw3"]
+[ext_resource type="Script" path="res://scenes/entrence_mine.gd" id="8_7r4gi"]
+[ext_resource type="Script" path="res://scenes/chests.gd" id="9_lakw3"]
 [ext_resource type="Script" uid="uid://cgr8n7aefcjpm" path="res://scenes/coin.gd" id="10_e3hyu"]
 [ext_resource type="Script" uid="uid://b35wvxhts04i4" path="res://scenes/heiler.gd" id="10_jhx03"]
 [ext_resource type="Texture2D" uid="uid://dcc5aclxi7afe" path="res://art/manager/RPG Chests.png" id="10_pm21f"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://clrtna2mqjbhw" path="res://art/apple-icon.png" id="15_xo05s"]
 [ext_resource type="PackedScene" uid="uid://c2x6c0b1trwuq" path="res://scenes/apple.tscn" id="17_pm21f"]
 [ext_resource type="PackedScene" uid="uid://cso8qj3r03ya0" path="res://scenes/pause_menu.tscn" id="21_7iits"]
+[ext_resource type="Script" uid="uid://bwx8xtd2tmiep" path="res://scenes/schild.gd" id="23_kpybi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jhx03"]
 texture = ExtResource("2_q5onr")
@@ -405,6 +406,9 @@ func _on_body_entered(body: Node2D) -> void:
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7t5mc"]
 radius = 5.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oo54l"]
+size = Vector2(43, 32)
 
 [node name="world" type="Node2D" unique_id=968044343]
 y_sort_enabled = true
@@ -1061,6 +1065,18 @@ shape = SubResource("CircleShape2D_7t5mc")
 
 [node name="pause_menu" parent="." unique_id=1321023038 instance=ExtResource("21_7iits")]
 
+[node name="schild" type="Area2D" parent="." unique_id=1925165577]
+script = ExtResource("23_kpybi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="schild" unique_id=254476634]
+position = Vector2(41, -453)
+shape = SubResource("RectangleShape2D_oo54l")
+
+[node name="SignUI" type="Label" parent="schild" unique_id=431711659]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "HAlloo"
+
 [connection signal="body_entered" from="spikes/DamageZone" to="spikes/DamageZone" method="_on_body_entered"]
 [connection signal="body_entered" from="chests" to="chests" method="_on_body_entered"]
 [connection signal="body_exited" from="chests" to="chests" method="_on_body_exited"]
@@ -1093,3 +1109,6 @@ shape = SubResource("CircleShape2D_7t5mc")
 [connection signal="body_entered" from="Coin24" to="Coin24" method="_on_body_entered"]
 [connection signal="body_entered" from="Coin25" to="Coin25" method="_on_body_entered"]
 [connection signal="body_entered" from="Apple2" to="Apple2" method="_on_body_entered"]
+[connection signal="body_entered" from="schild" to="schild" method="_on_body_entered"]
+[connection signal="body_exited" from="schild" to="schild" method="_on_body_exited"]
+[connection signal="ready" from="schild" to="schild" method="_on_ready"]

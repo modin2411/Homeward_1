@@ -71,8 +71,8 @@ func play_heal_animation():
 	is_healing = true
 	velocity = Vector2.ZERO
 	$AnimatedSprite2D.play("get_heal")
-	GameManager.add_quest_progress(50)
-	update_quest_bar()
+	#GameManager.add_quest_progress(50)
+	#update_quest_bar()
 
 
 func _on_animated_sprite_2d_animation_finished():
@@ -173,7 +173,7 @@ func _input(event):
 			player_light.visible = false
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if get_tree().paused:
 		return
 
