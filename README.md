@@ -1,4 +1,4 @@
-﻿# Homeward_1
+# Homeward_1
 
 
 GitHub Befehle
@@ -14,8 +14,3 @@ git reset --hard origin/main
 git add .
 git commit -m "text"
 git push
-
-
-
-
-

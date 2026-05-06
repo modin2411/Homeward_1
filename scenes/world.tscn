@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bb1ekc4q5gggp" path="res://scenes/villager.tscn" id="5_71j4m"]
 [ext_resource type="Texture2D" uid="uid://c7av7e05pa4d1" path="res://art/manager/spikes-Photoroom (1).png" id="6_jhx03"]
 [ext_resource type="TileSet" uid="uid://dkn8ms5utc2nc" path="res://tilesets/farm.tres" id="6_o8fc1"]
-[ext_resource type="Script" path="res://scenes/entrence_mine.gd" id="8_7r4gi"]
-[ext_resource type="Script" path="res://scenes/chests.gd" id="9_lakw3"]
+[ext_resource type="Script" uid="uid://6wpe1nygim1o" path="res://scenes/entrence_mine.gd" id="8_7r4gi"]
+[ext_resource type="Script" uid="uid://ihx5kth1ssdj" path="res://scenes/chests.gd" id="9_lakw3"]
 [ext_resource type="Script" uid="uid://cgr8n7aefcjpm" path="res://scenes/coin.gd" id="10_e3hyu"]
 [ext_resource type="Script" uid="uid://b35wvxhts04i4" path="res://scenes/heiler.gd" id="10_jhx03"]
 [ext_resource type="Texture2D" uid="uid://dcc5aclxi7afe" path="res://art/manager/RPG Chests.png" id="10_pm21f"]
@@ -412,6 +412,8 @@ size = Vector2(43, 32)
 
 [node name="world" type="Node2D" unique_id=968044343]
 y_sort_enabled = true
+
+[node name="pause_menu" parent="." unique_id=1321023038 instance=ExtResource("21_7iits")]
 
 [node name="DayNight" type="CanvasModulate" parent="." unique_id=65121050]
 visible = false
@@ -1063,8 +1065,6 @@ texture = ExtResource("15_xo05s")
 position = Vector2(6, -12)
 shape = SubResource("CircleShape2D_7t5mc")
 
-[node name="pause_menu" parent="." unique_id=1321023038 instance=ExtResource("21_7iits")]
-
 [node name="schild" type="Area2D" parent="." unique_id=1925165577]
 script = ExtResource("23_kpybi")
 
@@ -1073,9 +1073,16 @@ position = Vector2(41, -453)
 shape = SubResource("RectangleShape2D_oo54l")
 
 [node name="SignUI" type="Label" parent="schild" unique_id=431711659]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "HAlloo"
+offset_left = 17.0
+offset_top = -486.0
+offset_right = 62.0
+offset_bottom = -442.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 8
+text = "
+psh..."
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="spikes/DamageZone" to="spikes/DamageZone" method="_on_body_entered"]
 [connection signal="body_entered" from="chests" to="chests" method="_on_body_entered"]
