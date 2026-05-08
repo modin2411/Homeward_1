@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://dc8phsfskqe8j"]
+
+[ext_resource type="Script" uid="uid://e0ffwutwaomf" path="res://inventory/inventory_item.gd" id="1_airtg"]
+[ext_resource type="Texture2D" uid="uid://ccvctgkwmxc8r" path="res://art/pixil-frame-0 (5).png" id="2_ifu1f"]
+
+[resource]
+script = ExtResource("1_airtg")
+name = "Torgue"
+texture = ExtResource("2_ifu1f")
+metadata/_custom_type_script = "uid://e0ffwutwaomf"

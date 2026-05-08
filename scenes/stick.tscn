@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://sno6mgwq624p"]
+
+[ext_resource type="Script" uid="uid://dhog472vwqr3c" path="res://scenes/stick.gd" id="1_ld7er"]
+[ext_resource type="Resource" uid="uid://banbc1rgeas3b" path="res://inventory/items/stick.tres" id="2_m8wbh"]
+[ext_resource type="Texture2D" uid="uid://cclpe0vv007kk" path="res://art/pixil-frame-0 (6).png" id="3_m8wbh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ld7er"]
+size = Vector2(13.375, 11.8125)
+
+[node name="Stick" type="Area2D" unique_id=1771968187]
+position = Vector2(15, 9)
+script = ExtResource("1_ld7er")
+item = ExtResource("2_m8wbh")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=532514422]
+position = Vector2(-15, -9)
+texture = ExtResource("3_m8wbh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=406915107]
+position = Vector2(-15.6875, -8.90625)
+shape = SubResource("RectangleShape2D_ld7er")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

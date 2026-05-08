@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bgvqnk7h0objj"]
+
+[ext_resource type="Script" uid="uid://cr13k7uo2fmts" path="res://scenes/torgue.gd" id="1_yfuou"]
+[ext_resource type="Texture2D" uid="uid://ccvctgkwmxc8r" path="res://art/pixil-frame-0 (5).png" id="2_spufv"]
+[ext_resource type="Resource" uid="uid://dc8phsfskqe8j" path="res://inventory/items/torgue.tres" id="2_uqprs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhxh6"]
+size = Vector2(12, 14)
+
+[node name="Torgue" type="Area2D" unique_id=1433942545]
+script = ExtResource("1_yfuou")
+item = ExtResource("2_uqprs")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1936462030]
+texture = ExtResource("2_spufv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=171454979]
+shape = SubResource("RectangleShape2D_uhxh6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -18,12 +18,16 @@
 [ext_resource type="Texture2D" uid="uid://djdjls4gxavwf" path="res://art/manager/MonedaD.png" id="10_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://dpdvdjfj6ejuf" path="res://scenes/coin.tscn" id="11_2lf6f"]
 [ext_resource type="Script" uid="uid://cddt6355ck1o5" path="res://scenes/damage_zone.gd" id="12_q5onr"]
+[ext_resource type="PackedScene" uid="uid://bgvqnk7h0objj" path="res://scenes/torgue.tscn" id="13_ts3gi"]
+[ext_resource type="Script" uid="uid://ci6vsjd3htwep" path="res://scenes/chest_2.gd" id="14_xgqkh"]
 [ext_resource type="Resource" uid="uid://binntw3fp44rk" path="res://inventory/items/apple.tres" id="15_dss4m"]
 [ext_resource type="Texture2D" uid="uid://clrtna2mqjbhw" path="res://art/apple-icon.png" id="15_xo05s"]
 [ext_resource type="PackedScene" uid="uid://c2x6c0b1trwuq" path="res://scenes/apple.tscn" id="17_pm21f"]
+[ext_resource type="Resource" uid="uid://d3bobw11ejste" path="res://inventory/items/coin.tres" id="21_0nbtd"]
 [ext_resource type="PackedScene" uid="uid://cso8qj3r03ya0" path="res://scenes/pause_menu.tscn" id="21_7iits"]
 [ext_resource type="Script" uid="uid://bwx8xtd2tmiep" path="res://scenes/schild.gd" id="23_kpybi"]
 [ext_resource type="Script" uid="uid://dgkropbx31hxc" path="res://scenes/sign_2.gd" id="24_ctatt"]
+[ext_resource type="PackedScene" uid="uid://sno6mgwq624p" path="res://scenes/stick.tscn" id="25_xgqkh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jhx03"]
 texture = ExtResource("2_q5onr")
@@ -578,8 +582,9 @@ shape = SubResource("CircleShape2D_jhx03")
 metadata/_edit_group_ = true
 
 [node name="chests" type="Area2D" parent="." unique_id=528472836]
+z_index = 5
 script = ExtResource("9_lakw3")
-item_scenes = Array[PackedScene]([ExtResource("17_pm21f"), ExtResource("17_pm21f"), ExtResource("11_2lf6f")])
+item_scenes = Array[PackedScene]([ExtResource("25_xgqkh"), ExtResource("13_ts3gi"), ExtResource("17_pm21f")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="chests" unique_id=1207789684]
 position = Vector2(78, -381)
@@ -595,6 +600,32 @@ offset_left = 59.0
 offset_top = -413.0
 offset_right = 98.0
 offset_bottom = -382.0
+theme_override_constants/line_spacing = -4
+theme_override_constants/paragraph_spacing = 0
+theme_override_font_sizes/font_size = 10
+text = "press E
+to open"
+
+[node name="chest2" type="Area2D" parent="." unique_id=1433273290]
+position = Vector2(-26, -783)
+script = ExtResource("14_xgqkh")
+item_scenes = Array[PackedScene]([ExtResource("25_xgqkh"), ExtResource("17_pm21f")])
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="chest2" unique_id=4568771]
+position = Vector2(8, -46)
+sprite_frames = SubResource("SpriteFrames_ctatt")
+animation = &"open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chest2" unique_id=445128249]
+position = Vector2(10, -46)
+shape = SubResource("RectangleShape2D_xgqkh")
+
+[node name="chest_massage" type="Label" parent="chest2" unique_id=212656970]
+z_index = 4
+offset_left = -9.0
+offset_top = -84.0
+offset_right = 30.0
+offset_bottom = -53.0
 theme_override_constants/line_spacing = -4
 theme_override_constants/paragraph_spacing = 0
 theme_override_font_sizes/font_size = 10
@@ -644,10 +675,12 @@ text = "Heiler"
 
 [node name="Coin" parent="." unique_id=1404212501 instance=ExtResource("11_2lf6f")]
 position = Vector2(-5, -231)
+item = ExtResource("21_0nbtd")
 
 [node name="Coin2" type="Area2D" parent="." unique_id=1305785355]
 position = Vector2(-5, -253)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin2" unique_id=385850415]
@@ -665,6 +698,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin3" type="Area2D" parent="." unique_id=693965446]
 position = Vector2(-6, -275)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin3" unique_id=2112552835]
@@ -682,6 +716,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin4" type="Area2D" parent="." unique_id=917749774]
 position = Vector2(-6, -295)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin4" unique_id=777557793]
@@ -699,6 +734,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin5" type="Area2D" parent="." unique_id=1884321588]
 position = Vector2(-7, -317)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin5" unique_id=388071268]
@@ -716,6 +752,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin6" type="Area2D" parent="." unique_id=314175500]
 position = Vector2(356, -332)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin6" unique_id=793558680]
@@ -733,6 +770,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin7" type="Area2D" parent="." unique_id=1716056701]
 position = Vector2(356, -354)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin7" unique_id=2030189080]
@@ -750,6 +788,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin8" type="Area2D" parent="." unique_id=1738805582]
 position = Vector2(355, -376)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin8" unique_id=1013882438]
@@ -767,6 +806,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin9" type="Area2D" parent="." unique_id=1855252941]
 position = Vector2(355, -396)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin9" unique_id=1447813775]
@@ -784,6 +824,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin10" type="Area2D" parent="." unique_id=770326778]
 position = Vector2(354, -418)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin10" unique_id=564025544]
@@ -801,6 +842,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin11" type="Area2D" parent="." unique_id=1816321900]
 position = Vector2(401, -1217)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin11" unique_id=876131971]
@@ -818,6 +860,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin12" type="Area2D" parent="." unique_id=290446337]
 position = Vector2(401, -1239)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin12" unique_id=2014013894]
@@ -835,6 +878,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin13" type="Area2D" parent="." unique_id=491729853]
 position = Vector2(400, -1261)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin13" unique_id=1617695267]
@@ -852,6 +896,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin14" type="Area2D" parent="." unique_id=1896639680]
 position = Vector2(400, -1281)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin14" unique_id=1068081648]
@@ -869,6 +914,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin15" type="Area2D" parent="." unique_id=1513594138]
 position = Vector2(399, -1303)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin15" unique_id=293605628]
@@ -886,6 +932,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin16" type="Area2D" parent="." unique_id=193102075]
 position = Vector2(569, -488)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin16" unique_id=1918958358]
@@ -903,6 +950,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin17" type="Area2D" parent="." unique_id=1599550897]
 position = Vector2(598, -495)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin17" unique_id=675552897]
@@ -920,6 +968,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin18" type="Area2D" parent="." unique_id=603383829]
 position = Vector2(626, -511)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin18" unique_id=1975080578]
@@ -937,6 +986,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin19" type="Area2D" parent="." unique_id=634111282]
 position = Vector2(646, -532)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin19" unique_id=1292926077]
@@ -954,6 +1004,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin20" type="Area2D" parent="." unique_id=767895293]
 position = Vector2(649, -560)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin20" unique_id=461432744]
@@ -971,6 +1022,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin21" type="Area2D" parent="." unique_id=1976922596]
 position = Vector2(403, -725)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin21" unique_id=1179518809]
@@ -988,6 +1040,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin22" type="Area2D" parent="." unique_id=75163796]
 position = Vector2(403, -747)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin22" unique_id=1409068497]
@@ -1005,6 +1058,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin23" type="Area2D" parent="." unique_id=557873667]
 position = Vector2(402, -769)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin23" unique_id=2102536620]
@@ -1022,6 +1076,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin24" type="Area2D" parent="." unique_id=1783765443]
 position = Vector2(402, -789)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin24" unique_id=950849446]
@@ -1039,6 +1094,7 @@ shape = SubResource("CircleShape2D_w7kh3")
 [node name="Coin25" type="Area2D" parent="." unique_id=543316927]
 position = Vector2(401, -811)
 script = ExtResource("10_e3hyu")
+item = ExtResource("21_0nbtd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin25" unique_id=510066434]
@@ -1132,6 +1188,8 @@ horizontal_alignment = 1
 [connection signal="body_entered" from="spikes/DamageZone" to="spikes/DamageZone" method="_on_body_entered"]
 [connection signal="body_entered" from="chests" to="chests" method="_on_body_entered"]
 [connection signal="body_exited" from="chests" to="chests" method="_on_body_exited"]
+[connection signal="body_entered" from="chest2" to="chest2" method="_on_body_entered"]
+[connection signal="body_exited" from="chest2" to="chest2" method="_on_body_exited"]
 [connection signal="body_entered" from="entrence hole" to="entrence hole" method="_on_body_entered"]
 [connection signal="body_entered" from="entrence mine" to="entrence mine" method="_on_body_entered"]
 [connection signal="body_entered" from="villager/Heiler" to="villager/Heiler" method="_on_body_entered"]

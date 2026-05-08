@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://banbc1rgeas3b"]
+
+[ext_resource type="Script" uid="uid://e0ffwutwaomf" path="res://inventory/inventory_item.gd" id="1_b46qi"]
+[ext_resource type="Texture2D" uid="uid://cclpe0vv007kk" path="res://art/pixil-frame-0 (6).png" id="2_b46qi"]
+
+[resource]
+script = ExtResource("1_b46qi")
+name = "Stick"
+texture = ExtResource("2_b46qi")
+metadata/_custom_type_script = "uid://e0ffwutwaomf"
