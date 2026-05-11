@@ -1,10 +1,38 @@
-extends Node
+extends CanvasLayer
 
 @onready var help_menu = $Control/CenterContainer/VBoxContainer
+@onready var hint_text = $Control/CenterContainer/VBoxContainer/HintText
+
+@export_multiline var default_text: String = """Hinweiß.
+-Begib dich auf eine Reise durch die Welt von Fox 
+   und finde deinen vermissten Freund.
+-Sprich mit den Bewohnern, um Hinweise zu sammeln 
+   und neue Aufgaben zu erhalten.
+-Durchsuche Boxen und Kisten, um wertvolle 
+  Belohnungen zu entdecken.."""
+
+var override_text: String = ""
 
 func _ready():
 	help_menu.visible = false
+	_update_text()
 
 func _process(_delta):
 	if Input.is_action_just_pressed("HelpMenu"):
 		help_menu.visible = !help_menu.visible
+		_update_text()
+
+func set_area_hint(new_text: String) -> void:
+	override_text = new_text
+	help_menu.visible = true
+	_update_text()
+
+func clear_area_hint() -> void:
+	override_text = ""
+	_update_text()
+
+func _update_text() -> void:
+	if override_text != "":
+		hint_text.text = override_text
+	else:
+		hint_text.text = default_text

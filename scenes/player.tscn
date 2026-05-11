@@ -336,7 +336,7 @@ offset_bottom = 1283.0
 scale = Vector2(0.015, 0.015)
 texture = ExtResource("4_dqkch")
 
-[node name="CanvasLayer4_Menu" type="CanvasLayer" parent="." unique_id=98246178]
+[node name="CanvasLayer4_Menu" type="CanvasLayer" parent="." unique_id=98246178 groups=["hint_ui"]]
 script = ExtResource("6_tuyoq")
 
 [node name="Control" type="Control" parent="CanvasLayer4_Menu" unique_id=264165232]
@@ -350,10 +350,14 @@ grow_vertical = 2
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer4_Menu/Control" unique_id=2079392254]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -150.0
+anchor_left = 0.5
+anchor_top = 0.95100003
+anchor_right = 0.5
+anchor_bottom = 0.95100003
+offset_left = -104.0
+offset_top = -142.30005
+offset_right = 104.0
+offset_bottom = 7.699951
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -372,13 +376,6 @@ modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 theme_override_constants/line_spacing = -1
 theme_override_font_sizes/font_size = 5
-text = "Hinweis:
--Begib dich auf eine Reise durch die Welt von Fox 
-   und finde deinen vermissten Freund.
--Sprich mit den Bewohnern, um Hinweise zu sammeln 
-   und neue Aufgaben zu erhalten.
--Durchsuche Boxen und Kisten, um wertvolle 
-  Belohnungen zu entdecken."
 horizontal_alignment = 1
 
 [node name="CanvasLayer_progress" type="CanvasLayer" parent="." unique_id=252295598]

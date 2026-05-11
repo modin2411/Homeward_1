@@ -1,29 +1,23 @@
 extends Area2D
 
-@onready var message_label: Label = $Schild1
-var player_inside := false
+@export_multiline var sign_text: String = """Wir müssen uns vorbereiten...
+Sammle 10 Äpfel, 5 Coins und 2 Sticks.
+Die Sticks kannst du im Dorf sicher gut gebrauchen."""
 
+func get_hint_ui():
+	var nodes = get_tree().get_nodes_in_group("hint_ui")
+	if nodes.size() > 0:
+		return nodes[0]
+	return null
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		player_inside = true
-		show_message()
-
+		var ui = get_hint_ui()
+		if ui:
+			ui.set_area_hint(sign_text)
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
-		player_inside = false
-		hide_message()
-
-
-# Diese Funktion kannst du auch in _process() rufen, falls du die Nachricht nur unter Bedingungen anzeigen willst
-func show_message():
-	if message_label:
-		message_label.text = "Sammle 3 Medizin-Items, 
-		um deinen Freund zu retten!"
-		message_label.visible = true
-
-
-func hide_message():
-	if message_label:
-		message_label.visible = false
+		var ui = get_hint_ui()
+		if ui:
+			ui.clear_area_hint()
