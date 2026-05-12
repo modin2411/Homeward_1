@@ -23,6 +23,7 @@
 [ext_resource type="Resource" uid="uid://binntw3fp44rk" path="res://inventory/items/apple.tres" id="15_dss4m"]
 [ext_resource type="Texture2D" uid="uid://clrtna2mqjbhw" path="res://art/apple-icon.png" id="15_xo05s"]
 [ext_resource type="PackedScene" uid="uid://c2x6c0b1trwuq" path="res://scenes/apple.tscn" id="17_pm21f"]
+[ext_resource type="PackedScene" uid="uid://bs865406vaav2" path="res://scenes/trader.tscn" id="19_37qwj"]
 [ext_resource type="Script" uid="uid://ddjsr4obidgcv" path="res://scenes/trader.gd" id="20_navra"]
 [ext_resource type="Resource" uid="uid://d3bobw11ejste" path="res://inventory/items/coin.tres" id="21_0nbtd"]
 [ext_resource type="PackedScene" uid="uid://cso8qj3r03ya0" path="res://scenes/pause_menu.tscn" id="21_7iits"]
@@ -349,6 +350,9 @@ size = Vector2(14, 11)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0juu"]
 size = Vector2(7, 14)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_navra"]
+radius = 16.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_o8fc1"]
 radius = 16.03122
 
@@ -405,18 +409,8 @@ script/source = "extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	print(\"Apple touched by:\", body.name)
-
 	if body.is_in_group(\"player\"):
-		
-		# 🎒 1. Inventory (dein bestehendes System)
 		body.collect(item)
-
-		# 🌍 2. GameManager zusätzlich updaten
-		if item.name == \"apple\":
-			GameManager.apple += 1
-
-		print(\"Inventory + GameManager updated:\", GameManager.apple)
-
 		queue_free()
 "
 
@@ -485,6 +479,14 @@ color = Color(1, 1, 1, 0.56078434)
 energy = 4.78
 texture = SubResource("GradientTexture2D_oo54l")
 texture_scale = 9.64
+
+[node name="tradercanvas" type="CanvasLayer" parent="player" unique_id=1764833406]
+
+[node name="trader" type="Label" parent="player/tradercanvas" unique_id=187923636]
+offset_left = 104.77
+offset_top = 137.435
+offset_right = 144.76999
+offset_bottom = 160.435
 
 [node name="ground" type="TileMapLayer" parent="." unique_id=1628781350]
 y_sort_enabled = true
@@ -668,6 +670,15 @@ shape = SubResource("RectangleShape2D_k0juu")
 z_index = 1
 position = Vector2(227, -163)
 
+[node name="trader" parent="villager" unique_id=384817904 instance=ExtResource("19_37qwj")]
+position = Vector2(142, -4)
+script = ExtResource("20_navra")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="villager/trader" unique_id=693667236]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_navra")
+metadata/_edit_group_ = true
+
 [node name="Heiler" type="Area2D" parent="villager" unique_id=1914091456]
 script = ExtResource("10_jhx03")
 
@@ -684,32 +695,13 @@ offset_bottom = 7.55
 theme_override_font_sizes/font_size = 6
 text = "Heiler"
 
-[node name="trader" parent="." unique_id=429093170 instance=ExtResource("5_71j4m")]
-z_index = 1
-position = Vector2(350, -163)
-
-[node name="trader" type="Area2D" parent="trader" unique_id=1907221260]
-z_index = 3
-script = ExtResource("20_navra")
-coin_scene = ExtResource("13_ts3gi")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="trader/trader" unique_id=1239710511]
-position = Vector2(0, -3)
-shape = SubResource("CircleShape2D_o8fc1")
-
-[node name="HeilerSchrift" type="Label" parent="trader" unique_id=602073306]
-modulate = Color(0, 0.61960787, 1, 1)
-offset_left = -8.38
-offset_top = -1.45
-offset_right = 9.62
-offset_bottom = 7.55
-theme_override_font_sizes/font_size = 6
+[node name="TraderSchrift" type="Label" parent="villager" unique_id=1734430225]
+offset_left = 118.0
+offset_top = -7.0
+offset_right = 170.0
+offset_bottom = 16.0
 text = "Trader"
-
-[node name="Label" type="Label" parent="trader" unique_id=1929413616]
-z_index = 3
-offset_right = 40.0
-offset_bottom = 23.0
+metadata/_edit_group_ = true
 
 [node name="Coin" parent="." unique_id=1404212501 instance=ExtResource("11_2lf6f")]
 position = Vector2(-5, -231)
@@ -1166,6 +1158,7 @@ shape = SubResource("CircleShape2D_7t5mc")
 
 [node name="sign1" type="Area2D" parent="." unique_id=1925165577]
 script = ExtResource("23_kpybi")
+sign_text = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sign1" unique_id=254476634]
 position = Vector2(41, -453)
@@ -1231,10 +1224,9 @@ horizontal_alignment = 1
 [connection signal="body_exited" from="chest2" to="chest2" method="_on_body_exited"]
 [connection signal="body_entered" from="entrence hole" to="entrence hole" method="_on_body_entered"]
 [connection signal="body_entered" from="entrence mine" to="entrence mine" method="_on_body_entered"]
+[connection signal="ready" from="villager/trader" to="villager/trader" method="_on_ready"]
 [connection signal="body_entered" from="villager/Heiler" to="villager/Heiler" method="_on_body_entered"]
 [connection signal="body_exited" from="villager/Heiler" to="villager/Heiler" method="_on_body_exited"]
-[connection signal="body_entered" from="trader/trader" to="trader/trader" method="_on_body_entered"]
-[connection signal="body_exited" from="trader/trader" to="trader/trader" method="_on_body_exited"]
 [connection signal="body_entered" from="Coin2" to="Coin2" method="_on_body_entered"]
 [connection signal="body_entered" from="Coin3" to="Coin3" method="_on_body_entered"]
 [connection signal="body_entered" from="Coin4" to="Coin4" method="_on_body_entered"]

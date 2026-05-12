@@ -20,3 +20,20 @@ func insert(item: InvItem):
 	items.append(new_slot)
 
 	print("SIZE:", items.size())
+
+func get_apple_count() -> int:
+	var count = 0
+	for slot in items:
+		if slot.item.name == "apple":
+			count += slot.amount
+	return count
+
+
+func remove_items(item_name: String, amount: int):
+	var removed = 0
+
+	for slot in items:
+		if slot.item.name == item_name:
+			while slot.amount > 0 and removed < amount:
+				slot.amount -= 1
+				removed += 1

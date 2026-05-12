@@ -10,8 +10,18 @@ script/source = "extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	print(\"Apple touched by:\", body.name)
+
 	if body.is_in_group(\"player\"):
+		
+		# 🎒 1. Inventory (dein bestehendes System)
 		body.collect(item)
+
+		# 🌍 2. GameManager zusätzlich updaten
+		if item.name == \"apple\":
+			GameManager.apple += 1
+
+		print(\"Inventory + GameManager updated:\", GameManager.apple)
+
 		queue_free()
 "
 
