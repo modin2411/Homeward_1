@@ -15,21 +15,26 @@ var override_text: String = ""
 
 func _ready():
 	help_menu.visible = false
+	hint_text.custom_minimum_size = Vector2(200, 40)
+	hint_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_update_text()
 
 func _process(_delta):
 	if Input.is_action_just_pressed("HelpMenu"):
-		help_menu.visible = !help_menu.visible
-		_update_text()
+		if help_menu.visible:
+			help_menu.visible = false
+		else:
+			_update_text()
+			help_menu.visible = true
 
 func set_area_hint(new_text: String) -> void:
 	override_text = new_text
-	help_menu.visible = true
 	_update_text()
+	help_menu.visible = true
 
 func clear_area_hint() -> void:
 	override_text = ""
-	_update_text()
+	help_menu.visible = false
 
 func _update_text() -> void:
 	if override_text != "":

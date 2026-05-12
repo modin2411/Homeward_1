@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bfbquw5jtna4n" path="res://art/characters/bardo_heal.png" id="4_smehm"]
 [ext_resource type="Script" uid="uid://23ntm36qy6bn" path="res://scenes/canvas_layer_4_menu.gd" id="6_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://ckwh0oyf6wta4" path="res://art/manager/pixelartrolle (2)-Photoroom.png" id="7_fjrip"]
+[ext_resource type="Script" uid="uid://du7r2e24knfyn" path="res://scenes/canvas_layer_progress.gd" id="10_3v2ag"]
 [ext_resource type="PackedScene" uid="uid://cvb4dc4h6xbp5" path="res://inventory/inv_ui.tscn" id="10_d2wvv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
@@ -377,8 +378,10 @@ layout_mode = 2
 theme_override_constants/line_spacing = -1
 theme_override_font_sizes/font_size = 5
 horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="CanvasLayer_progress" type="CanvasLayer" parent="." unique_id=252295598]
+script = ExtResource("10_3v2ag")
 
 [node name="quest_bar" type="ProgressBar" parent="CanvasLayer_progress" unique_id=490067846]
 anchors_preset = 1

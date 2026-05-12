@@ -10,32 +10,26 @@ var quest_progress_max: int = 100
 
 var inventory_data: Array = []
 
-
 func damage(amount: int = 1):
 	health -= amount
 	if health < 0:
 		health = 0
-
 
 func heal(amount: int = 1):
 	health += amount
 	if health > max_health:
 		health = max_health
 
-
 func can_buy_heart() -> bool:
 	return coins >= 5 and health < max_health
-
 
 func buy_heart():
 	if can_buy_heart():
 		coins -= 5
 		heal(1)
 
-
 func add_quest_progress(amount: int):
 	quest_progress = clamp(quest_progress + amount, 0, quest_progress_max)
-
 
 func reset_for_new_game() -> void:
 	coins = 0
