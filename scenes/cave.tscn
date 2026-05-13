@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://bibrg2mtfmodk" path="res://tilesets/cave.tres" id="2_rawnq"]
 [ext_resource type="Script" path="res://scenes/area_2d.gd" id="3_rawnq"]
 [ext_resource type="PackedScene" uid="uid://cso8qj3r03ya0" path="res://scenes/pause_menu.tscn" id="4_ywssb"]
+[ext_resource type="PackedScene" uid="uid://4aii4igv3yax" path="res://scenes/diamant.tscn" id="5_rtd55"]
 
 [sub_resource type="Gradient" id="Gradient_ywssb"]
 offsets = PackedFloat32Array(0.53097343, 1)
@@ -18,6 +19,8 @@ metadata/_snap_enabled = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2l0f"]
 size = Vector2(13, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rtd55"]
 
 [node name="cave" type="Node2D" unique_id=95283900]
 
@@ -120,5 +123,12 @@ position = Vector2(3.5, -4)
 shape = SubResource("RectangleShape2D_w2l0f")
 
 [node name="pause_menu" parent="." unique_id=1321023038 instance=ExtResource("4_ywssb")]
+
+[node name="diamant" parent="." unique_id=1207767320 instance=ExtResource("5_rtd55")]
+z_index = 3
+position = Vector2(62, 684)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="diamant" unique_id=8792695]
+shape = SubResource("CircleShape2D_rtd55")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

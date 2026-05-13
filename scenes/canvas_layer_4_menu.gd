@@ -3,13 +3,14 @@ extends CanvasLayer
 @onready var help_menu = $Control/CenterContainer/VBoxContainer
 @onready var hint_text = $Control/CenterContainer/VBoxContainer/HintText
 
-@export_multiline var default_text: String = """Hinweiß.
--Begib dich auf eine Reise durch die Welt von Fox 
-   und finde deinen vermissten Freund.
--Sprich mit den Bewohnern, um Hinweise zu sammeln 
-   und neue Aufgaben zu erhalten.
--Durchsuche Boxen und Kisten, um wertvolle 
-  Belohnungen zu entdecken.."""
+@export_multiline var default_text: String = """Hint:
+-Embark on a journey through the world of Fox 
+   and find your missing friend.
+
+-Talk to the inhabitants to gather clues and 
+   receive new tasks.
+
+-Search boxes and chests to discover valuable rewards."""
 
 var override_text: String = ""
 

@@ -1,8 +1,11 @@
 extends Area2D
 
-@export_multiline var sign_text: String = """Wir müssen uns vorbereiten...
-Sammle 10 Äpfel, 5 Coins und 2 Sticks.
-Die Sticks kannst du im Dorf sicher gut gebrauchen."""
+@export_multiline var sign_text: String = """
+
+
+We have to prepare...
+Collect 10 apples, 5 coins and 2 sticks.
+You'll certainly be able to use the sticks in the village."""
 
 func get_hint_ui():
 	var nodes = get_tree().get_nodes_in_group("hint_ui")
