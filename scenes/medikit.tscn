@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bmwsedqx38s26"]
+
+[ext_resource type="Texture2D" uid="uid://bx0frswakf38j" path="res://art/pixil-frame-0 (13).png" id="1_ntv2h"]
+[ext_resource type="Script" uid="uid://bdc7gv870jyc7" path="res://scenes/medikit.gd" id="1_xpamv"]
+[ext_resource type="Resource" uid="uid://c8b8djnk4sgie" path="res://inventory/items/medikit.tres" id="2_qy4gi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpamv"]
+atlas = ExtResource("1_ntv2h")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qy4gi"]
+atlas = ExtResource("1_ntv2h")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0et0"]
+atlas = ExtResource("1_ntv2h")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vurab"]
+atlas = ExtResource("1_ntv2h")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ocdy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpamv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qy4gi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0et0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vurab")
+}],
+"loop": true,
+"name": &"medikit",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ntv2h"]
+radius = 8.0
+
+[node name="medikit" type="Area2D" unique_id=1213539315]
+z_index = 5
+script = ExtResource("1_xpamv")
+item = ExtResource("2_qy4gi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=39331030]
+sprite_frames = SubResource("SpriteFrames_0ocdy")
+animation = &"medikit"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1735410359]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_ntv2h")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

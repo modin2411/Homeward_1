@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://8n5xgrn4voms"]
+
+[ext_resource type="Script" uid="uid://e0ffwutwaomf" path="res://inventory/inventory_item.gd" id="1_qetio"]
+[ext_resource type="Texture2D" uid="uid://btn8cds7k0ujx" path="res://art/ring16x16.png" id="2_qetio"]
+
+[resource]
+script = ExtResource("1_qetio")
+name = "ring"
+texture = ExtResource("2_qetio")
+metadata/_custom_type_script = "uid://e0ffwutwaomf"

@@ -1,39 +1,36 @@
 [gd_scene format=3 uid="uid://4aii4igv3yax"]
 
 [ext_resource type="Script" uid="uid://bpk50jbmgsusy" path="res://scenes/diamant.gd" id="1_a8mmf"]
-[ext_resource type="Texture2D" uid="uid://dim6nauq3dmab" path="res://art/pixil-frame-0 (3).png" id="2_a8mmf"]
 [ext_resource type="Resource" uid="uid://d2eljabfkdba8" path="res://inventory/items/diamant.tres" id="2_bge8o"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bge8o"]
-atlas = ExtResource("2_a8mmf")
-region = Rect2(0, 0, 16, 16)
+[ext_resource type="Texture2D" uid="uid://dim6nauq3dmab" path="res://art/pixil-frame-0 (3).png" id="3_bge8o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hpabv"]
-atlas = ExtResource("2_a8mmf")
-region = Rect2(16, 0, 16, 16)
+atlas = ExtResource("3_bge8o")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3w8vm"]
-atlas = ExtResource("2_a8mmf")
-region = Rect2(32, 0, 16, 16)
+atlas = ExtResource("3_bge8o")
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qxxqi"]
-atlas = ExtResource("2_a8mmf")
-region = Rect2(16, 16, 16, 16)
+atlas = ExtResource("3_bge8o")
+region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ni42"]
-atlas = ExtResource("2_a8mmf")
-region = Rect2(32, 16, 16, 16)
+atlas = ExtResource("3_bge8o")
+region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fcto5"]
-atlas = ExtResource("2_a8mmf")
+atlas = ExtResource("3_bge8o")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0sda"]
+atlas = ExtResource("3_bge8o")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c0sda"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bge8o")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hpabv")
 }, {
@@ -48,6 +45,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fcto5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0sda")
 }],
 "loop": true,
 "name": &"diamantspin",

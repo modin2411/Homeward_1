@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://c8b8djnk4sgie"]
+
+[ext_resource type="Script" uid="uid://e0ffwutwaomf" path="res://inventory/inventory_item.gd" id="1_norpk"]
+[ext_resource type="Texture2D" uid="uid://iw8f4jcejo4r" path="res://art/medikit16x16.png" id="2_norpk"]
+
+[resource]
+script = ExtResource("1_norpk")
+name = "medikit"
+texture = ExtResource("2_norpk")
+metadata/_custom_type_script = "uid://e0ffwutwaomf"

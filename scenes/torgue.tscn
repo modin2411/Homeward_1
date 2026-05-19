@@ -8,6 +8,7 @@
 size = Vector2(12, 14)
 
 [node name="Torgue" type="Area2D" unique_id=1433942545]
+z_index = 5
 script = ExtResource("1_yfuou")
 item = ExtResource("2_uqprs")
 metadata/_edit_group_ = true

@@ -18,7 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://djdjls4gxavwf" path="res://art/manager/MonedaD.png" id="10_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://dpdvdjfj6ejuf" path="res://scenes/coin.tscn" id="11_2lf6f"]
 [ext_resource type="Script" uid="uid://cddt6355ck1o5" path="res://scenes/damage_zone.gd" id="12_q5onr"]
+[ext_resource type="PackedScene" uid="uid://6ifwsbqkn3ts" path="res://scenes/ring.tscn" id="13_luhhm"]
 [ext_resource type="PackedScene" uid="uid://bgvqnk7h0objj" path="res://scenes/torgue.tscn" id="13_ts3gi"]
+[ext_resource type="PackedScene" uid="uid://bmwsedqx38s26" path="res://scenes/medikit.tscn" id="14_fh13f"]
 [ext_resource type="Script" uid="uid://ci6vsjd3htwep" path="res://scenes/chest_2.gd" id="14_xgqkh"]
 [ext_resource type="Resource" uid="uid://binntw3fp44rk" path="res://inventory/items/apple.tres" id="15_dss4m"]
 [ext_resource type="Texture2D" uid="uid://clrtna2mqjbhw" path="res://art/apple-icon.png" id="15_xo05s"]
@@ -599,7 +601,7 @@ metadata/_edit_group_ = true
 [node name="chests" type="Area2D" parent="." unique_id=528472836]
 z_index = 5
 script = ExtResource("9_lakw3")
-item_scenes = Array[PackedScene]([ExtResource("17_pm21f"), ExtResource("17_pm21f"), ExtResource("17_pm21f")])
+item_scenes = Array[PackedScene]([ExtResource("17_pm21f"), ExtResource("17_pm21f"), ExtResource("17_pm21f"), ExtResource("13_luhhm"), ExtResource("14_fh13f")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="chests" unique_id=1207789684]
 position = Vector2(78, -381)
