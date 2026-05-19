@@ -1,16 +1,46 @@
 extends Node2D
 
+@onready var load_button = $button_controler/VBoxContainer/load
+@onready var new_game_name_panel = $NewGameNamePanel
+@onready var name_line_edit = $NewGameNamePanel/Panel/VBoxContainer/NameLineEdit
+@onready var error_label = $NewGameNamePanel/Panel/VBoxContainer/ErrorLabel
+
 
 func _ready() -> void:
-	var has_data := SaveManager.has_save("MySave")
-	print("Save vorhanden im MainMenu: ", has_data)
-	$button_controler/VBoxContainer/load.disabled = not has_data
+	load_button.disabled = not SaveManager.has_any_save()
+	new_game_name_panel.visible = false
+	error_label.visible = false
 
 
 func _on_start_pressed() -> void:
-	GameManager.reset_for_new_game()
-	SaveManager.has_pending_player_position = false
-	get_tree().change_scene_to_file("res://scenes/world.tscn")
+	new_game_name_panel.visible = true
+	error_label.visible = false
+	name_line_edit.text = ""
+	name_line_edit.grab_focus()
+
+
+func _on_confirm_new_game_button_pressed() -> void:
+	var slot_name: String = name_line_edit.text.strip_edges()
+
+	if slot_name.is_empty():
+		error_label.visible = true
+		error_label.text = "Bitte gib einen Namen ein."
+		return
+
+	if SaveManager.create_new_game(slot_name):
+		SaveManager.has_pending_player_position = false
+		get_tree().change_scene_to_file("res://scenes/world.tscn")
+	else:
+		error_label.visible = true
+		error_label.text = "Name existiert schon oder ist ungültig."
+
+
+func _on_cancel_new_game_button_pressed() -> void:
+	new_game_name_panel.visible = false
+
+
+func _on_load_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/load_menu.tscn")
 
 
 func _on_options_pressed() -> void:
@@ -19,25 +49,3 @@ func _on_options_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
-
-
-func _on_load_pressed() -> void:
-	var data := SaveManager.load_game("MySave")
-
-	if data.is_empty():
-		print("Kein Save gefunden.")
-		return
-
-	if not data.has("scene") or not data.has("position") or not data.has("game_manager"):
-		print("Save ist unvollständig.")
-		return
-
-	var scene_path: String = data["scene"]
-	var pos_dict: Dictionary = data["position"]
-	var gm_data: Dictionary = data["game_manager"]
-
-	SaveManager.apply_game_manager_data(gm_data)
-	SaveManager.pending_player_position = Vector2(pos_dict["x"], pos_dict["y"])
-	SaveManager.has_pending_player_position = true
-
-	get_tree().change_scene_to_file(scene_path)

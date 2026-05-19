@@ -15,52 +15,56 @@ var light_on := false
 @onready var heart1 = $CanvasLayer2/health
 @onready var heart2 = $CanvasLayer2/health2
 @onready var heart3 = $CanvasLayer2/health3
-
 @onready var player_light = $PointLight2D2
 
 
-func add_coin():
+func add_coin() -> void:
 	GameManager.coins += 1
 	update_coin_ui()
 
 
-func add_apple():
+func add_apple() -> void:
 	GameManager.apple += 1
 	update_coin_ui()
 	sync_inventory_to_game_manager()
 
-func add_diamant():
+
+func add_diamant() -> void:
 	GameManager.diamant += 1
 	sync_inventory_to_game_manager()
-	
-func add_ring():
+
+
+func add_ring() -> void:
 	GameManager.ring += 1
 	sync_inventory_to_game_manager()
-	
-func add_medikit():
+
+
+func add_medikit() -> void:
 	GameManager.medikit += 1
 	sync_inventory_to_game_manager()
-	
-func add_stick():
+
+
+func add_stick() -> void:
 	GameManager.stick += 1
 	sync_inventory_to_game_manager()
-	
-func update_coin_ui():
+
+
+func update_coin_ui() -> void:
 	coin_label.text = str(GameManager.coins)
 
 
-func update_hearts():
+func update_hearts() -> void:
 	heart1.visible = GameManager.health >= 1
 	heart2.visible = GameManager.health >= 2
 	heart3.visible = GameManager.health >= 3
 
 
-func update_quest_bar():
+func update_quest_bar() -> void:
 	quest_bar.max_value = GameManager.quest_progress_max
 	quest_bar.value = GameManager.quest_progress
 
 
-func play_hurt_animation():
+func play_hurt_animation() -> void:
 	if is_hurt or is_dead:
 		return
 
@@ -69,7 +73,7 @@ func play_hurt_animation():
 	$AnimatedSprite2D.play("get_damage")
 
 
-func die():
+func die() -> void:
 	if is_dead:
 		return
 
@@ -79,18 +83,16 @@ func die():
 	$AnimatedSprite2D.play("death")
 
 
-func play_heal_animation():
+func play_heal_animation() -> void:
 	if is_dead or is_hurt or is_healing:
 		return
 
 	is_healing = true
 	velocity = Vector2.ZERO
 	$AnimatedSprite2D.play("get_heal")
-	#GameManager.add_quest_progress(50)
-	#update_quest_bar()
 
 
-func _on_animated_sprite_2d_animation_finished():
+func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "death":
 		GameManager.health = GameManager.max_health
 		get_tree().reload_current_scene()
@@ -159,6 +161,7 @@ func _ready() -> void:
 	$AnimatedSprite2D.play("front_idle")
 
 	player_light.visible = false
+	light_on = false
 
 	if SaveManager.has_pending_player_position:
 		global_position = SaveManager.pending_player_position
@@ -175,10 +178,10 @@ func _ready() -> void:
 	update_quest_bar()
 
 
-func _input(event):
+func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and event.keycode == KEY_I:
-		var current_scene_path = get_tree().current_scene.scene_file_path
-		var allowed_scene = "res://scenes/cave.tscn"
+		var current_scene_path := get_tree().current_scene.scene_file_path
+		var allowed_scene := "res://scenes/cave.tscn"
 
 		if current_scene_path == allowed_scene:
 			light_on = !light_on
@@ -203,7 +206,7 @@ func _physics_process(_delta: float) -> void:
 	player_movement()
 
 
-func player_movement():
+func player_movement() -> void:
 	var input_dir = Vector2.ZERO
 
 	var right = Input.is_action_pressed("ui_right")
@@ -268,7 +271,7 @@ func player_movement():
 	move_and_slide()
 
 
-func play_anim(movement):
+func play_anim(movement: int) -> void:
 	if is_dead or is_hurt or is_healing:
 		return
 
@@ -291,7 +294,7 @@ func play_anim(movement):
 		anim.play("back_walk" if movement else "front_idle")
 
 
-func collect(item):
+func collect(item) -> void:
 	inv.insert(item)
 	sync_inventory_to_game_manager()
 	get_tree().call_group("inventory_ui", "update_slots")

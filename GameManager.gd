@@ -13,14 +13,7 @@ var quest_progress: int = 0
 var quest_progress_max: int = 100
 
 var inventory_data: Array = []
-
-# 👉 Torgue Counter (wie Coins)
 var torgue: int = 0
-
-func _process(_delta):
-	print(apple)#kontrolle für verschieden items
-	print(medikit)
-	
 
 
 func damage(amount: int = 1):
@@ -52,6 +45,10 @@ func add_quest_progress(amount: int):
 func reset_for_new_game() -> void:
 	coins = 0
 	apple = 0
+	ring = 0
+	medikit = 0
+	diamant = 0
+	stick = 0
 	health = 3
 	max_health = 3
 	torgue = 0

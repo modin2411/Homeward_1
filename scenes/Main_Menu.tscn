@@ -66,7 +66,54 @@ position = Vector2(-2.3841858e-07, -4.7683716e-07)
 scale = Vector2(0.65944415, 0.6186218)
 texture = ExtResource("2_y2rfe")
 
+[node name="NewGameNamePanel" type="Control" parent="." unique_id=1895339497]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="NewGameNamePanel" unique_id=1446029306]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NewGameNamePanel/Panel" unique_id=649671174]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 273.0
+offset_top = -293.0
+offset_right = 477.0
+offset_bottom = -138.0
+grow_vertical = 0
+
+[node name="TitleLabel" type="Label" parent="NewGameNamePanel/Panel/VBoxContainer" unique_id=1397232329]
+layout_mode = 2
+
+[node name="NameLineEdit" type="LineEdit" parent="NewGameNamePanel/Panel/VBoxContainer" unique_id=836099670]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="ErrorLabel" type="Label" parent="NewGameNamePanel/Panel/VBoxContainer" unique_id=1701221341]
+layout_mode = 2
+
+[node name="ConfirmNewGameButton" type="Button" parent="NewGameNamePanel/Panel/VBoxContainer" unique_id=1542116250]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = "Confirm"
+
+[node name="CancelNewGameButton" type="Button" parent="NewGameNamePanel/Panel/VBoxContainer" unique_id=1298014091]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = "Cancel"
+
 [connection signal="pressed" from="button_controler/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="button_controler/VBoxContainer/load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="button_controler/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="button_controler/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="NewGameNamePanel/Panel/VBoxContainer/ConfirmNewGameButton" to="." method="_on_confirm_new_game_button_pressed"]
+[connection signal="pressed" from="NewGameNamePanel/Panel/VBoxContainer/CancelNewGameButton" to="." method="_on_cancel_new_game_button_pressed"]

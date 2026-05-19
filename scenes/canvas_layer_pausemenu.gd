@@ -57,15 +57,18 @@ func _on_save_pressed() -> void:
 		push_error("Keine aktuelle Szene gefunden.")
 		return
 
+	if SaveManager.current_slot_name.strip_edges().is_empty():
+		push_error("Kein aktiver Save-Slot ausgewählt.")
+		return
+
 	player.sync_inventory_to_game_manager()
 
-	var ok := SaveManager.save_game(
-		"MySave",
+	var ok := SaveManager.save_current_game(
 		player.global_position,
 		current_scene.scene_file_path
 	)
 
 	if ok:
-		print("Spiel gespeichert.")
+		print("Spiel gespeichert in Slot: ", SaveManager.current_slot_name)
 	else:
 		print("Speichern fehlgeschlagen.")
