@@ -29,7 +29,22 @@ func add_apple():
 	update_coin_ui()
 	sync_inventory_to_game_manager()
 
-
+func add_diamant():
+	GameManager.diamant += 1
+	sync_inventory_to_game_manager()
+	
+func add_ring():
+	GameManager.ring += 1
+	sync_inventory_to_game_manager()
+	
+func add_medikit():
+	GameManager.medikit += 1
+	sync_inventory_to_game_manager()
+	
+func add_stick():
+	GameManager.stick += 1
+	sync_inventory_to_game_manager()
+	
 func update_coin_ui():
 	coin_label.text = str(GameManager.coins)
 

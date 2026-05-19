@@ -21,6 +21,7 @@ DialogueManager="*uid://c3rodes2l3gxb"
 global="*uid://c733fks5634n1"
 GameManager="*uid://bybxlcoesfo7l"
 SaveManager="*uid://b5m0rhtwtv1rn"
+Inventory="*uid://br17x2oklssbe"
 
 [display]
 

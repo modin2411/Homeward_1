@@ -7,6 +7,6 @@ func _ready():
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		body.add_coin()      # optional Counter
+		body.add_medikit()      # optional Counter
 		body.collect(item)   # INS INVENTORY
 		queue_free()

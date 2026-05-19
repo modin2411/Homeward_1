@@ -2,6 +2,10 @@ extends Node
 
 var coins: int = 0
 var apple: int = 0
+var ring: int = 0
+var medikit: int = 0
+var diamant: int = 0
+var stick: int = 0
 var health: int = 3
 var max_health: int = 3
 
@@ -14,7 +18,8 @@ var inventory_data: Array = []
 var torgue: int = 0
 
 func _process(_delta):
-	print(torgue)
+	print(apple)#kontrolle für verschieden items
+	print(medikit)
 	
 
 

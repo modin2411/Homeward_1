@@ -5,7 +5,7 @@ var opened = false
 
 @export var coin_scene: PackedScene
 
-@onready var message_label = $"../Label"
+@onready var message_label = $"../diamantlabel"
 
 func _ready():
 	message_label.visible = false
@@ -23,36 +23,36 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _process(_delta: float) -> void:
 	if player_in_range and Input.is_action_just_pressed("interact"):
-		trade_apples()
+		drop_diamant()
 
 func update_text():
 	if opened:
-		message_label.text = "You already got the torgue"
-	elif GameManager.apple >= 2:
-		message_label.text = "Press E to trade 2 apples for a torgue"
+		message_label.text = "You already got a diamantring"
+	elif GameManager.diamant >= 1:
+		message_label.text = "Press E to make the special Diamantring"
 	else:
-		message_label.text = "You need 2 apples"
+		message_label.text = "You need a diamant"
 
-func trade_apples():
+func drop_diamant():
 	if opened:
-		message_label.text = "You already got the torgue"
+		message_label.text = "You already got a diamantring"
 		return
 
-	if GameManager.apple < 2:
-		message_label.text = "You need 2 apples"
+	if GameManager.apple < 1:
+		message_label.text = "You need a diamant"
 		return
 
-	GameManager.apple -= 2
+	GameManager.diamant -= 1
 	
 	opened = true
-	message_label.text = "You got a torgue"
+	message_label.text = "You got the special diamantring"
 
 	GameManager.add_quest_progress(1)
 	get_tree().call_group("quest_ui", "update_quest_bar")
 
-	spawn_torgue()
+	spawn_ring()
 
-func spawn_torgue():
+func spawn_ring():
 	var item_scenes: Array = [coin_scene]
 
 	for scene in item_scenes:
@@ -60,6 +60,6 @@ func spawn_torgue():
 		get_tree().current_scene.add_child(item)
 
 		item.global_position = global_position + Vector2(
-			randf_range(10, 20),
-			randf_range(10, 20)
+			randf_range(0,3),
+			randf_range(50,55)
 		)
