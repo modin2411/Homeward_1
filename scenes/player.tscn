@@ -337,7 +337,7 @@ offset_bottom = 1283.0
 scale = Vector2(0.015, 0.015)
 texture = ExtResource("4_dqkch")
 
-[node name="CanvasLayer4_Menu" type="CanvasLayer" parent="." unique_id=98246178 groups=["hint_ui"]]
+[node name="CanvasLayer4_Menu" type="CanvasLayer" parent="." unique_id=98246178 groups=["hint_ui", "player"]]
 script = ExtResource("6_tuyoq")
 
 [node name="Control" type="Control" parent="CanvasLayer4_Menu" unique_id=264165232]

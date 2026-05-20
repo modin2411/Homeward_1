@@ -64,6 +64,16 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 6
 
+[node name="StartButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer" unique_id=1759601585]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+text = "Start "
+
+[node name="DeleteButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer" unique_id=1605400218]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+text = "Delete"
+
 [node name="BackButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer" unique_id=138650490]
 custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
@@ -72,4 +82,6 @@ text = "Back"
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1097256890]
 zoom = Vector2(0.5, 0.5)
 
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/DeleteButton" to="." method="_on_delete_button_pressed"]
 [connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

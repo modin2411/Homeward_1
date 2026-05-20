@@ -24,7 +24,7 @@ func _on_confirm_new_game_button_pressed() -> void:
 
 	if slot_name.is_empty():
 		error_label.visible = true
-		error_label.text = "Bitte gib einen Namen ein."
+		error_label.text = "No name entered."
 		return
 
 	if SaveManager.create_new_game(slot_name):
@@ -32,7 +32,7 @@ func _on_confirm_new_game_button_pressed() -> void:
 		get_tree().change_scene_to_file("res://scenes/world.tscn")
 	else:
 		error_label.visible = true
-		error_label.text = "Name existiert schon oder ist ungültig."
+		error_label.text = "This name already exists."
 
 
 func _on_cancel_new_game_button_pressed() -> void:

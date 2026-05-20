@@ -1,14 +1,17 @@
 extends CharacterBody2D
 
 const speed = 100
+
 var current_dir = "down"
 var is_dead = false
 var is_hurt = false
 var is_healing = false
 
 var light_on := false
+var can_show_hint := false
 
 @export var inv: Inv
+@export var hint_menu: Control
 
 @onready var coin_label = $CanvasLayer/CoinLabel
 @onready var quest_bar = $CanvasLayer_progress/quest_bar
@@ -122,7 +125,6 @@ func sync_inventory_to_game_manager() -> void:
 		})
 
 	GameManager.inventory_data = result
-	print("SYNC INVENTORY TO GM:", GameManager.inventory_data)
 
 
 func rebuild_inventory_from_game_manager() -> void:
@@ -139,34 +141,36 @@ func rebuild_inventory_from_game_manager() -> void:
 		var amount: int = int(entry.get("amount", 1))
 
 		if item_path.is_empty():
-			push_error("Leerer item_path im GameManager-Inventar gefunden.")
 			continue
 
 		var loaded_item = load(item_path)
+
 		if loaded_item == null:
-			push_error("Item konnte nicht geladen werden: " + item_path)
 			continue
 
 		var new_slot := InvSlot.new()
 		new_slot.item = loaded_item
 		new_slot.amount = amount
+
 		inv.items.append(new_slot)
 
-	print("REBUILD INVENTORY FROM GM:", GameManager.inventory_data)
 	get_tree().call_group("inventory_ui", "update_slots")
 
 
 func _ready() -> void:
 	add_to_group("player")
+
 	$AnimatedSprite2D.play("front_idle")
 
 	player_light.visible = false
 	light_on = false
 
+	if hint_menu:
+		hint_menu.visible = false
+
 	if SaveManager.has_pending_player_position:
 		global_position = SaveManager.pending_player_position
 		SaveManager.has_pending_player_position = false
-		print("Geladene Position gesetzt: ", global_position)
 
 	rebuild_inventory_from_game_manager()
 
@@ -175,20 +179,27 @@ func _ready() -> void:
 
 	quest_bar.min_value = 0
 	quest_bar.custom_minimum_size = Vector2(100, 24)
+
 	update_quest_bar()
 
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and event.keycode == KEY_I:
-		var current_scene_path := get_tree().current_scene.scene_file_path
-		var allowed_scene := "res://scenes/cave.tscn"
+	if event is InputEventKey and event.pressed:
 
-		if current_scene_path == allowed_scene:
-			light_on = !light_on
-			player_light.visible = light_on
-		else:
-			light_on = false
-			player_light.visible = false
+		if event.keycode == KEY_I:
+			var current_scene_path := get_tree().current_scene.scene_file_path
+			var allowed_scene := "res://scenes/cave.tscn"
+
+			if current_scene_path == allowed_scene:
+				light_on = !light_on
+				player_light.visible = light_on
+			else:
+				light_on = false
+				player_light.visible = false
+
+		if event.keycode == KEY_E and can_show_hint:
+			if hint_menu:
+				hint_menu.visible = !hint_menu.visible
 
 
 func _physics_process(_delta: float) -> void:
@@ -216,55 +227,36 @@ func player_movement() -> void:
 
 	if right:
 		input_dir.x += 1
+
 	if left:
 		input_dir.x -= 1
+
 	if down:
 		input_dir.y += 1
+
 	if up:
 		input_dir.y -= 1
 
 	input_dir = input_dir.normalized()
+
 	velocity = input_dir * speed
 
 	if input_dir != Vector2.ZERO:
-		match current_dir:
-			"right":
-				if not right:
-					if left:
-						current_dir = "left"
-					elif down:
-						current_dir = "down"
-					elif up:
-						current_dir = "up"
 
-			"left":
-				if not left:
-					if right:
-						current_dir = "right"
-					elif down:
-						current_dir = "down"
-					elif up:
-						current_dir = "up"
+		if right:
+			current_dir = "right"
 
-			"down":
-				if not down:
-					if up:
-						current_dir = "up"
-					elif right:
-						current_dir = "right"
-					elif left:
-						current_dir = "left"
+		elif left:
+			current_dir = "left"
 
-			"up":
-				if not up:
-					if down:
-						current_dir = "down"
-					elif right:
-						current_dir = "right"
-					elif left:
-						current_dir = "left"
+		elif down:
+			current_dir = "down"
+
+		elif up:
+			current_dir = "up"
 
 		play_anim(1)
+
 	else:
 		play_anim(0)
 
@@ -298,3 +290,14 @@ func collect(item) -> void:
 	inv.insert(item)
 	sync_inventory_to_game_manager()
 	get_tree().call_group("inventory_ui", "update_slots")
+
+
+func enable_hint_area() -> void:
+	can_show_hint = true
+
+
+func disable_hint_area() -> void:
+	can_show_hint = false
+
+	if hint_menu:
+		hint_menu.visible = false

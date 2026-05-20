@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c22is4dowb8xl"]
+
+[ext_resource type="Script" uid="uid://wqmosogjpyuf" path="res://scenes/bush.gd" id="1_ehqem"]
+[ext_resource type="Texture2D" uid="uid://dd6qruto7rtr7" path="res://art/pixil-frame-0 (14).png" id="1_lad4k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehqem"]
+atlas = ExtResource("1_lad4k")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tu87o"]
+atlas = ExtResource("1_lad4k")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ftm5"]
+atlas = ExtResource("1_lad4k")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpk7d"]
+atlas = ExtResource("1_lad4k")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d8g13"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehqem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tu87o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ftm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpk7d")
+}],
+"loop": true,
+"name": &"bush",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x11nt"]
+size = Vector2(30, 17)
+
+[node name="bush" type="StaticBody2D" unique_id=1674364103]
+script = ExtResource("1_ehqem")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1946107806]
+sprite_frames = SubResource("SpriteFrames_d8g13")
+animation = &"bush"
+frame_progress = 0.13863164
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=968623303]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_x11nt")
