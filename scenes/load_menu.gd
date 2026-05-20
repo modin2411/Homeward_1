@@ -24,7 +24,7 @@ func build_save_list() -> void:
 	for save_slot in saves:
 		var button := Button.new()
 		var slot_name: String = str(save_slot.get("slot_name", "Unbekannt"))
-		var updated_at: String = str(save_slot.get("updated_at", ""))
+		var updated_at: String = str(save_slot.get("updated_at", "")).replace("T", " um ")
 
 		button.text = slot_name + "\nZuletzt gespeichert: " + updated_at
 		button.custom_minimum_size = Vector2(0, 70)

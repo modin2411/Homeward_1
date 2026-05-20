@@ -69,4 +69,7 @@ custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
 text = "Back"
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1097256890]
+zoom = Vector2(0.5, 0.5)
+
 [connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
