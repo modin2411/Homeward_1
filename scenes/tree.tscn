@@ -67,7 +67,7 @@ radius = 13.601471
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=264513952]
 sprite_frames = SubResource("SpriteFrames_5yujg")
 animation = &"tree"
-frame_progress = 0.20594381
+frame_progress = 0.51426727
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=727178631]
 position = Vector2(0, 14)
