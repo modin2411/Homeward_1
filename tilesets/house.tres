@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ck883u3v7dutx" path="res://art/Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Structures/Buildings/Props.png" id="4_yqv6a"]
 [ext_resource type="Texture2D" uid="uid://cn70d4kw4q1ql" path="res://art/Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Structures/Stations/Sawmill/Level_3-Sheet.png" id="5_gpoe3"]
 [ext_resource type="Texture2D" uid="uid://do5gq1w41r0vb" path="res://art/Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Structures/Stations/Sawmill/Level_1.png" id="6_ggnn1"]
+[ext_resource type="Texture2D" uid="uid://bsdu8fwniq4gv" path="res://art/pixil-frame-0(1).png" id="7_yqv6a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lhm7x"]
 texture = ExtResource("1_vitdj")
@@ -4331,6 +4332,16 @@ texture = ExtResource("6_ggnn1")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qgitl"]
+texture = ExtResource("7_yqv6a")
+0:0/size_in_atlas = Vector2i(3, 3)
+0:0/animation_speed = 1.5
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/0 = 0
+0:0/0/probability = 1.5
+
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lhm7x")
@@ -4339,3 +4350,4 @@ sources/2 = SubResource("TileSetAtlasSource_xv8dv")
 sources/3 = SubResource("TileSetAtlasSource_o3qu3")
 sources/4 = SubResource("TileSetAtlasSource_ggnn1")
 sources/5 = SubResource("TileSetAtlasSource_yqv6a")
+sources/6 = SubResource("TileSetAtlasSource_qgitl")
