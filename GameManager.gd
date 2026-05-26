@@ -11,6 +11,7 @@ var max_health: int = 3
 
 var quest_progress: int = 0
 var quest_progress_max: int = 100
+var quests: int = 10
 
 var inventory_data: Array = []
 var torgue: int = 0
@@ -39,7 +40,7 @@ func buy_heart():
 
 
 func add_quest_progress(amount: int):
-	quest_progress = clamp(quest_progress + amount, 0, quest_progress_max)
+	quest_progress = clamp(quest_progress + amount*(100/quests), 0, quest_progress_max)
 
 
 func reset_for_new_game() -> void:
