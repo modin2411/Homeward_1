@@ -8,16 +8,7 @@ script = ExtResource("1_jfien")
 
 [node name="button_controler" type="Control" parent="." unique_id=873585170]
 layout_mode = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
-grow_horizontal = 2
-grow_vertical = 0
+anchors_preset = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
@@ -29,9 +20,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.0
+offset_left = -50.0
 offset_top = -68.0
-offset_right = 48.0
+offset_right = 50.0
 offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -63,8 +54,8 @@ limit_top = -20000000
 limit_bottom = 10007951
 
 [node name="HomewardQuerLogo" type="Sprite2D" parent="." unique_id=1552822670]
-position = Vector2(-2.3841858e-07, -4.7683716e-07)
-scale = Vector2(0.65944415, 0.6186218)
+position = Vector2(17.27346, -4.7683716e-07)
+scale = Vector2(0.6819356, 0.6186218)
 texture = ExtResource("2_y2rfe")
 
 [node name="NewGameNamePanel" type="Control" parent="." unique_id=1895339497]
@@ -80,18 +71,18 @@ offset_bottom = 40.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="NewGameNamePanel/Panel" unique_id=649671174]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -141.0
-offset_top = -250.0
-offset_right = 101.0
-offset_bottom = -95.0
-grow_horizontal = 2
+anchors_preset = -1
+anchor_left = -3.041
+anchor_top = -6.336
+anchor_right = -2.991
+anchor_bottom = -6.161
+offset_right = 242.0
+offset_bottom = 155.0
 
 [node name="TitleLabel" type="Label" parent="NewGameNamePanel/Panel/VBoxContainer" unique_id=1397232329]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
 text = "Enter game name"
 horizontal_alignment = 1
 
@@ -104,7 +95,8 @@ theme_override_constants/minimum_character_width = 6
 
 [node name="ErrorLabel" type="Label" parent="NewGameNamePanel/Panel/VBoxContainer" unique_id=1701221341]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
 text = "No name entered"
 horizontal_alignment = 1
 

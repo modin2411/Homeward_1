@@ -11,7 +11,7 @@ var max_health: int = 3
 
 var quest_progress: int = 0
 var quest_progress_max: int = 100
-var quests: int = 10
+var quests: int = 5
 
 var inventory_data: Array = []
 var torgue: int = 0

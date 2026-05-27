@@ -32,6 +32,7 @@
 [ext_resource type="Script" uid="uid://ddjsr4obidgcv" path="res://scenes/trader.gd" id="20_navra"]
 [ext_resource type="Resource" uid="uid://d3bobw11ejste" path="res://inventory/items/coin.tres" id="21_0nbtd"]
 [ext_resource type="PackedScene" uid="uid://cso8qj3r03ya0" path="res://scenes/pause_menu.tscn" id="21_7iits"]
+[ext_resource type="Script" uid="uid://cjtu3m28ivppd" path="res://scenes/entrence_house_1.gd" id="22_ggc52"]
 [ext_resource type="Script" uid="uid://bwx8xtd2tmiep" path="res://scenes/schild.gd" id="23_kpybi"]
 [ext_resource type="Script" uid="uid://dgkropbx31hxc" path="res://scenes/sign_2.gd" id="24_ctatt"]
 [ext_resource type="PackedScene" uid="uid://sno6mgwq624p" path="res://scenes/stick.tscn" id="25_xgqkh"]
@@ -353,6 +354,9 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xgqkh"]
 size = Vector2(37, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_817gm"]
+size = Vector2(20, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37qwj"]
 
@@ -684,6 +688,16 @@ theme_override_constants/paragraph_spacing = 0
 theme_override_font_sizes/font_size = 10
 text = "press E
 to open"
+
+[node name="entrence_house1" type="Area2D" parent="." unique_id=938900091]
+z_index = 2
+position = Vector2(928, -1240)
+script = ExtResource("22_ggc52")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="entrence_house1" unique_id=1451493513]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_817gm")
 
 [node name="entrence hole" type="Area2D" parent="." unique_id=436447420]
 position = Vector2(648, -585)
@@ -1293,6 +1307,7 @@ offset_bottom = 23.0
 [connection signal="body_exited" from="chests" to="chests" method="_on_body_exited"]
 [connection signal="body_entered" from="chest2" to="chest2" method="_on_body_entered"]
 [connection signal="body_exited" from="chest2" to="chest2" method="_on_body_exited"]
+[connection signal="body_entered" from="entrence_house1" to="entrence_house1" method="_on_body_entered"]
 [connection signal="body_entered" from="entrence hole" to="entrence hole" method="_on_body_entered"]
 [connection signal="body_exited" from="entrence hole" to="entrence hole" method="_on_body_exited"]
 [connection signal="body_entered" from="entrence mine" to="entrence mine" method="_on_body_entered"]
