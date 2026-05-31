@@ -21,6 +21,8 @@ var can_show_hint := false
 @onready var player_light = $PointLight2D2
 
 
+
+
 func add_coin() -> void:
 	GameManager.coins += 1
 	update_coin_ui()
@@ -82,7 +84,9 @@ func die() -> void:
 
 	is_dead = true
 	velocity = Vector2.ZERO
+
 	GameManager.coins = max(GameManager.coins - 10, 0)
+	
 	$AnimatedSprite2D.play("death")
 
 
