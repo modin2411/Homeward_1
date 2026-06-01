@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://b47mh6svjsamv"]
+
+[ext_resource type="Texture2D" uid="uid://gduu4n2h8mk7" path="res://art/Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Props/Animated/pixil-frame-0(8).png" id="1_cfklw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxo7q"]
+atlas = ExtResource("1_cfklw")
+region = Rect2(272, 144, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy2dh"]
+atlas = ExtResource("1_cfklw")
+region = Rect2(304, 144, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_neu1n"]
+atlas = ExtResource("1_cfklw")
+region = Rect2(336, 144, 32, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6qic1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxo7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy2dh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_neu1n")
+}],
+"loop": false,
+"name": &"schalter",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gmkmf"]
+radius = 9.0
+
+[node name="schalter" type="CharacterBody2D" unique_id=502296838]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=42760147]
+sprite_frames = SubResource("SpriteFrames_6qic1")
+animation = &"schalter"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1653144436]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_gmkmf")

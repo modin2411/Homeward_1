@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://dmycfsrxkel8u" path="res://scenes/2_light.gd" id="6_imuf2"]
 [ext_resource type="Script" uid="uid://dd2xrxpkporqs" path="res://scenes/3_light.gd" id="7_vcpb6"]
 [ext_resource type="Script" uid="uid://bb52361omrc5x" path="res://scenes/4_light.gd" id="8_jkkxb"]
+[ext_resource type="Texture2D" uid="uid://gduu4n2h8mk7" path="res://art/Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Props/Animated/pixil-frame-0(8).png" id="10_ki3t3"]
+[ext_resource type="Script" uid="uid://kgre4pjnue1f" path="res://scenes/area2dschalter.gd" id="11_w2xca"]
 
 [sub_resource type="Gradient" id="Gradient_ywssb"]
 offsets = PackedFloat32Array(0.53097343, 1)
@@ -84,6 +86,41 @@ fill_to = Vector2(0.5356125, 0.67236465)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_661cr"]
 size = Vector2(184, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ki3t3"]
+size = Vector2(48, 34.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2xca"]
+atlas = ExtResource("10_ki3t3")
+region = Rect2(272, 144, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2t40"]
+atlas = ExtResource("10_ki3t3")
+region = Rect2(304, 144, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymhi1"]
+atlas = ExtResource("10_ki3t3")
+region = Rect2(336, 144, 32, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_faci3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2xca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2t40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymhi1")
+}],
+"loop": false,
+"name": &"schalter",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f4eko"]
+radius = 7.0
 
 [node name="house_1" type="Node2D" unique_id=1283079579]
 
@@ -225,6 +262,34 @@ z_index = 10
 position = Vector2(231, 57)
 shape = SubResource("RectangleShape2D_661cr")
 
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=531064446]
+z_index = 3
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=1956616282]
+z_index = 4
+position = Vector2(120, 250)
+script = ExtResource("11_w2xca")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=1748671583]
+z_index = 2
+position = Vector2(1, -2.625)
+shape = SubResource("RectangleShape2D_ki3t3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1371749641]
+position = Vector2(121, 249)
+sprite_frames = SubResource("SpriteFrames_faci3")
+animation = &"schalter"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1552024421]
+position = Vector2(121, 253)
+shape = SubResource("CircleShape2D_f4eko")
+
+[node name="Label_Schalter" type="Label" parent="CharacterBody2D" unique_id=549784555]
+offset_left = 102.0
+offset_top = 225.0
+offset_right = 142.0
+offset_bottom = 248.0
+
 [connection signal="body_entered" from="spikes/spikes2" to="spikes/spikes2" method="_on_body_entered"]
 [connection signal="body_entered" from="1_light" to="1_light" method="_on_body_entered"]
 [connection signal="body_exited" from="1_light" to="1_light" method="_on_body_exited"]
@@ -234,3 +299,5 @@ shape = SubResource("RectangleShape2D_661cr")
 [connection signal="body_exited" from="3_light" to="3_light" method="_on_body_exited"]
 [connection signal="body_entered" from="4_light" to="4_light" method="_on_body_entered"]
 [connection signal="body_exited" from="4_light" to="4_light" method="_on_body_exited"]
+[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D/Area2D" method="_on_body_exited"]
