@@ -437,7 +437,7 @@ size = Vector2(44, 59)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aas14"]
 size = Vector2(65, 35)
 
-[node name="woodworker" type="StaticBody2D" unique_id=1339820474]
+[node name="woodworker" type="CharacterBody2D" unique_id=1153545706]
 script = ExtResource("1_j3008")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=496758903]

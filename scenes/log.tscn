@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://imp05yd5exil"]
+
+[ext_resource type="Script" uid="uid://cvxbvrw2npm2g" path="res://log.gd" id="1_pt1ea"]
+[ext_resource type="Texture2D" uid="uid://c7fjm4udcw3n7" path="res://art/log_16x16.png" id="2_k0uux"]
+[ext_resource type="Resource" uid="uid://c2ws0i4j2rgmk" path="res://inventory/items/log.tres" id="2_vx63x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vx63x"]
+size = Vector2(18, 11)
+
+[node name="log" type="Area2D" unique_id=971853377]
+script = ExtResource("1_pt1ea")
+item = ExtResource("2_vx63x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1351149184]
+texture = ExtResource("2_k0uux")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=460314082]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_vx63x")

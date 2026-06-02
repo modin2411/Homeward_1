@@ -52,6 +52,10 @@ func add_medikit() -> void:
 func add_stick() -> void:
 	GameManager.stick += 1
 	sync_inventory_to_game_manager()
+	
+func add_log() -> void:
+	GameManager.log += 1
+	sync_inventory_to_game_manager()
 
 
 func update_coin_ui() -> void:

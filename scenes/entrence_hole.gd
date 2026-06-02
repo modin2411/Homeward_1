@@ -39,6 +39,8 @@ func _process(_delta):
 	if Input.is_action_just_pressed("interact"):
 
 		if has_torgue():
+			GameManager.return_position = player_ref.global_position
+			GameManager.has_return_position = true
 			get_tree().change_scene_to_file(cave_scene)
 			print("ENTER CAVE")
 		else:

@@ -1,4 +1,4 @@
-extends Area2D
+extends StaticBody2D
 
 var player_in_range = false
 var opened = false
@@ -13,13 +13,13 @@ func _ready():
 	hint_label.visible = false
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and not opened:
 		player_in_range = true
 		hint_label.visible = true
 
 
-func _on_body_exited(body: Node2D) -> void:
+func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_range = false
 		hint_label.visible = false

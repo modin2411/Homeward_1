@@ -1,11 +1,11 @@
 extends Area2D
+
 var player_in_range = false
 var opened = false
 
+@export var stick_scene: PackedScene
 
-@export var coin_scene: PackedScene
-
-@onready var message_label = $"../Label"
+@onready var message_label = $"../logtosticklabel"
 
 func _ready():
 	message_label.visible = false
@@ -23,43 +23,35 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _process(_delta: float) -> void:
 	if player_in_range and Input.is_action_just_pressed("interact"):
-		trade_apples()
+		trade_log_to_sticks()
 
 func update_text():
-	if opened:
-		message_label.text = "You already got the torch"
-	elif GameManager.stick >= 20:
-		message_label.text = "Press E to trade 20 sticks for a torch"
+	if GameManager.log < 1:
+		message_label.text = "You need 1 log"
 	else:
-		message_label.text = "You need 20 sticks"
+		message_label.text = "Press E to trade 1 log for 4 sticks"
 
-func trade_apples():
-	if opened:
-		message_label.text = "You already got the torch"
+func trade_log_to_sticks():
+	if GameManager.log < 1:
+		message_label.text = "You need 1 log"
 		return
 
-	if GameManager.apple < 2:
-		message_label.text = "You need 20 sticks"
-		return
+	GameManager.log -= 1
+	GameManager.stick += 4
 
-	GameManager.apple -= 2
-	
-	opened = true
-	message_label.text = "You got a torch"
+	message_label.text = "You got 4 sticks!"
 
 	GameManager.add_quest_progress(1)
 	get_tree().call_group("quest_ui", "update_quest_bar")
 
-	spawn_torgue()
+	spawn_sticks()
 
-func spawn_torgue():
-	var item_scenes: Array = [coin_scene]
-
-	for scene in item_scenes:
-		var item = scene.instantiate()
+func spawn_sticks():
+	for i in range(4):
+		var item = stick_scene.instantiate()
 		get_tree().current_scene.add_child(item)
 
 		item.global_position = global_position + Vector2(
-			randf_range(10, 20),
+			randf_range(80, 90),
 			randf_range(10, 20)
 		)

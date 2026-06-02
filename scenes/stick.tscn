@@ -8,6 +8,7 @@
 size = Vector2(13.375, 11.8125)
 
 [node name="Stick" type="Area2D" unique_id=1771968187]
+z_index = 3
 position = Vector2(15, 9)
 script = ExtResource("1_ld7er")
 item = ExtResource("2_m8wbh")

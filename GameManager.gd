@@ -6,6 +6,7 @@ var ring: int = 0
 var medikit: int = 0
 var diamant: int = 0
 var stick: int = 0
+var log: int = 0
 var health: int = 3
 var max_health: int = 3
 
@@ -16,6 +17,8 @@ var quests: int = 5
 var inventory_data: Array = []
 var torgue: int = 0
 
+var return_position: Vector2 = Vector2.ZERO
+var has_return_position: bool = false
 
 func damage(amount: int = 1):
 	health -= amount
@@ -50,6 +53,7 @@ func reset_for_new_game() -> void:
 	medikit = 0
 	diamant = 0
 	stick = 0
+	log = 0
 	health = 3
 	max_health = 3
 	torgue = 0
