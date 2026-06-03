@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://bttsjij0ss8q0" path="res://art/jumpandrun/Frog/frog.tscn" id="22_8sn40"]
 [ext_resource type="Script" path="res://scenes/exit.gd" id="23_kh180"]
 [ext_resource type="PackedScene" uid="uid://cso8qj3r03ya0" path="res://scenes/pause_menu.tscn" id="24_lyj1p"]
+[ext_resource type="PackedScene" uid="uid://dpdvdjfj6ejuf" path="res://scenes/coin.tscn" id="25_u28iu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyj1p"]
 size = Vector2(10, 17)
@@ -225,6 +226,150 @@ limit_right = 3600
 limit_bottom = 240
 
 [node name="pause_menu" parent="." unique_id=1321023038 instance=ExtResource("24_lyj1p")]
+
+[node name="Coin" parent="." unique_id=1404212501 instance=ExtResource("25_u28iu")]
+position = Vector2(110, 183)
+
+[node name="Coin2" parent="." unique_id=1134568994 instance=ExtResource("25_u28iu")]
+position = Vector2(556, 115)
+
+[node name="Coin3" parent="." unique_id=655368261 instance=ExtResource("25_u28iu")]
+position = Vector2(570, 115)
+
+[node name="Coin4" parent="." unique_id=1385957013 instance=ExtResource("25_u28iu")]
+position = Vector2(359, 198)
+
+[node name="Coin5" parent="." unique_id=1161294092 instance=ExtResource("25_u28iu")]
+position = Vector2(327, 198)
+
+[node name="Coin6" parent="." unique_id=1465039471 instance=ExtResource("25_u28iu")]
+position = Vector2(295, 198)
+
+[node name="Coin7" parent="." unique_id=1200466919 instance=ExtResource("25_u28iu")]
+position = Vector2(263, 199)
+
+[node name="Coin8" parent="." unique_id=821816295 instance=ExtResource("25_u28iu")]
+position = Vector2(226, 200)
+
+[node name="Coin9" parent="." unique_id=1491566283 instance=ExtResource("25_u28iu")]
+position = Vector2(190, 200)
+
+[node name="Coin10" parent="." unique_id=716719802 instance=ExtResource("25_u28iu")]
+position = Vector2(149, 184)
+
+[node name="Coin11" parent="." unique_id=767402634 instance=ExtResource("25_u28iu")]
+position = Vector2(745, 180)
+
+[node name="Coin12" parent="." unique_id=351731521 instance=ExtResource("25_u28iu")]
+position = Vector2(769, 180)
+
+[node name="Coin13" parent="." unique_id=2089072673 instance=ExtResource("25_u28iu")]
+position = Vector2(598, 115)
+
+[node name="Coin14" parent="." unique_id=1682160760 instance=ExtResource("25_u28iu")]
+position = Vector2(611, 115)
+
+[node name="Coin15" parent="." unique_id=1889030414 instance=ExtResource("25_u28iu")]
+position = Vector2(584, 115)
+
+[node name="Coin16" parent="." unique_id=875125765 instance=ExtResource("25_u28iu")]
+position = Vector2(903, 180)
+
+[node name="Coin17" parent="." unique_id=1384201620 instance=ExtResource("25_u28iu")]
+position = Vector2(882, 180)
+
+[node name="Coin18" parent="." unique_id=1734540401 instance=ExtResource("25_u28iu")]
+position = Vector2(861, 180)
+
+[node name="Coin19" parent="." unique_id=1629708264 instance=ExtResource("25_u28iu")]
+position = Vector2(816, 180)
+
+[node name="Coin20" parent="." unique_id=1234286007 instance=ExtResource("25_u28iu")]
+position = Vector2(792, 180)
+
+[node name="Coin21" parent="." unique_id=519579072 instance=ExtResource("25_u28iu")]
+position = Vector2(922, 180)
+
+[node name="Coin22" parent="." unique_id=1395899768 instance=ExtResource("25_u28iu")]
+position = Vector2(940, 180)
+
+[node name="Coin23" parent="." unique_id=1386372360 instance=ExtResource("25_u28iu")]
+position = Vector2(959, 180)
+
+[node name="Coin24" parent="." unique_id=1231870462 instance=ExtResource("25_u28iu")]
+position = Vector2(978, 180)
+
+[node name="Coin25" parent="." unique_id=1758866485 instance=ExtResource("25_u28iu")]
+position = Vector2(1224, 150)
+
+[node name="Coin26" parent="." unique_id=268174262 instance=ExtResource("25_u28iu")]
+position = Vector2(1246, 150)
+
+[node name="Coin27" parent="." unique_id=1398313265 instance=ExtResource("25_u28iu")]
+position = Vector2(1268, 150)
+
+[node name="Coin28" parent="." unique_id=1303309399 instance=ExtResource("25_u28iu")]
+position = Vector2(1916, 166)
+
+[node name="Coin29" parent="." unique_id=249275693 instance=ExtResource("25_u28iu")]
+position = Vector2(1952, 166)
+
+[node name="Coin30" parent="." unique_id=393630422 instance=ExtResource("25_u28iu")]
+position = Vector2(1989, 166)
+
+[node name="Coin31" parent="." unique_id=1861411342 instance=ExtResource("25_u28iu")]
+position = Vector2(2047, 166)
+
+[node name="Coin32" parent="." unique_id=596908059 instance=ExtResource("25_u28iu")]
+position = Vector2(2080, 166)
+
+[node name="Coin33" parent="." unique_id=1398557360 instance=ExtResource("25_u28iu")]
+position = Vector2(2113, 165)
+
+[node name="Coin34" parent="." unique_id=923612912 instance=ExtResource("25_u28iu")]
+position = Vector2(2151, 165)
+
+[node name="Coin35" parent="." unique_id=512422219 instance=ExtResource("25_u28iu")]
+position = Vector2(2182, 165)
+
+[node name="Coin36" parent="." unique_id=1244099375 instance=ExtResource("25_u28iu")]
+position = Vector2(3184, 168)
+
+[node name="Coin37" parent="." unique_id=140211987 instance=ExtResource("25_u28iu")]
+position = Vector2(3203, 168)
+
+[node name="Coin38" parent="." unique_id=621862185 instance=ExtResource("25_u28iu")]
+position = Vector2(3225, 168)
+
+[node name="Coin39" parent="." unique_id=1655028356 instance=ExtResource("25_u28iu")]
+position = Vector2(3244, 168)
+
+[node name="Coin40" parent="." unique_id=308489537 instance=ExtResource("25_u28iu")]
+position = Vector2(3287, 182)
+
+[node name="Coin41" parent="." unique_id=857586914 instance=ExtResource("25_u28iu")]
+position = Vector2(3306, 182)
+
+[node name="Coin42" parent="." unique_id=1604056509 instance=ExtResource("25_u28iu")]
+position = Vector2(3325, 182)
+
+[node name="Coin43" parent="." unique_id=1839560715 instance=ExtResource("25_u28iu")]
+position = Vector2(3334, 163)
+
+[node name="Coin44" parent="." unique_id=1918467351 instance=ExtResource("25_u28iu")]
+position = Vector2(3350, 150)
+
+[node name="Coin45" parent="." unique_id=4309071 instance=ExtResource("25_u28iu")]
+position = Vector2(3366, 150)
+
+[node name="Coin46" parent="." unique_id=2060407504 instance=ExtResource("25_u28iu")]
+position = Vector2(3383, 163)
+
+[node name="Coin47" parent="." unique_id=1883186578 instance=ExtResource("25_u28iu")]
+position = Vector2(3396, 182)
+
+[node name="Coin48" parent="." unique_id=1688817098 instance=ExtResource("25_u28iu")]
+position = Vector2(3580, 169)
 
 [connection signal="body_entered" from="Enemies/Eagle" to="Enemies/Oposum" method="_on_eagle_body_entered"]
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]

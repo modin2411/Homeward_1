@@ -27,11 +27,13 @@ Inventory="*uid://br17x2oklssbe"
 
 window/size/viewport_width=2000
 window/size/viewport_height=1300
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 window/stretch/scale=5.0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 

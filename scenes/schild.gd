@@ -4,8 +4,9 @@ extends Area2D
 
 
 We have to prepare...
-Collect 10 apples, 5 coins and 2 sticks.
-You'll certainly be able to use the sticks in the village."""
+Collect all the logs you can find, 
+take also a few apples with you.
+You'll certainly be able to use the logs in the village."""
 
 func get_hint_ui():
 	var nodes = get_tree().get_nodes_in_group("hint_ui")
