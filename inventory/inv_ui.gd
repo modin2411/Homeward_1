@@ -8,15 +8,28 @@ var is_open = false
 func _ready():
 	await get_tree().process_frame
 	add_to_group("inventory_ui")
-	var players = get_tree().get_nodes_in_group("player")
-	if players.is_empty():
-		push_error("No player in group!")
+
+	var player_node = get_player_node()
+	if player_node == null:
+		push_error("No player in group 'player' or 'Player'!")
 		return
-	
-	inv = players[0].inv
-	
+
+	inv = player_node.inv
+
 	update_slots()
 	close()
+
+
+func get_player_node():
+	var players_lower = get_tree().get_nodes_in_group("player")
+	if not players_lower.is_empty():
+		return players_lower[0]
+
+	var players_upper = get_tree().get_nodes_in_group("Player")
+	if not players_upper.is_empty():
+		return players_upper[0]
+
+	return null
 	
 func update_slots():
 	print("UI UPDATE CALLED")

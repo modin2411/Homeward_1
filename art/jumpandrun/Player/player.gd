@@ -5,11 +5,46 @@ const SPEED = 110.0
 const JUMP_VELOCITY = -300.0
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var coin_label = $CanvasLayer/CoinLabel
+@export var inv: Inv
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func _ready():
+	add_to_group("Player")
+	
+func add_coin() -> void:
+	GameManager.coins += 1
+	update_coin_ui()
+	
+func update_coin_ui() -> void:
+	coin_label.text = str(GameManager.coins)
 
+func sync_inventory_to_game_manager() -> void:
+	if inv == null:
+		GameManager.inventory_data = []
+		return
+
+	var result: Array = []
+
+	for slot in inv.items:
+		if slot == null or slot.item == null:
+			continue
+
+		result.append({
+			"item_name": slot.item.name,
+			"item_path": slot.item.resource_path,
+			"amount": slot.amount
+		})
+
+	GameManager.inventory_data = result
+	
+func collect(item) -> void:
+	inv.insert(item)
+	sync_inventory_to_game_manager()
+	get_tree().call_group("inventory_ui", "update_slots")
+	
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():

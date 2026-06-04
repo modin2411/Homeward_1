@@ -33,3 +33,7 @@ func _on_timer_timeout():
 func _on_eagle_body_entered(body: Node2D) -> void:
 	if "Player" in $"../Eagle/CollisionShape2D":
 		body.take_damage(1)
+
+
+func _on_coin_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
