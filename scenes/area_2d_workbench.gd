@@ -38,7 +38,7 @@ func drop_diamant():
 		message_label.text = "You already got a diamantring"
 		return
 
-	if GameManager.apple < 1:
+	if GameManager.diamant < 1:
 		message_label.text = "You need a diamant"
 		return
 

@@ -23,7 +23,7 @@ func _on_body_entered(body):
 		if has_torgue():
 			label.text = "Press E to enter cave"
 		else:
-			label.text = "You need a torgue"
+			label.text = "You need a torch"
 
 
 func _on_body_exited(body):

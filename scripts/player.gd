@@ -36,6 +36,7 @@ func add_apple() -> void:
 
 func add_diamant() -> void:
 	GameManager.diamant += 1
+	print(GameManager.diamant)
 	sync_inventory_to_game_manager()
 
 

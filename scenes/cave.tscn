@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c1n5ksqthg6jo" path="res://scenes/player.tscn" id="1_w6v1y"]
 [ext_resource type="TileSet" uid="uid://bibrg2mtfmodk" path="res://tilesets/cave.tres" id="2_rawnq"]
-[ext_resource type="Script" path="res://scenes/area_2d.gd" id="3_rawnq"]
+[ext_resource type="Script" uid="uid://c8pw6ybhwbi3j" path="res://scenes/area_2d.gd" id="3_rawnq"]
 [ext_resource type="PackedScene" uid="uid://cso8qj3r03ya0" path="res://scenes/pause_menu.tscn" id="4_ywssb"]
 [ext_resource type="PackedScene" uid="uid://4aii4igv3yax" path="res://scenes/diamant.tscn" id="5_rtd55"]
 
@@ -121,6 +121,13 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=79623818]
 position = Vector2(3.5, -4)
 shape = SubResource("RectangleShape2D_w2l0f")
+
+[node name="Label" type="Label" parent="Area2D" unique_id=1696867350]
+custom_minimum_size = Vector2(0.3, 0.54)
+offset_left = -181.0
+offset_top = -284.0
+offset_right = -141.0
+offset_bottom = -261.0
 
 [node name="pause_menu" parent="." unique_id=1321023038 instance=ExtResource("4_ywssb")]
 
