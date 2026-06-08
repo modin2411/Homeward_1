@@ -13,7 +13,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
 	
-	if  is_on_floor():
+	if is_on_floor():
 		# stop if is on the floor
 		velocity.x = 0
 		$AnimatedSprite2D.play("idle")
@@ -28,17 +28,26 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("jump")
 
 	move_and_slide()
+	check_player_collision()
 	
 	# flip sprite
-	$AnimatedSprite2D.flip_h = direction >0
+	$AnimatedSprite2D.flip_h = direction > 0
 	
 	
 func jump():
 	velocity.y = JUMP_VELOCITY
 
 
-
 func _on_timer_timeout():
 	# when timer finish, change direction and jump
 	direction *= -1
 	jump()
+
+
+func check_player_collision():
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var body = collision.get_collider()
+		
+		if body != null and body.is_in_group("Player"):
+			body.take_damage(1)

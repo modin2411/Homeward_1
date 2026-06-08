@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://0n8tfusaiur2"]
 
-[ext_resource type="PackedScene" uid="uid://bcsnyw4t6pnw2" path="res://art/jumpandrun/parallax_background.tscn" id="1_2dejq"]
+[ext_resource type="PackedScene" uid="uid://bcsnyw4t6pnw2" path="res://scenes/parallax_background.tscn" id="1_2dejq"]
 [ext_resource type="PackedScene" uid="uid://bapvy71043313" path="res://art/jumpandrun/Player/player.tscn" id="1_vr7hw"]
 [ext_resource type="TileSet" uid="uid://c7kaege8uy1fd" path="res://scenes/world-tileset.tres" id="2_2cmn2"]
 [ext_resource type="Texture2D" uid="uid://lsat347glqmi" path="res://art/jumpandrun/rock.png" id="2_oelmh"]
@@ -22,12 +22,13 @@
 [ext_resource type="PackedScene" uid="uid://hvw2tjk7rxpp" path="res://art/jumpandrun/Oposum/oposum.tscn" id="20_x2wnd"]
 [ext_resource type="PackedScene" uid="uid://cad0e06g0b45v" path="res://art/jumpandrun/Eagle/eagle.tscn" id="21_25vrf"]
 [ext_resource type="PackedScene" uid="uid://bttsjij0ss8q0" path="res://art/jumpandrun/Frog/frog.tscn" id="22_8sn40"]
-[ext_resource type="Script" uid="uid://cpldhjtrrjd0v" path="res://scenes/exit.gd" id="23_kh180"]
+[ext_resource type="Script" path="res://scenes/exit.gd" id="23_kh180"]
 [ext_resource type="PackedScene" uid="uid://cso8qj3r03ya0" path="res://scenes/pause_menu.tscn" id="24_lyj1p"]
 [ext_resource type="Resource" uid="uid://b6cet4aw2her5" path="res://inventory/playerinv.tres" id="24_qjnoa"]
 [ext_resource type="Texture2D" uid="uid://ddfvb12pmkmrf" path="res://art/manager/Coins Image.png" id="25_oxx1i"]
-[ext_resource type="Script" uid="uid://340wny8rau4g" path="res://scenes/coinjumpandrun.gd" id="25_p36v6"]
+[ext_resource type="Script" path="res://scenes/coinjumpandrun.gd" id="25_p36v6"]
 [ext_resource type="PackedScene" uid="uid://cvb4dc4h6xbp5" path="res://inventory/inv_ui.tscn" id="26_mmaev"]
+[ext_resource type="Texture2D" uid="uid://bvhntllvom1xw" path="res://art/manager/Heart_pixelart.png" id="27_b5tys"]
 [ext_resource type="Resource" uid="uid://d3bobw11ejste" path="res://inventory/items/coin.tres" id="29_hh4yr"]
 [ext_resource type="Texture2D" uid="uid://c2gb68c8bn4q3" path="res://art/manager/MonedaR.png" id="30_hh4yr"]
 
@@ -244,9 +245,6 @@ position = Vector2(671, 70)
 [node name="Eagle3" parent="Enemies" unique_id=1728092561 instance=ExtResource("21_25vrf")]
 position = Vector2(1109, 70)
 
-[node name="Eagle4" parent="Enemies" unique_id=770811633 instance=ExtResource("21_25vrf")]
-position = Vector2(3362, 69)
-
 [node name="Frog" parent="Enemies" unique_id=61819518 instance=ExtResource("22_8sn40")]
 position = Vector2(836, 180)
 
@@ -282,19 +280,18 @@ limit_bottom = 240
 [node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=1105267754]
 
 [node name="TextureRect" type="TextureRect" parent="Player/CanvasLayer" unique_id=1915363648]
-offset_left = 4.0000153
-offset_top = 2.0
-offset_right = 1258.0
-offset_bottom = 1256.0
+offset_left = 68.99999
+offset_top = 3.0
+offset_right = 1323.0
+offset_bottom = 1257.0
 scale = Vector2(0.015, 0.015)
 texture = ExtResource("25_oxx1i")
 
 [node name="CoinLabel" type="Label" parent="Player/CanvasLayer" unique_id=110329649]
 top_level = true
-offset_left = 27.0
-offset_top = -1.0
-offset_right = 37.0
-offset_bottom = 22.0
+offset_left = 91.999985
+offset_right = 101.999985
+offset_bottom = 23.0
 text = "0"
 
 [node name="Inv_UI" parent="Player" unique_id=1180561331 instance=ExtResource("26_mmaev")]
@@ -304,6 +301,33 @@ offset_right = 43.0
 offset_bottom = -28.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player/Inv_UI" unique_id=1220518662]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Player" unique_id=112889365]
+
+[node name="health" type="TextureRect" parent="Player/CanvasLayer2" unique_id=477413198]
+offset_left = 4.0600085
+offset_top = 2.9999995
+offset_right = 1284.06
+offset_bottom = 1283.0
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("27_b5tys")
+metadata/_edit_use_anchors_ = true
+
+[node name="health2" type="TextureRect" parent="Player/CanvasLayer2" unique_id=848166048]
+offset_left = 24.850006
+offset_top = 2.9999998
+offset_right = 1304.85
+offset_bottom = 1283.0
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("27_b5tys")
+
+[node name="health3" type="TextureRect" parent="Player/CanvasLayer2" unique_id=1862533395]
+offset_left = 46.324997
+offset_top = 2.9999998
+offset_right = 1326.325
+offset_bottom = 1283.0
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("27_b5tys")
 
 [node name="pause_menu" parent="." unique_id=1321023038 instance=ExtResource("24_lyj1p")]
 
@@ -358,6 +382,9 @@ animation = &"Coinspin"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="coin3" unique_id=1572274107]
 shape = SubResource("CircleShape2D_hromk")
+
+[node name="Eagle4" parent="." unique_id=770811633 instance=ExtResource("21_25vrf")]
+position = Vector2(3362, 69)
 
 [node name="coin4" type="Area2D" parent="." unique_id=84544796]
 position = Vector2(2654, 211)

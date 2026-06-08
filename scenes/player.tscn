@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bfbquw5jtna4n" path="res://art/characters/bardo_heal.png" id="4_smehm"]
 [ext_resource type="Script" uid="uid://23ntm36qy6bn" path="res://scenes/canvas_layer_4_menu.gd" id="6_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://ckwh0oyf6wta4" path="res://art/manager/pixelartrolle (2)-Photoroom.png" id="7_fjrip"]
-[ext_resource type="Script" path="res://scenes/canvas_layer_progress.gd" id="10_3v2ag"]
+[ext_resource type="Script" uid="uid://du7r2e24knfyn" path="res://scenes/canvas_layer_progress.gd" id="10_3v2ag"]
 [ext_resource type="PackedScene" uid="uid://cvb4dc4h6xbp5" path="res://inventory/inv_ui.tscn" id="10_d2wvv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
@@ -320,6 +320,7 @@ offset_right = 1284.06
 offset_bottom = 1283.0
 scale = Vector2(0.015, 0.015)
 texture = ExtResource("4_dqkch")
+metadata/_edit_use_anchors_ = true
 
 [node name="health2" type="TextureRect" parent="CanvasLayer2" unique_id=606405049]
 offset_left = 24.850006
@@ -328,6 +329,7 @@ offset_right = 1304.85
 offset_bottom = 1283.0
 scale = Vector2(0.015, 0.015)
 texture = ExtResource("4_dqkch")
+metadata/_edit_use_anchors_ = true
 
 [node name="health3" type="TextureRect" parent="CanvasLayer2" unique_id=1770849426]
 offset_left = 46.324997
@@ -336,6 +338,7 @@ offset_right = 1326.325
 offset_bottom = 1283.0
 scale = Vector2(0.015, 0.015)
 texture = ExtResource("4_dqkch")
+metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer4_Menu" type="CanvasLayer" parent="." unique_id=98246178 groups=["hint_ui", "player"]]
 script = ExtResource("6_tuyoq")

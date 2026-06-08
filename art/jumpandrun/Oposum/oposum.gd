@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const SPEED = 40.0
 const JUMP_VELOCITY = -400.0
 
@@ -18,6 +17,7 @@ func _physics_process(delta):
 	velocity.x = direction * SPEED
 
 	move_and_slide()
+	check_player_collision()
 	
 	# change sprite direction
 	if direction > 0:
@@ -30,10 +30,14 @@ func _on_timer_timeout():
 	direction *= -1
 
 
-func _on_eagle_body_entered(body: Node2D) -> void:
-	if "Player" in $"../Eagle/CollisionShape2D":
-		body.take_damage(1)
+func check_player_collision():
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i)
+		var body = collision.get_collider()
+
+		if body != null and body.is_in_group("Player"):
+			body.take_damage(1)
 
 
 func _on_coin_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	pass

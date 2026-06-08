@@ -104,7 +104,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [],
-"loop": true,
+"loop": false,
 "name": &"damage",
 "speed": 5.0
 }, {
@@ -185,7 +185,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cxkmh")
 }],
-"loop": true,
+"loop": false,
 "name": &"take_damage",
 "speed": 5.0
 }]
@@ -202,5 +202,5 @@ shape = SubResource("CapsuleShape2D_bs47l")
 position = Vector2(1, -15)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_f4wda")
-animation = &"death"
+animation = &"damage"
 autoplay = "idle"
