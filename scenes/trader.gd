@@ -38,11 +38,11 @@ func trade_apples():
 		message_label.text = "You already got the torch"
 		return
 
-	if GameManager.apple < 2:
+	if GameManager.stick < 20:
 		message_label.text = "You need 20 sticks"
 		return
 
-	GameManager.apple -= 2
+	GameManager.stick -= 2
 	
 	opened = true
 	message_label.text = "You got a torch"

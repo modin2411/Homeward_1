@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://hvw2tjk7rxpp" path="res://art/jumpandrun/Oposum/oposum.tscn" id="20_x2wnd"]
 [ext_resource type="PackedScene" uid="uid://cad0e06g0b45v" path="res://art/jumpandrun/Eagle/eagle.tscn" id="21_25vrf"]
 [ext_resource type="PackedScene" uid="uid://bttsjij0ss8q0" path="res://art/jumpandrun/Frog/frog.tscn" id="22_8sn40"]
-[ext_resource type="Script" path="res://scenes/exit.gd" id="23_kh180"]
+[ext_resource type="Script" uid="uid://cpldhjtrrjd0v" path="res://scenes/exit.gd" id="23_kh180"]
 [ext_resource type="PackedScene" uid="uid://cso8qj3r03ya0" path="res://scenes/pause_menu.tscn" id="24_lyj1p"]
 [ext_resource type="Resource" uid="uid://b6cet4aw2her5" path="res://inventory/playerinv.tres" id="24_qjnoa"]
 [ext_resource type="Texture2D" uid="uid://ddfvb12pmkmrf" path="res://art/manager/Coins Image.png" id="25_oxx1i"]
