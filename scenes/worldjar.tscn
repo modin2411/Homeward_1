@@ -98,7 +98,7 @@ position = Vector2(2848, 135)
 texture = ExtResource("6_vbq7h")
 
 [node name="Rock" type="Sprite2D" parent="Props" unique_id=1892562308]
-position = Vector2(187, 202)
+position = Vector2(187, 204)
 texture = ExtResource("2_oelmh")
 
 [node name="House" type="Sprite2D" parent="Props" unique_id=478729680]
