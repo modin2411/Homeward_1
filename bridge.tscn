@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://d02txpt1k0p70"]
+
+[ext_resource type="Texture2D" uid="uid://we4mwp4h86g3" path="res://art/castle_entrence.png" id="1_an2wo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvmcf"]
+atlas = ExtResource("1_an2wo")
+region = Rect2(4, 0, 156, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iysm1"]
+atlas = ExtResource("1_an2wo")
+region = Rect2(160, 0, 156, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xy2vu"]
+atlas = ExtResource("1_an2wo")
+region = Rect2(316, 0, 156, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tynux"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvmcf")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_iysm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xy2vu")
+}],
+"loop": false,
+"name": &"bridge",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25uw4"]
+size = Vector2(12, 101)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0n2te"]
+size = Vector2(12, 102)
+
+[node name="entrence_castle" type="Area2D" unique_id=1153690143]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1737075770]
+sprite_frames = SubResource("SpriteFrames_tynux")
+animation = &"bridge"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=687173939]
+position = Vector2(-46, -19.5)
+shape = SubResource("RectangleShape2D_25uw4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=366197060]
+position = Vector2(66, -18)
+shape = SubResource("RectangleShape2D_0n2te")
