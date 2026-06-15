@@ -32,7 +32,6 @@
 [ext_resource type="PackedScene" uid="uid://c2x6c0b1trwuq" path="res://scenes/apple.tscn" id="17_pm21f"]
 [ext_resource type="Script" uid="uid://ddjsr4obidgcv" path="res://scenes/trader.gd" id="20_navra"]
 [ext_resource type="PackedScene" uid="uid://cso8qj3r03ya0" path="res://scenes/pause_menu.tscn" id="21_7iits"]
-[ext_resource type="PackedScene" uid="uid://4aii4igv3yax" path="res://scenes/diamant.tscn" id="21_8u370"]
 [ext_resource type="Script" uid="uid://cjtu3m28ivppd" path="res://scenes/entrence_house_1.gd" id="22_ggc52"]
 [ext_resource type="Script" uid="uid://bwx8xtd2tmiep" path="res://scenes/schild.gd" id="23_kpybi"]
 [ext_resource type="Script" uid="uid://dgkropbx31hxc" path="res://scenes/sign_2.gd" id="24_ctatt"]
@@ -570,9 +569,9 @@ shape = SubResource("RectangleShape2D_xgqkh")
 
 [node name="chest2" type="StaticBody2D" parent="." unique_id=192384782]
 z_index = 2
-position = Vector2(1355, -1129)
+position = Vector2(-26, -780)
 script = ExtResource("14_xgqkh")
-item_scenes = Array[PackedScene]([ExtResource("25_xgqkh"), ExtResource("25_xgqkh"), ExtResource("17_pm21f"), ExtResource("21_8u370")])
+item_scenes = Array[PackedScene]([ExtResource("25_xgqkh"), ExtResource("25_xgqkh"), ExtResource("17_pm21f")])
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="chest2" unique_id=4568771]

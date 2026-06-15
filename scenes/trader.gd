@@ -10,6 +10,9 @@ var opened = false
 func _ready():
 	message_label.visible = false
 
+func get_player():
+	return get_tree().get_first_node_in_group("player")
+
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_range = true
@@ -26,6 +29,9 @@ func _process(_delta: float) -> void:
 		trade_apples()
 
 func update_text():
+	var player = get_player()
+	if player == null:
+		return
 	if opened:
 		message_label.text = "You already got the torch"
 	elif GameManager.stick >= 20:
@@ -33,7 +39,13 @@ func update_text():
 	else:
 		message_label.text = "You need 20 sticks"
 
+
+	
 func trade_apples():
+	var player = get_player()
+	if player == null:
+		return
+
 	if opened:
 		message_label.text = "You already got the torch"
 		return
@@ -42,8 +54,12 @@ func trade_apples():
 		message_label.text = "You need 20 sticks"
 		return
 
-	GameManager.stick -= 2
-	
+	# GameManager wie bisher
+	GameManager.stick -= 20
+
+	# Zusätzlich Inventar anpassen
+	player.inv.remove_items("Stick", 20)
+
 	opened = true
 	message_label.text = "You got a torch"
 

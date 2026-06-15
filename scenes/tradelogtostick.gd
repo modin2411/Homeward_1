@@ -55,6 +55,7 @@ func drop_stick():
 	# 1 LOG ABZIEHEN
 	player.inv.remove_items("Log", 1)
 
+	
 	message_label.text = "You got 4 sticks!"
 
 	GameManager.add_quest_progress(1)
