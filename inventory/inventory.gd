@@ -47,10 +47,6 @@ func get_apple_count() -> int:
 
 	return count
 
-func remove_apples(amount: int):
-	Inventory.remove_items("apple", amount)
-	GameManager.apple = Inventory.get_count("apple")
-	
 
 func remove_items(item_name: String, amount: int):
 	var removed = 0
