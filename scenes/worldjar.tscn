@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://0n8tfusaiur2"]
 
-[ext_resource type="PackedScene" uid="uid://bcsnyw4t6pnw2" path="res://scenes/parallax_background.tscn" id="1_2dejq"]
+[ext_resource type="PackedScene" uid="uid://bcsnyw4t6pnw2" path="res://art/jumpandrun/parallax_background.tscn" id="1_2dejq"]
 [ext_resource type="PackedScene" uid="uid://bapvy71043313" path="res://art/jumpandrun/Player/player.tscn" id="1_vr7hw"]
 [ext_resource type="TileSet" uid="uid://c7kaege8uy1fd" path="res://scenes/world-tileset.tres" id="2_2cmn2"]
 [ext_resource type="Texture2D" uid="uid://lsat347glqmi" path="res://art/jumpandrun/rock.png" id="2_oelmh"]
@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://cso8qj3r03ya0" path="res://scenes/pause_menu.tscn" id="24_lyj1p"]
 [ext_resource type="Resource" uid="uid://b6cet4aw2her5" path="res://inventory/playerinv.tres" id="24_qjnoa"]
 [ext_resource type="Texture2D" uid="uid://ddfvb12pmkmrf" path="res://art/manager/Coins Image.png" id="25_oxx1i"]
-[ext_resource type="Script" path="res://scenes/coinjumpandrun.gd" id="25_p36v6"]
+[ext_resource type="Script" uid="uid://340wny8rau4g" path="res://scenes/coinjumpandrun.gd" id="25_p36v6"]
 [ext_resource type="PackedScene" uid="uid://cvb4dc4h6xbp5" path="res://inventory/inv_ui.tscn" id="26_mmaev"]
 [ext_resource type="Texture2D" uid="uid://bvhntllvom1xw" path="res://art/manager/Heart_pixelart.png" id="27_b5tys"]
 [ext_resource type="Resource" uid="uid://d3bobw11ejste" path="res://inventory/items/coin.tres" id="29_hh4yr"]

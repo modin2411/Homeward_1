@@ -62,7 +62,8 @@ func drop_diamant():
 
 	# 🔥 ITEM REMOVE
 	player.inv.remove_items("diamant", 1)
-
+	
+	
 	opened = true
 	message_label.text = "You got the special diamantring"
 

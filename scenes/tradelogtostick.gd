@@ -1,7 +1,7 @@
 extends Area2D
 
 var player_in_range = false
-
+var count = 0
 @export var coin_scene: PackedScene
 @onready var message_label = $"../logtosticklabel"
 
@@ -30,6 +30,7 @@ func _on_body_exited(body: Node2D) -> void:
 func _process(_delta: float) -> void:
 	if player_in_range and Input.is_action_just_pressed("interact"):
 		drop_stick()
+		count = count + 1
 
 
 func update_text():
@@ -54,11 +55,12 @@ func drop_stick():
 
 	# 1 LOG ABZIEHEN
 	player.inv.remove_items("Log", 1)
-
+	get_tree().call_group("inv_ui", "update_slots")
+	
 	
 	message_label.text = "You got 4 sticks!"
-
-	GameManager.add_quest_progress(1)
+	if count == 4:
+		GameManager.add_quest_progress(1)
 	get_tree().call_group("quest_ui", "update_quest_bar")
 
 	spawn_stick()
