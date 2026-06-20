@@ -3,10 +3,9 @@ extends Area2D
 @export_multiline var sign_text: String = """
 
 
-Welcome to the village...
-Here you can trade with villagers, 
-use maschine's to further process your resources.
-Your path's will surely lead you here more often ."""
+There's a healer very close by. 
+Have you spotted him yet?
+You can replenish your hearts at the healer."""
 
 func get_hint_ui():
 	var nodes = get_tree().get_nodes_in_group("hint_ui")

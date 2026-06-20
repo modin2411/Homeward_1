@@ -24,7 +24,7 @@ func _on_body_exited(body):
 
 func _process(delta: float) -> void:
 	if player_in_area and Input.is_action_just_pressed("interact"):
-		animated_sprite.play("default")
+		animated_sprite.play("bridge")
 		label.visible = false
 
 		await get_tree().create_timer(1).timeout
