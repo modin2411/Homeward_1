@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bnj56spsh4ulc"]
+
+[ext_resource type="Texture2D" uid="uid://n62hhser8wef" path="res://art/Zaubertrank-Photoroom.png" id="1_8ehcv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4muk"]
+
+[node name="zaubertrank" type="Area2D" unique_id=1663410702]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1137468733]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("1_8ehcv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=417444638]
+shape = SubResource("CircleShape2D_g4muk")

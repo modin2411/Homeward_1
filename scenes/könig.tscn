@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b00x24rjn4xi8"]
+
+[ext_resource type="Texture2D" uid="uid://b4d66cqgtfgqf" path="res://art/manager/king-Photoroom.png" id="1_kdiq3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ptpit"]
+height = 40.0
+
+[node name="König" type="CharacterBody2D" unique_id=998109444]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=600386865]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_kdiq3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1070635628]
+z_index = 1
+shape = SubResource("CapsuleShape2D_ptpit")

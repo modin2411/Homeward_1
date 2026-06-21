@@ -4,13 +4,13 @@
 [ext_resource type="TileSet" uid="uid://rwiqqjbfxjbo" path="res://scenes/house.tres" id="1_w5d2h"]
 [ext_resource type="PackedScene" uid="uid://c1n5ksqthg6jo" path="res://scenes/player.tscn" id="2_w5d2h"]
 [ext_resource type="Texture2D" uid="uid://dt5gcsifvo6jn" path="res://art/Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Tilesets/black.png" id="3_so4da"]
-[ext_resource type="Script" uid="uid://ci55v843dv6mi" path="res://scenes/spikes.gd" id="4_02old"]
-[ext_resource type="Script" uid="uid://dg00f2etju08f" path="res://scenes/1_light.gd" id="5_mxe37"]
-[ext_resource type="Script" uid="uid://dmycfsrxkel8u" path="res://scenes/2_light.gd" id="6_imuf2"]
-[ext_resource type="Script" uid="uid://dd2xrxpkporqs" path="res://scenes/3_light.gd" id="7_vcpb6"]
-[ext_resource type="Script" uid="uid://bb52361omrc5x" path="res://scenes/4_light.gd" id="8_jkkxb"]
+[ext_resource type="Script" path="res://scenes/spikes.gd" id="4_02old"]
+[ext_resource type="Script" path="res://scenes/1_light.gd" id="5_mxe37"]
+[ext_resource type="Script" path="res://scenes/2_light.gd" id="6_imuf2"]
+[ext_resource type="Script" path="res://scenes/3_light.gd" id="7_vcpb6"]
+[ext_resource type="Script" path="res://scenes/4_light.gd" id="8_jkkxb"]
 [ext_resource type="Texture2D" uid="uid://gduu4n2h8mk7" path="res://art/Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Props/Animated/pixil-frame-0(8).png" id="10_ki3t3"]
-[ext_resource type="Script" uid="uid://kgre4pjnue1f" path="res://scenes/area2dschalter.gd" id="11_w2xca"]
+[ext_resource type="Script" path="res://scenes/area2dschalter.gd" id="11_w2xca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2xca"]
 size = Vector2(31, 12)
@@ -94,29 +94,29 @@ size = Vector2(184, 192)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ki3t3"]
 size = Vector2(48, 34.75)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w2xca"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymhi1"]
 atlas = ExtResource("10_ki3t3")
-region = Rect2(272, 144, 32, 36)
+region = Rect2(336, 144, 32, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v2t40"]
 atlas = ExtResource("10_ki3t3")
 region = Rect2(304, 144, 32, 36)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ymhi1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2xca"]
 atlas = ExtResource("10_ki3t3")
-region = Rect2(336, 144, 32, 36)
+region = Rect2(272, 144, 32, 36)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_faci3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w2xca")
+"texture": SubResource("AtlasTexture_ymhi1")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_v2t40")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ymhi1")
+"texture": SubResource("AtlasTexture_w2xca")
 }],
 "loop": false,
 "name": &"schalter",
@@ -298,6 +298,8 @@ shape = SubResource("RectangleShape2D_ki3t3")
 position = Vector2(121, 249)
 sprite_frames = SubResource("SpriteFrames_faci3")
 animation = &"schalter"
+frame = 2
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1552024421]
 position = Vector2(121, 253)
